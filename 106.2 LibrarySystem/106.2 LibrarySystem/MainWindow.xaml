@@ -1,12 +1,54 @@
-﻿<Window x:Class="_106._2_LibrarySystem.MainWindow"
+﻿<Window x:Class="WPFProject.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:_106._2_LibrarySystem"
+        xmlns:local="clr-namespace:WPFProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="Images/image.png"
+               Grid.Column="0" 
+               Margin="-26,-20,380,-30" Grid.ColumnSpan="2"/>
+
+        <StackPanel Grid.Column="2" Margin="0 0 0 0">
+            <Image Source="Images/image2.png"
+                   Margin="0 80 0 0"
+                   Height="76" 
+                   Width="83"/>
+            <TextBlock Margin="0 20 0 15"
+                       FontSize="18"
+                       FontFamily="Fonts/#Karla"
+                       TextAlignment="Center"
+                       Foreground="Black"><Run Text="Login"/></TextBlock>
+            <TextBox x:Name="ItemBox" 
+                     Width="160" 
+                     Text="Username"/>
+            <TextBox x:Name="ItemBox2" 
+                     Margin="0 10 0 10"
+                     Width="160" 
+                     Text="Password"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Foreground="White"
+                    Background="#89A894"
+                    FontSize="13"
+                    Width="100px"
+                    Margin="0 5 0 5" Content="Login"/>
+                <Button Foreground="White"
+                    Background="#A3B6CC"
+                    FontSize="13"
+                    Width="100px"
+                    Margin=" 20 5 0 5" Content="Sign Up"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
