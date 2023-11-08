@@ -20,17 +20,16 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class MainWindow : Window
     {
-        HomeScreen homeScreen = new HomeScreen();
+        HomeScreen homePage = new HomeScreen();
         AccountScreen accScreen = new AccountScreen();
         public MainWindow()
         {
             InitializeComponent();
-            MainContent.Content = homeScreen;
+            
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainContent.Content = homeScreen;
+            MainContent.Content = homePage;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

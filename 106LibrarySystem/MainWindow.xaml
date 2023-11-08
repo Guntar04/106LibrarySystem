@@ -52,8 +52,8 @@
                     Width="100px"
                     Margin=" 20 5 0 5" Content="Sign Up"/>
             </StackPanel>
-            
+
         </StackPanel>
-        <!--<ContentControl Name="MainContent" Grid.ColumnSpan="2"></ContentControl>-->
+        <ContentControl Name="MainContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </Window>

@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace _106LibrarySystem
 {
     /// <summary>
-    /// Interaction logic for signup.xaml
+    /// Interaction logic for SignUp.xaml
     /// </summary>
-    public partial class signup : Window
+    public partial class SignUp : UserControl
     {
-        public signup()
+        public SignUp()
         {
             InitializeComponent();
         }
