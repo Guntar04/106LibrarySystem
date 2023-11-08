@@ -20,9 +20,15 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class HomeScreen : UserControl
     {
+        AccountScreen accScreen = new AccountScreen();
         public HomeScreen()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            HomeContent.Content = accScreen;
         }
     }
 }

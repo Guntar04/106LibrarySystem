@@ -15,8 +15,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ContentControl Name="MainContent" Grid.ColumnSpan="2"></ContentControl>
-        <Rectangle Fill="Red" Grid.RowSpan="2"/>
+        <Rectangle  Fill="Red" Grid.RowSpan="2"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button 
                 Foreground="White"
@@ -24,12 +23,13 @@
                 FontSize="13"
                 Width="100px"
                 Margin="0 5 5 5">Home</Button>
-            <Button 
+            <Button Click="Button_Click"
                 Foreground="White"
                 Background="#89A894"
                 FontSize="13"
                 Width="100px"
                 Margin="0 5 0 5">Account</Button>
         </StackPanel>
+        <ContentControl Name="HomeContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </UserControl>

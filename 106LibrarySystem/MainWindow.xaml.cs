@@ -21,7 +21,7 @@ namespace _106LibrarySystem
     public partial class MainWindow : Window
     {
         HomeScreen homePage = new HomeScreen();
-        AccountScreen accScreen = new AccountScreen();
+        SignUp signUp = new SignUp();
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace _106LibrarySystem
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainContent.Content = accScreen;
+            MainContent.Content = signUp;
         }
     }
 }
