@@ -24,5 +24,10 @@ namespace _106._2_LibrarySystem
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
