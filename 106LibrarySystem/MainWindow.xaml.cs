@@ -18,7 +18,7 @@ namespace _106LibrarySystem
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : UserControl
+    public partial class MainWindow : Window
     {
         HomeScreen homeScreen = new HomeScreen();
         AccountScreen accScreen = new AccountScreen();
