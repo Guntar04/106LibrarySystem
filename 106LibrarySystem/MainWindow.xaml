@@ -1,11 +1,11 @@
-﻿<Window x:Class="WPFProject.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFProject"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+﻿<UserControl x:Class="_106LibrarySystem.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:_106LibrarySystem"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -21,7 +21,7 @@
                Margin="-26,-20,380,-30" Grid.ColumnSpan="2"/>
 
         <StackPanel Grid.Column="2" Margin="0 0 0 0">
-            <Image Source="Images/image2.png"
+            <Image Source="Images/image 2.png"
                    Margin="0 80 0 0"
                    Height="76" 
                    Width="83"/>
@@ -38,17 +38,20 @@
                      Width="160" 
                      Text="Password"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Foreground="White"
+                <Button Click="Button_Click"
+                    Foreground="White"
                     Background="#89A894"
                     FontSize="13"
                     Width="100px"
                     Margin="0 5 0 5" Content="Login"/>
-                <Button Foreground="White"
+                <Button Click="Button_Click_1"
+                    Foreground="White"
                     Background="#A3B6CC"
                     FontSize="14"
                     Width="100px"
                     Margin=" 20 5 0 5" Content="Sign Up"/>
             </StackPanel>
+            <ContentControl Name="MainContent" Grid.Column="1"></ContentControl>
         </StackPanel>
     </Grid>
-</Window>
+</UserControl>
