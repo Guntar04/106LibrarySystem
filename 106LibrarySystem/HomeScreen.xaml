@@ -15,17 +15,22 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Rectangle  Fill="Red" Grid.RowSpan="2"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <Rectangle  Fill="White" Grid.RowSpan="2"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Source="Images/image 2.png"
+               Grid.Column="0" 
+               Margin="20 0 10 0" Grid.ColumnSpan="2"/>
             <Button 
-                Foreground="White"
-                Background="#89A894"
+                Foreground="Black"
+                Background="White"
+                BorderBrush="White"
                 FontSize="13"
                 Width="100px"
                 Margin="0 5 5 5">Home</Button>
             <Button Click="Button_Click"
-                Foreground="White"
-                Background="#89A894"
+                Foreground="Black"
+                Background="white"
+                    BorderBrush="White"
                 FontSize="13"
                 Width="100px"
                 Margin="0 5 0 5">Account</Button>
