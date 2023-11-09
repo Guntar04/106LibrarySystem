@@ -8,9 +8,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -27,7 +27,7 @@
             <Image Source="Images/image 2.png"
                Grid.Column="0" 
                Margin="20 0 10 0" Grid.ColumnSpan="2"/>
-            <Button Click="PlaceHolder"
+            <!--<Button Click="PlaceHolder"
                 Foreground="Black"
                 Background="White"
                 BorderBrush="White"
@@ -61,7 +61,7 @@
                     BorderBrush="White"
                 FontSize="13"
                 Width="100px"
-                Margin="0 5 0 5">Support</Button>
+                Margin="0 5 0 5">Support</Button>-->
             <Image Source="Images/lang.png"
                Grid.Column="0" 
                Margin="20 0 10 0" Grid.ColumnSpan="2" Height="39" Width="52"/>
@@ -69,20 +69,19 @@
                Grid.Column="0" 
                Margin="20 0 10 0" Grid.ColumnSpan="2" Height="40" Width="34"/>
         </StackPanel>
-        <ContentControl Name="MemberPage" Grid.Row="1" Foreground="white" Height="12" VerticalAlignment="Center" Content=""/>
-        <Grid Grid.ColumnSpan="3" Grid.Row="1">
-            <Rectangle  Fill="#FF011936" Height="10" VerticalAlignment="Top"/>
-            <Rectangle  Fill="#FF00487C" Height="10" Margin="0,11,0,0" Grid.RowSpan="3" VerticalAlignment="Top" />
-            <Rectangle  Fill="#FF00487C" Height="150" Width="500" Margin="0,13,0,0" Grid.RowSpan="3" VerticalAlignment="Top"/>
-        </Grid>
-        <StackPanel Grid.ColumnSpan="3"
-            Grid.Row="1">
-            <Border BorderThickness="10">
-
-            </Border>
+        <Rectangle  Fill="#FF011936" Height="10" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Row="1"/>
+        <Rectangle  Fill="#FF00487C" Height="10" Margin="0,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Row="1" />
+        <Rectangle  Fill="#FF00487C" Height="126" Width="500" Margin="0,13,0,0"  VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
             <Image Source="/Images/member_profile.png" 
-                       Height="100" Width="100" 
-            Margin="0 20 300 0"/>
+                       Height="100" Width="100" Margin="15,0,0,80"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+            Grid.Row="1"
+                    Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <TextBlock Foreground="White" Height="30" FontSize="18" Margin="40,10,0,140"><Run Text="Arthur Werner"/></TextBlock>
+            <TextBlock Foreground="White" Height="30" Margin="10,18,0,140" FontSize="14" FontStyle="Italic"><Run Text="- Member"/></TextBlock>
         </StackPanel>
         <Rectangle  Fill="#FF011936" Height="180" VerticalAlignment="Bottom" Grid.Row="3" Grid.ColumnSpan="3"/>
     </Grid>
