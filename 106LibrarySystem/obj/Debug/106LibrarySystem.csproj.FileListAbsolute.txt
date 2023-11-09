@@ -40,3 +40,23 @@ C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\106Li
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.CoreCompileInputs.cache
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.exe
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.pdb
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\bin\Debug\106LibrarySystem.exe
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\bin\Debug\106LibrarySystem.pdb
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.AssemblyReference.cache
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AccountScreen.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\HomeScreen.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\MainWindow.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\SignUp.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\App.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem_MarkupCompile.cache
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem_MarkupCompile.lref
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AccountScreen.baml
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\HomeScreen.baml
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\MainWindow.baml
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\SignUp.baml
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.g.resources
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\_106LibrarySystem.Properties.Resources.resources
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.GenerateResource.cache
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.CoreCompileInputs.cache
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.exe
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.pdb
