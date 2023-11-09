@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace _106LibrarySystem
 {
     /// <summary>
-    /// Interaction logic for profileMember.xaml
+    /// Interaction logic for MemberPage.xaml
     /// </summary>
-    public partial class profileMember : UserControl
+    public partial class MemberPage : UserControl
     {
-        public profileMember()
+        public MemberPage()
         {
             InitializeComponent();
         }
