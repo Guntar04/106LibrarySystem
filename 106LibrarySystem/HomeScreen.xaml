@@ -63,8 +63,10 @@
                Margin="20 0 10 0" Grid.ColumnSpan="2" Height="40" Width="34"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
+            <Image HorizontalAlignment="Center"
+                   Source="Images/homeBanner.png" 
+                   Margin="20 0 10 0" Grid.ColumnSpan="2"/>
 
-            <TextBlock>GET BACK TO WORK WANKER</TextBlock>
         </StackPanel>
         <ContentControl Name="HomeContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
