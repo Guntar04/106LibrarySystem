@@ -7,6 +7,67 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="381*"/>
+        </Grid.RowDefinitions>
+        <Rectangle  Fill="white" Grid.RowSpan="4"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Source="Images/image 2.png"
+               Grid.Column="0" 
+               Margin="20 0 10 0" Grid.ColumnSpan="2"/>
+            <Button 
+                Foreground="Black"
+                Background="White"
+                BorderBrush="White"
+                FontSize="13"
+                Width="100px"
+                Margin="50 5 5 5">Home</Button>
+            <Button Click="Button_Click"
+                Foreground="Black"
+                Background="white"
+                    BorderBrush="White"
+                FontSize="13"
+                Width="100px"
+                Margin="0 5 0 5">About</Button>
+            <Button Click="Button_Click"
+                Foreground="Black"
+                Background="white"
+                    BorderBrush="White"
+                FontSize="13"
+                Width="100px"
+                Margin="0 5 0 5">Catalogue</Button>
+            <Button Click="Button_Click"
+                Foreground="Black"
+                Background="white"
+                    BorderBrush="White"
+                FontSize="13"
+                Width="100px"
+                Margin="0 5 0 5">Blogs</Button>
+            <Button Click="Button_Click"
+                Foreground="Black"
+                Background="white"
+                    BorderBrush="White"
+                FontSize="13"
+                Width="100px"
+                Margin="0 5 0 5">Support</Button>
+            <Image Source="Images/lang.png"
+               Grid.Column="0" 
+               Margin="20 0 10 0" Grid.ColumnSpan="2" Height="39" Width="52"/>
+            <Image Source="Images/profile.png"
+               Grid.Column="0" 
+               Margin="20 0 10 0" Grid.ColumnSpan="2" Height="40" Width="34"/>
+        </StackPanel>
+        <ContentControl Name="HomeContent" Grid.Row="1" Foreground="white" Height="12" VerticalAlignment="Center" Content=""/>
+        <Rectangle  Fill="#FF011936" Height="10" VerticalAlignment="Center" Grid.Row="1"/>
+        <Rectangle  Fill="#FF00487C" Height="10" Margin="0,11,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Grid.Row="1"/>
+        <Rectangle  Fill="#FF00487C" Height="150" Width="500" Margin="0,13,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Grid.Row="1"/>
+        <Rectangle  Fill="#FF011936" Height="180" VerticalAlignment="Bottom" Grid.Row="3"/>
     </Grid>
 </UserControl>
