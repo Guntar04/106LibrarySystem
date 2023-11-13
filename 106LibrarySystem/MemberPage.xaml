@@ -74,7 +74,7 @@
         <Rectangle  Fill="#FF00487C" Height="126" Width="500" Margin="0,13,0,0"  VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"/>
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
             <Image Source="/Images/member_profile.png" 
-                       Height="100" Width="100" Margin="15,0,0,80"/>
+                       Height="89" Width="89" Margin="15,0,0,80"/>
         </StackPanel>
         <StackPanel Grid.Column="1"
             Grid.Row="1"
@@ -82,6 +82,38 @@
 
             <TextBlock Foreground="White" Height="30" FontSize="18" Margin="40,10,0,140"><Run Text="Arthur Werner"/></TextBlock>
             <TextBlock Foreground="White" Height="30" Margin="10,18,0,140" FontSize="14" FontStyle="Italic"><Run Text="- Member"/></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1"
+                    Orientation="Vertical"
+                    VerticalAlignment="Top"
+                    Margin="130,60,0,0"
+                    Height="79">
+            <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
+            <Run Text="Joined - 17/03/2020"/></TextBlock>
+            <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
+            <Run Text="DOB - 24/05/2003"/></TextBlock>
+            <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
+            <Run Text="Email - arthur.h.werner@gmail.com"/></TextBlock>
+            <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
+            <Run Text="Gender - Male"/></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Grid.Row= "1"
+                    Orientation="Vertical"
+                    VerticalAlignment="Top"
+                    Margin="400,30,0,0"
+                    Height="60">
+
+            <Rectangle  Fill="#FF011936" 
+                        Height="20" 
+                        Width="70" 
+                        RadiusX ="5"
+                        RadiusY ="5"/>
+
+            <TextBlock Width="50" FontSize="9">Edit Details</TextBlock>
+            <Rectangle  Fill="#FF011936" Height="20" Width="70" Margin="0,5,0,0" VerticalAlignment="Bottom" Grid.Row="3" Grid.ColumnSpan="3"/>
+
         </StackPanel>
         <Rectangle  Fill="#FF011936" Height="180" VerticalAlignment="Bottom" Grid.Row="3" Grid.ColumnSpan="3"/>
     </Grid>
