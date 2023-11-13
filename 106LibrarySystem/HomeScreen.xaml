@@ -91,7 +91,46 @@
                        Width="18"
                        Height="18" Margin="569,26,113,26"/>
             </Grid>
+            <StackPanel Grid.ColumnSpan="3"
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        Margin="20">
+                <StackPanel >
+                    <Image Source="Images/Card.png"
+                       Width="50"
+                       Height="50"
+                       Margin="40 0 40 0"/>
+                    <TextBlock Margin="35 0 35 0">Your Books</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Image Source="Images/Calander.png"
+                       Width="50"
+                       Height="50"
+                       Margin="40 0 40 0"/>
+                    <TextBlock Margin="35 0 35 0">Events</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Image Source="Images/Contact.png"
+                       Width="50"
+                       Height="50"
+                       Margin="40 0 40 0"/>
+                    <TextBlock Margin="35 0 35 0">Support</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Image Source="Images/Audio.png"
+                       Width="50"
+                       Height="50"
+                       Margin="40 0 40 0"/>
+                    <TextBlock Margin="35 0 35 0">Online Library</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Image Source="Images/Maps.png"
+                       Width="50"
+                       Height="50"
+                       Margin="40 0 40 0"/>
+                    <TextBlock Margin="35 0 35 0">Location</TextBlock>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
-        <ContentControl Name="HomeContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </UserControl>

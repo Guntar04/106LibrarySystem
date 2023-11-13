@@ -58,6 +58,9 @@
     <Compile Include="HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MemberPage.xaml.cs">
+      <DependentUpon>MemberPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MemberPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SignUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +131,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\searchIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\member_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Audio.png" />
+    <Resource Include="Images\Calander.png" />
+    <Resource Include="Images\Card.png" />
+    <Resource Include="Images\Contact.png" />
+    <Resource Include="Images\Maps.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
