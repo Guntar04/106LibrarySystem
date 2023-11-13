@@ -18,7 +18,7 @@
             <RowDefinition Height="223"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ContentControl Name="HomeContent" Grid.ColumnSpan="2"></ContentControl>
+        
         <Rectangle  Fill="White" 
                     Grid.ColumnSpan="3"
                     Grid.RowSpan="3"/>
@@ -92,6 +92,6 @@
                        Height="18" Margin="569,26,113,26"/>
             </Grid>
         </StackPanel>
-        
+        <ContentControl Name="HomeContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </UserControl>
