@@ -83,3 +83,5 @@ C:\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.g.resources
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\_106LibrarySystem.Properties.Resources.resources
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.GenerateResource.cache
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.CoreCompileInputs.cache
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\MemberPage.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\MemberPage.baml
