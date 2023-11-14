@@ -98,23 +98,27 @@
             <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
             <Run Text="Gender - Male"/></TextBlock>
         </StackPanel>
-        <StackPanel Grid.Column="1"
-                    Grid.Row= "1"
-                    Orientation="Vertical"
-                    VerticalAlignment="Top"
-                    Margin="400,30,0,0"
-                    Height="60">
 
+        <Grid Grid.Column="1"
+              Grid.Row="1">
             <Rectangle  Fill="#FF011936" 
                         Height="20" 
                         Width="70" 
-                        RadiusX ="5"
-                        RadiusY ="5"/>
+                        VerticalAlignment="Top"
+                        Margin="400,30,0,0"/>
+            <TextBlock Width="50" Height="10" Margin="406 0 0 146" FontSize="9" Foreground="white" >Edit Details</TextBlock>
 
-            <TextBlock Width="50" FontSize="9">Edit Details</TextBlock>
-            <Rectangle  Fill="#FF011936" Height="20" Width="70" Margin="0,5,0,0" VerticalAlignment="Bottom" Grid.Row="3" Grid.ColumnSpan="3"/>
+            <Button  Background="#FF011936" 
+                        Height="20" 
+                        Width="70" 
+                        Margin="400,55,0,0"
+                        VerticalAlignment="Top"/>
 
-        </StackPanel>
+            <TextBlock Width="50" Height="10" Margin="406 0 0 98" FontSize="9" Foreground="white" >Log out</TextBlock>
+        </Grid>
+
+        <Rectangle  Fill="#FF011936" Height="20" Width="70" Margin="0,5,0,0" VerticalAlignment="Bottom" Grid.Row="3" Grid.ColumnSpan="3"/>
+
         <Rectangle  Fill="#FF011936" Height="180" VerticalAlignment="Bottom" Grid.Row="3" Grid.ColumnSpan="3"/>
     </Grid>
 </UserControl>
