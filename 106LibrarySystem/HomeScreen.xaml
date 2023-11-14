@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:_106LibrarySystem"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
@@ -18,7 +18,7 @@
             <RowDefinition Height="223"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ContentControl Name="HomeContent" Grid.ColumnSpan="2"></ContentControl>
+        
         <Rectangle  Fill="White" 
                     Grid.ColumnSpan="3"
                     Grid.RowSpan="3"/>
@@ -70,28 +70,65 @@
                Grid.Column="0" 
                Margin="20 0 10 0" Grid.ColumnSpan="3" Height="40" Width="34"/>
         </StackPanel>
-        <StackPanel x:Name="Banner"
-                    Grid.Row="1"
-                    Grid.ColumnSpan="3">
-            <Image Margin="15 0 15 0"
-                Source="Images/homeBanner.png"/>
-        </StackPanel>
-        <StackPanel x:Name="Icons"       
-            Grid.Row="2"
-            Grid.Column="1">
-            <Grid>
-                <Rectangle Fill="#A3B6CC" 
-           Height="30"
-           Width="500"
-           RadiusX="5"  
-           RadiusY="5"
-           Margin="20"/>
-                <TextBlock  Width="100" Margin="118,26,482,26">Search Library...</TextBlock>
-                <Image Source="Images/searchIcon.png"
-                       Width="18"
-                       Height="18" Margin="569,26,113,26"/>
-            </Grid>
-        </StackPanel>
-        
+        <ScrollViewer Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3" Height="800" Width="800">
+            <StackPanel>
+                <StackPanel Grid.RowSpan="2"
+                            Grid.Column="2">
+                    <Image Margin="15 0 15 0"
+                    Source="Images/homeBanner.png"/>
+                </StackPanel>
+                <StackPanel x:Name="Icons"       
+                Grid.Row="2"
+                Grid.Column="1">
+                    <Grid>
+                        <Rectangle Fill="#A3B6CC" 
+               Height="30"
+               Width="500"
+               RadiusX="5"  
+               RadiusY="5"
+               Margin="20"/>
+                        <TextBlock  Width="100" Margin="118,26,482,26">Search Library...</TextBlock>
+                        <Image Source="Images/searchIcon.png"
+                           Width="18"
+                           Height="18" Margin="569,26,113,26"/>
+                    </Grid>
+                    <StackPanel Grid.ColumnSpan="3"
+                            Orientation="Horizontal" 
+                            HorizontalAlignment="Center">
+                        <StackPanel Margin="30">
+                            <Image Source="Images/Card.png"
+                           Width="50"
+                           Height="50"/>
+                            <TextBlock>Your Books</TextBlock>
+                        </StackPanel>
+                        <StackPanel Margin="30">
+                            <Image Source="Images/Calander.png"
+                           Width="50"
+                           Height="50"/>
+                            <TextBlock>Events</TextBlock>
+                        </StackPanel>
+                        <StackPanel Margin="30">
+                            <Image Source="Images/Contact.png"
+                           Width="50"
+                           Height="50"/>
+                            <TextBlock>Support</TextBlock>
+                        </StackPanel>
+                        <StackPanel Margin="30">
+                            <Image Source="Images/Audio.png"
+                           Width="50"
+                           Height="50"/>
+                            <TextBlock>Online Library</TextBlock>
+                        </StackPanel>
+                        <StackPanel Margin="30">
+                            <Image Source="Images/Maps.png"
+                           Width="50"
+                           Height="50"/>
+                            <TextBlock>Location</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <ContentControl Name="HomeContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </UserControl>
