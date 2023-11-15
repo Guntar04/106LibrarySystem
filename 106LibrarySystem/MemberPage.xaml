@@ -80,23 +80,42 @@
             Grid.Row="1"
                     Orientation="Horizontal" HorizontalAlignment="Center">
 
-            <TextBlock Foreground="White" Height="30" FontSize="18" Margin="40,10,0,140"><Run Text="Arthur Werner"/></TextBlock>
-            <TextBlock Foreground="White" Height="30" Margin="10,18,0,140" FontSize="14" FontStyle="Italic"><Run Text="- Member"/></TextBlock>
+            <TextBlock Foreground="White" Height="30" FontSize="16" Margin="40,-15,0,140"><Run Text="Arthur Werner"/></TextBlock>
+            <TextBlock Foreground="White" Height="30" Margin="7,-9,0,140" FontSize="13" FontStyle="Italic"><Run Text="- Member"/></TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1"
                     Grid.Row="1"
                     Orientation="Vertical"
                     VerticalAlignment="Top"
-                    Margin="130,60,0,0"
+                    Margin="130,50,0,0"
                     Height="79">
-            <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
-            <Run Text="Joined - 17/03/2020"/></TextBlock>
-            <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
-            <Run Text="DOB - 24/05/2003"/></TextBlock>
-            <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
-            <Run Text="Email - arthur.h.werner@gmail.com"/></TextBlock>
-            <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
-            <Run Text="Gender - Male"/></TextBlock>
+            <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold"><Run Text="Joined:"/></TextBlock>
+                <TextBlock Foreground="White" FontSize="13"><Run Text=" 17/03/2020"/></TextBlock>
+            </StackPanel>
+            <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold"><Run Text="DOB:"/></TextBlock>
+                <TextBlock Foreground="White" FontSize="13" ><Run Text=" 24/05/2003"/></TextBlock>
+            </StackPanel>
+            <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" ><Run Text="Email:"/></TextBlock>
+                <TextBlock Foreground="White" FontSize="13" ><Run Text=" arthur.h.werner@gmail.com"/></TextBlock>
+            </StackPanel>
+            <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" ><Run Text="Gender:"/></TextBlock>
+                <TextBlock Foreground="White" FontSize="13" ><Run Text=" Male"/></TextBlock>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right">
+                <TextBlock Foreground="White" FontSize="12" Margin="0 -3 10 0 "><Run Text=" Member ID: 204167"/></TextBlock>
+            </StackPanel>
         </StackPanel>
 
         <Grid Grid.Column="1"
