@@ -98,23 +98,48 @@
             <TextBlock Foreground="White" FontSize="14" FontStyle="Italic">
             <Run Text="Gender - Male"/></TextBlock>
         </StackPanel>
-        <StackPanel Grid.Column="1"
-                    Grid.Row= "1"
-                    Orientation="Vertical"
-                    VerticalAlignment="Top"
-                    Margin="400,30,0,0"
-                    Height="60">
 
+        <Grid Grid.Column="1"
+              Grid.Row="1">
             <Rectangle  Fill="#FF011936" 
                         Height="20" 
                         Width="70" 
-                        RadiusX ="5"
-                        RadiusY ="5"/>
+                        VerticalAlignment="Top"
+                        Margin="400,30,0,0"/>
+            <TextBlock Width="50" Height="10" Margin="406 0 0 146" FontSize="9" Foreground="white" >Edit Details</TextBlock>
 
-            <TextBlock Width="50" FontSize="9">Edit Details</TextBlock>
-            <Rectangle  Fill="#FF011936" Height="20" Width="70" Margin="0,5,0,0" VerticalAlignment="Bottom" Grid.Row="3" Grid.ColumnSpan="3"/>
+            <Button  Click="Button_Click"
+                Background="#FF011936" 
+                        Height="20" 
+                        Width="70" 
+                        Margin="400,55,0,0"
+                        VerticalAlignment="Top"/>
 
-        </StackPanel>
-        <Rectangle  Fill="#FF011936" Height="180" VerticalAlignment="Bottom" Grid.Row="3" Grid.ColumnSpan="3"/>
+            <TextBlock Width="50" Height="20" Margin="406 0 0 87" FontSize="9" Foreground="white" >Log out</TextBlock>
+        </Grid>
+        <Rectangle  Fill="#FF011936" Height="215" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,191,0,0" Grid.RowSpan="2"/>
+        <Grid Grid.Column="1"
+              Grid.Row="2">
+            <TextBlock FontSize="12" FontWeight="Bold" Margin="150,-55,-13,210">Books Due</TextBlock>
+            <TextBlock FontSize="12" Margin="231,-55,-93,210">Watch List</TextBlock>
+            <TextBlock FontSize="12" Margin="306,-55,-170,210">History</TextBlock>
+            <Rectangle Fill="black" Height="18" Width="0.8" Margin="218,-56,281,213"></Rectangle>
+            <Rectangle Fill="black" Height="18" Width="0.8" Margin="296,-56,203,213"></Rectangle>
+            <Rectangle Fill="black" Height="3" Width="75" Margin="144,-37,281,211"></Rectangle>
+            <Rectangle Fill="LightGray" Height="3" Width="78" Margin="218.8,-37,203,211"></Rectangle>
+            <Rectangle Fill="LightGray" Height="3" Width="53" Margin="296.7,-37,150,211"></Rectangle>
+        </Grid>
+        <Grid Grid.ColumnSpan="3"
+              Grid.Row="2"
+              HorizontalAlignment="Left">
+
+            <Image Source="/Images/book1.png" Height="100" Width="80" Margin="17,-16,-2,93"/>
+            <Image Source="/Images/book2.png" Height="100" Width="80" Margin="115,-16,-100,93" />
+            <Image Source="/Images/book3.png" Height="100" Width="80" Margin="211,-16,-196,93" />
+            <Image Source="/Images/book4.png" Height="100" Width="80" Margin="310,-16,-295,93"/>
+            <Image Source="/Images/book5.png" Height="100" Width="80" Margin="412,-16,-397,93"/>
+
+        </Grid>
+        <ContentControl Name="MemberContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </UserControl>
