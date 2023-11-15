@@ -129,6 +129,17 @@
             <Rectangle Fill="LightGray" Height="3" Width="78" Margin="218.8,-37,203,211"></Rectangle>
             <Rectangle Fill="LightGray" Height="3" Width="53" Margin="296.7,-37,150,211"></Rectangle>
         </Grid>
+        <Grid Grid.ColumnSpan="3"
+              Grid.Row="2"
+              HorizontalAlignment="Left">
+
+            <Image Source="/Images/book1.png" Height="100" Width="80" Margin="17,-16,-2,93"/>
+            <Image Source="/Images/book2.png" Height="100" Width="80" Margin="115,-16,-100,93" />
+            <Image Source="/Images/book3.png" Height="100" Width="80" Margin="211,-16,-196,93" />
+            <Image Source="/Images/book4.png" Height="100" Width="80" Margin="310,-16,-295,93"/>
+            <Image Source="/Images/book5.png" Height="100" Width="80" Margin="412,-16,-397,93"/>
+
+        </Grid>
         <ContentControl Name="MemberContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </UserControl>
