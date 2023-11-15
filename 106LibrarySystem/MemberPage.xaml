@@ -27,7 +27,7 @@
             <Image Source="Images/image 2.png"
                Grid.Column="0" 
                Margin="20 0 10 0" Grid.ColumnSpan="2"/>
-            <Button Click="PlaceHolder"
+            <Button 
                 Foreground="Black"
                 Background="White"
                 BorderBrush="White"
@@ -35,7 +35,7 @@
                 Width="100px"
                 Margin="50 5 5 5">Home</Button>
             
-            <Button Click="PlaceHolder"
+            <Button 
                 Foreground="Black"
                 Background="white"
                 BorderBrush="White"
@@ -43,7 +43,7 @@
                 Width="100px"
                 Margin="0 5 0 5">About</Button>
             
-            <Button Click="PlaceHolder"
+            <Button 
                 Foreground="Black"
                 Background="white"
                     BorderBrush="White"
@@ -51,7 +51,7 @@
                 Width="100px"
                 Margin="0 5 0 5">Catalogue</Button>
             
-            <Button Click="PlaceHolder"
+            <Button 
                 Foreground="Black"
                 Background="white"
                     BorderBrush="White"
@@ -59,7 +59,7 @@
                 Width="100px"
                 Margin="0 5 0 5">Blogs</Button>
             
-            <Button Click="PlaceHolder"
+            <Button 
                 Foreground="Black"
                 Background="white"
                     BorderBrush="White"

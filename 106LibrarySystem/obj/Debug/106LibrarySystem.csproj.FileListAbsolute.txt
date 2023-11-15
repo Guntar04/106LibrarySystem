@@ -89,3 +89,5 @@ D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\MemberPage
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\MemberPage.baml
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\MemberPage.g.cs
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\MemberPage.baml
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.baml

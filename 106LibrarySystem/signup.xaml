@@ -64,7 +64,7 @@
                 FontSize="13"
                 Width="117"
                 Margin="0 20 0 0" Content="Create Account"/>
-                <Button Click="Button_Click_1"
+                <Button Click="Button_Click"
                 Foreground="White"
                 Background="#89A894"
                 FontSize="14"
