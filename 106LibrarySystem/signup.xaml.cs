@@ -20,9 +20,20 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class SignUp : UserControl
     {
+        HomeScreen homePage = new HomeScreen();
+        MainWindow login = new MainWindow();
         public SignUp()
         {
             InitializeComponent();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SignInContent.Content = homePage;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SignInContent.Content = login;
         }
     }
 }

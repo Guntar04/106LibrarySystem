@@ -5,8 +5,74 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:_106LibrarySystem"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="White"
+                   Grid.ColumnSpan="3"/>
+        <Image Source="Images/SignUpImage.png"
+           Grid.Column="0"  Margin="-114,-48,0,-44"/>
+
+        <StackPanel Grid.Column="2" Margin="0 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Source="Images/image 2.png"
+               Margin="0 00 0 0"
+               Height="76" 
+               Width="83"/>
+            <TextBlock Margin="0 20 0 15"
+                   FontSize="18"
+                   FontFamily="Fonts/#Karla"
+                   TextAlignment="Center"
+                   Foreground="Black"><Run Text="Sign Up"/></TextBlock>
+            <TextBox x:Name="ItemBox" 
+                     Width="160"
+                     Foreground="Gray"
+                     Text="Username"/>
+            <TextBox x:Name="ItemBox2" 
+                     Margin="0 10 0 10"
+                     Width="160" 
+                     Foreground="Gray"
+                     Text="First Name"/>
+            <TextBox x:Name="ItemBo3" 
+                     Width="160" 
+                     Foreground="Gray"
+                     Text="Last Name"/>
+            <TextBox x:Name="ItemBox4" 
+                     Margin="0 10 0 10"
+                     Width="160" 
+                     Foreground="Gray"
+                     Text="Email Address"/>
+            <TextBox x:Name="ItemBox5" 
+                     Width="160" 
+                     Foreground="Gray"
+                     Text="Phone Number"/>
+            <TextBox x:Name="ItemBox6" 
+                     Margin="0 10 0 10"
+                     Width="160" 
+                     Foreground="Gray"
+                     Text="Password"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Click="Button_Click"
+                Foreground="White"
+                Background="#89A894"
+                FontSize="13"
+                Width="117"
+                Margin="0 20 0 0" Content="Create Account"/>
+                <Button Click="Button_Click_1"
+                Foreground="White"
+                Background="#89A894"
+                FontSize="14"
+                Width="73"
+                Margin=" 20 20 0 0" Content="Login"/>
+            </StackPanel>
+
+        </StackPanel>
+        <ContentControl Name="SignInContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </UserControl>
