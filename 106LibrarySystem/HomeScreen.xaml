@@ -138,7 +138,10 @@
                     </StackPanel>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">HAVE A LOOK AT OUR TRENDING BOOKS</TextBlock>
+                    <TextBlock TextAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Margin="0 20 0 0">HAVE A LOOK AT OUR TRENDING BOOKS</TextBlock>
                     <Rectangle Fill="Black"
                                Width="500"
                                Height="2"
