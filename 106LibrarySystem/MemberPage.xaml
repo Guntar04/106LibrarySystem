@@ -23,7 +23,7 @@
                     Grid.RowSpan="2"/>
         <StackPanel Orientation="Horizontal" 
                     HorizontalAlignment="Left"
-                    Grid.ColumnSpan="2">
+                    Grid.ColumnSpan="3">
             <Image Source="Images/image 2.png"
                Grid.Column="0" 
                Margin="20 0 10 0" Grid.ColumnSpan="2"/>
