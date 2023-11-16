@@ -20,14 +20,12 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class SignUp : UserControl
     {
-        LoginPage loginPage = new LoginPage();
+        
         public SignUp()
         {
             InitializeComponent();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            SignInContent.Content = loginPage;
-        }
+        
+
     }
 }

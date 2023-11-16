@@ -58,13 +58,13 @@
                      Foreground="Gray"
                      Text="Password"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Click="Button_Click"
+                <Button 
                 Foreground="White"
                 Background="#89A894"
                 FontSize="13"
                 Width="117"
                 Margin="0 20 0 0" Content="Create Account"/>
-                <Button Click="Button_Click"
+                <Button 
                 Foreground="White"
                 Background="#89A894"
                 FontSize="14"
@@ -73,6 +73,6 @@
             </StackPanel>
 
         </StackPanel>
-        <ContentControl Name="SignInContent" Grid.ColumnSpan="2"></ContentControl>
+        <ContentControl Name="SignInContent" Grid.ColumnSpan="2"/>
     </Grid>
 </UserControl>
