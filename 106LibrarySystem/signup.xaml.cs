@@ -20,9 +20,12 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class SignUp : UserControl
     {
+        
         public SignUp()
         {
             InitializeComponent();
         }
+        
+
     }
 }

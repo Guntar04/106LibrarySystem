@@ -21,7 +21,7 @@ namespace _106LibrarySystem
     public partial class MemberPage : UserControl
     {
 
-        MainWindow mainWindow = new MainWindow();
+        
 
         public MemberPage()
         {
@@ -30,7 +30,7 @@ namespace _106LibrarySystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MemberContent.Content = mainWindow;
+            
         }
 
     }

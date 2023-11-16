@@ -16,13 +16,24 @@ using System.Windows.Shapes;
 namespace _106LibrarySystem
 {
     /// <summary>
-    /// Interaction logic for AccountScreen.xaml
+    /// Interaction logic for LoginPage.xaml
     /// </summary>
-    public partial class AccountScreen : UserControl
+    public partial class LoginPage : UserControl
     {
-        public AccountScreen()
+        HomeScreen homePage = new HomeScreen();
+        SignUp signUp = new SignUp();
+        public LoginPage()
         {
             InitializeComponent();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoginContent.Content = homePage;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            LoginContent.Content = signUp;
         }
     }
 }

@@ -58,17 +58,20 @@
     <Compile Include="HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MemberPage.xaml.cs">
       <DependentUpon>MemberPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
-    <Page Include="AccountScreen.xaml">
+    <Page Include="HomeScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HomeScreen.xaml">
+    <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,9 +79,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AccountScreen.xaml.cs">
-      <DependentUpon>AccountScreen.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -148,6 +148,11 @@
     <Resource Include="Images\book3.png" />
     <Resource Include="Images\book4.png" />
     <Resource Include="Images\book5.png" />
+    <Resource Include="Images\homeBanner.png" />
+    <Resource Include="Images\profilePic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SignUpImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
