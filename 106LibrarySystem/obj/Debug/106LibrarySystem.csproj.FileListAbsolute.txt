@@ -60,7 +60,6 @@ D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.exe
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.pdb
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.AssemblyReference.cache
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.SuggestedBindingRedirects.cache
-C:\106LibrarySystem\106LibrarySystem\obj\Debug\AccountScreen.g.cs
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\HomeScreen.g.cs
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\MainWindow.g.cs
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\MemberPage.g.cs
@@ -72,7 +71,6 @@ C:\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.exe
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.pdb
 C:\106LibrarySystem\106LibrarySystem\bin\Debug\106LibrarySystem.exe
 C:\106LibrarySystem\106LibrarySystem\bin\Debug\106LibrarySystem.pdb
-C:\106LibrarySystem\106LibrarySystem\obj\Debug\AccountScreen.baml
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\HomeScreen.baml
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\MainWindow.baml
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\MemberPage.baml
@@ -91,3 +89,5 @@ D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.g.cs
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.baml
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.g.cs
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.baml
