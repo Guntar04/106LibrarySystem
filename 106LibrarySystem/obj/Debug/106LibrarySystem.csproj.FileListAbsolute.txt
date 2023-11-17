@@ -91,3 +91,7 @@ C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\Login
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.baml
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBookDetail.g.cs
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBookDetail.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBookDetail.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBookDetail.baml
