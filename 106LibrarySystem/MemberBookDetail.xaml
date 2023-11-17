@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:_106LibrarySystem"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="1250" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
@@ -15,7 +15,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="350"/>
+            <RowDefinition Height="440"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -78,7 +78,8 @@
                    Width="34"/>
                 <Button 
                         Height="40"
-                        Background="Transparent"></Button>
+                        Background="Transparent"
+                        BorderBrush="Transparent"/>
             </Grid>
 
         </StackPanel>
@@ -86,13 +87,17 @@
             <StackPanel Orientation="Vertical" 
                         HorizontalAlignment="Center" 
                         VerticalAlignment="Top"
-                        Margin="0,40,0,0">
-                
-                <StackPanel Orientation="Horizontal">
+                        Margin="0,0,0,0">
+                <Rectangle Fill="#011936"
+                           Height="10"/>
+                <Rectangle Fill="#00487C"
+                           Height="5"/>
+                <StackPanel Margin="50 20 50 0"
+                            Orientation="Horizontal">
                     <Image Source="Images/book6.png"  
                    Width="200"/>
                     <StackPanel Margin="20 0 0 0">
-                        
+
                         <TextBlock FontWeight="Bold"
                                    FontSize="20"
                                    Margin="10 10 0 0">Harry Potter And the Sorcerer’s Stone</TextBlock>
@@ -134,19 +139,103 @@
                     <Button Margin="10"
                             Background="Transparent"
                             BorderBrush="Transparent">Description</Button>
+                    <Rectangle Fill="Black"
+                               Width="2"
+                               Height="25"/>
                     <Button Margin="10"
                             Background="Transparent"
                             BorderBrush="Transparent">Reviews</Button>
+                    <Rectangle Fill="Black"
+                               Width="2"
+                               Height="25"/>
                     <Button Margin="10"
                             Background="Transparent"
                             BorderBrush="Transparent">Suggestions</Button>
+                    <Rectangle Fill="Black"
+                               Width="2"
+                               Height="25"/>
                     <Button Margin="10" 
                             Background="Transparent"
                             BorderBrush="Transparent">Books By Author</Button>
                 </StackPanel>
+                <Grid HorizontalAlignment="Center" 
+                      VerticalAlignment="Center">
+                    <Rectangle Fill="#011936"
+                               Width="800"
+                               Height="350" />
+                    <StackPanel>
+                        <TextBlock Foreground="White"
+                           Width="150"
+                           Height="30"
+                           FontSize="25"
+                           FontWeight="Bold"
+                           Margin="0 20 0 0"
+                           TextAlignment="Center">Description</TextBlock>
+                        <TextBlock Foreground="White"
+                           Width="500"
+                           Height="200"
+                           FontSize="15"
+                           Margin="0 20 0 0"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center">Harry Potter has never even heard of Hogwarts when the letters start dropping on 
+    the doormat at number four, Privet Drive. Addressed in green ink on yellowish 
+    parchment with a purple seal, they are swiftly confiscated by his grisly aunt and 
+    uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called 
+    Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, 
+    and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible 
+    adventure is about to begin!
 
+    These new editions of the classic and internationally bestselling, multi-award-winning 
+    series feature instantly pick-up-able new jackets by Jonny Duddle, with huge child 
+    appeal, to bring Harry Potter to the next generation of readers. It's time to PASS THE 
+    MAGIC ON ...</TextBlock>
+                    </StackPanel>
+                </Grid>
+                <TextBlock Margin="0 20 0 0"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           TextAlignment="Center">SUGGESTED BOOKS BASED ON ‘HARRY POTTER AND THE SORCERER’S STONE</TextBlock>
+                <Rectangle Fill="Black"
+                           Height="2"
+                           Margin="50 20 50 20"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,30,0,30">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Margin="15 0 15 0"
+                           Source="Images/book1.png"
+                           Width="150"/>
+                        <TextBlock TextAlignment="Center"
+                                   FontSize="15"
+                                   Foreground="Green">Available</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Margin="15 0 15 0"
+                           Source="Images/book3.png"
+                           Width="150"/>
+                        <TextBlock TextAlignment="Center"
+                                   FontSize="15"
+                                   Foreground="Green">Available</TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Margin="15 0 15 0"
+                           Source="Images/book4.png"
+                           Width="150"/>
+                        <TextBlock TextAlignment="Center"
+                                   FontSize="15"
+                                   Foreground="Green">Available</TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Margin="15 0 15 0"
+                           Source="Images/book2.png"
+                           Width="150"/>
+                        <TextBlock TextAlignment="Center"
+                                   FontSize="15"
+                                   Foreground="Red">Unavailable</TextBlock>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
         </ScrollViewer>
-        
     </Grid>
 </UserControl>

@@ -29,6 +29,7 @@ namespace _106LibrarySystem
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Login Successful!");
             MainContent.Content = homePage;
         }
 
