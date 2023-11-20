@@ -163,7 +163,7 @@
                             HorizontalAlignment="Center"
                             Margin="0 30 0 30">
                     <Image Margin="15 0 15 0"
-                           Source="Images/book6.png"
+                           Source="Images/book7.png"
                            Width="150"
                            MouseLeftButtonDown="Image_Click"/>
                     <Image Margin="15 0 15 0"
@@ -188,16 +188,16 @@
                             HorizontalAlignment="Center"
                             Margin="0,30,0,30">
                     <Image Margin="15 0 15 0"
-                           Source="Images/book3.png"
+                           Source="Images/book9.png"
                            Width="150"/>
                     <Image Margin="15 0 15 0"
-                           Source="Images/book4.png"
+                           Source="Images/book8.png"
                            Width="150"/>
                     <Image Margin="15 0 15 0"
                            Source="Images/book1.png"
                            Width="150"/>
                     <Image Margin="15 0 15 0"
-                           Source="Images/book2.png"
+                           Source="Images/book10.png"
                            Width="150"/>
                 </StackPanel>
                 <Rectangle Fill="#011936"

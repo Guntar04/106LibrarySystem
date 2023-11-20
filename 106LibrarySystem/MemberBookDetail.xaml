@@ -94,7 +94,7 @@
                            Height="5"/>
                 <StackPanel Margin="50 20 50 0"
                             Orientation="Horizontal">
-                    <Image Source="Images/book6.png"  
+                    <Image Source="Images/book7.png"  
                    Width="200"/>
                     <StackPanel Margin="20 0 0 0">
 
