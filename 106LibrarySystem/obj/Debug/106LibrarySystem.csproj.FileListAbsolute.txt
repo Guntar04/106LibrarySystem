@@ -116,3 +116,13 @@ C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\Admin
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminHome.baml
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.baml
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBrowsing.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBookDetail.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBrowsing.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminHome.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBookDetail.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBrowsing.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminHome.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.baml
+C:\106LibrarySystem\106LibrarySystem\bin\Debug\LibraryDatabase.db
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem_Content.g.cs

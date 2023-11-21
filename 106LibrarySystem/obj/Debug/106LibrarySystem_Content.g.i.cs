@@ -8,16 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book10.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book11.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book12.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book13.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book14.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book15.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book16.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book7.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book8.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book9.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/checkbox.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("librarydatabase.db")]
 
 
