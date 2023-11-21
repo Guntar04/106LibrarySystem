@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace _106LibrarySystem
+namespace LibraryDatabase
 {
     /// <summary>
     /// Interaction logic for MemberBrowsing.xaml
@@ -23,6 +23,7 @@ namespace _106LibrarySystem
         public MemberBrowsing()
         {
             InitializeComponent();
+            DataContext = new BookViewModel();
         }
     }
 }
