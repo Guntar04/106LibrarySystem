@@ -20,9 +20,14 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class MemberBrowsing : UserControl
     {
+        //HomeScreen homeScreen = new HomeScreen();
         public MemberBrowsing()
         {
             InitializeComponent();
+        }
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            //MemberBrowse.Content = homeScreen;
         }
     }
 }

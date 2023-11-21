@@ -20,8 +20,9 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class HomeScreen : UserControl
     {
-        MemberPage memberPage = new MemberPage();
+        //MemberPage memberPage = new MemberPage();
         MemberBookDetail memberBookDetail = new MemberBookDetail();
+        MemberBrowsing memberBrowsing = new MemberBrowsing();
         public HomeScreen()
         {
             InitializeComponent();
@@ -29,11 +30,15 @@ namespace _106LibrarySystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            HomeContent.Content = memberPage;
+            //HomeContent.Content = memberPage;
         }
         private void Image_Click(object sender, MouseButtonEventArgs e)
         {
             HomeContent.Content = memberBookDetail;
+        }
+        private void Catalogue_Click(object sender, RoutedEventArgs e)
+        {
+            HomeContent.Content = memberBrowsing;
         }
     }
 }

@@ -26,7 +26,7 @@
             <Image Source="Images/image 2.png"
                Grid.Column="0" 
                Margin="20 0 10 0" Grid.ColumnSpan="2"/>
-            <Button 
+            <Button Click="Home_Click"
                 Foreground="Black"
                 Background="White"
                 BorderBrush="White"
@@ -207,5 +207,8 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
+        <ContentControl Name="MemberBrowse" 
+                        Grid.ColumnSpan="3"
+                        Grid.RowSpan="3"/>
     </Grid>
 </UserControl>

@@ -99,3 +99,13 @@ D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBook
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.baml
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBookDetail.baml
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBookDetail.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBrowsing.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminHome.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBrowsing.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBookDetail.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBrowsing.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminHome.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBrowsing.baml

@@ -27,7 +27,7 @@
             <Image Source="Images/image 2.png"
                Grid.Column="0" 
                Margin="20 0 10 0" Grid.ColumnSpan="2"/>
-            <Button 
+            <Button Click="Home_Click"
                 Foreground="Black"
                 Background="White"
                 BorderBrush="White"
@@ -43,7 +43,7 @@
                 Width="100px"
                 Margin="0 5 0 5">About</Button>
 
-            <Button 
+            <Button Click="Catalogue_Click"
                 Foreground="Black"
                 Background="white"
                     BorderBrush="White"
@@ -132,7 +132,7 @@
                         Margin="400,30,0,0"/>
             <TextBlock Width="50" Height="10" Margin="406 0 0 146" FontSize="9" Foreground="white" >Edit Details</TextBlock>
 
-            <Button  Click="Button_Click"
+            <Button  
                 Background="#FF011936" 
                         Height="20" 
                         Width="70" 

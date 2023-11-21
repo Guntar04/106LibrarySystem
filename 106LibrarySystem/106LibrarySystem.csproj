@@ -55,6 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminBookDetail.xaml.cs">
+      <DependentUpon>AdminBookDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminBrowsing.xaml.cs">
+      <DependentUpon>AdminBrowsing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.xaml.cs">
+      <DependentUpon>AdminHome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
@@ -67,12 +76,27 @@
     <Compile Include="MemberBookDetail.xaml.cs">
       <DependentUpon>MemberBookDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MemberBrowsing.xaml.cs">
+      <DependentUpon>MemberBrowsing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MemberPage.xaml.cs">
       <DependentUpon>MemberPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminBookDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdminBrowsing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +124,10 @@
     <Page Include="MemberBookDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MemberBrowsing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MemberPage.xaml">
       <Generator>MSBuild:Compile</Generator>
