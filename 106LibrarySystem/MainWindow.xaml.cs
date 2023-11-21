@@ -22,11 +22,12 @@ namespace _106LibrarySystem
     {
         HomeScreen homePage = new HomeScreen();
         SignUp signUp = new SignUp();
+
         public MainWindow()
         {
             InitializeComponent();
-            
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Login Successful!");
