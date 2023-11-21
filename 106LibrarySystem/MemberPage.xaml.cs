@@ -20,17 +20,21 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class MemberPage : UserControl
     {
-
-        
+        HomeScreen homeScreen = new HomeScreen();
+        MemberBrowsing memberBrowsing = new MemberBrowsing();
 
         public MemberPage()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Home_Click(object sender, RoutedEventArgs e)
         {
-            
+            MemberContent.Content = homeScreen;
+        }
+        private void Catalogue_Click(object sender, RoutedEventArgs e)
+        {
+            MemberContent.Content = memberBrowsing;
         }
 
     }

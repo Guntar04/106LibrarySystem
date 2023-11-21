@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="_106LibrarySystem.MemberBookDetail"
+﻿<UserControl x:Class="_106LibrarySystem.AdminBookDetail"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -129,6 +129,10 @@
                             <TextBlock FontWeight="Bold">Publisher:</TextBlock>
                             <TextBlock>Bloomsbury Publishing PLC</TextBlock>
                         </StackPanel>
+                    </StackPanel>
+                    <StackPanel Margin="10 30 0 0" Width="87">
+                        <Button Margin="0 70 0 10">Edit Details</Button>
+                        <Button >Remove Book</Button>
                     </StackPanel>
                 </StackPanel>
 

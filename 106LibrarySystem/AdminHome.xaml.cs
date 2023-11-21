@@ -16,26 +16,24 @@ using System.Windows.Shapes;
 namespace _106LibrarySystem
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AdminHome.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdminHome : UserControl
     {
-        HomeScreen homePage = new HomeScreen();
-        SignUp signUp = new SignUp();
-        public MainWindow()
+        AdminPage adminPage = new AdminPage();
+        AdminBookDetail adminBookDetail = new AdminBookDetail();
+        public AdminHome()
         {
             InitializeComponent();
-            
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Login Successful!");
-            MainContent.Content = homePage;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainContent.Content = signUp;
+            AdminHomeContent.Content = adminPage;
+        }
+        private void Image_Click(object sender, MouseButtonEventArgs e)
+        {
+            AdminHomeContent.Content = adminBookDetail;
         }
     }
 }

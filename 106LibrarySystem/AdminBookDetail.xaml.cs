@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace _106LibrarySystem
 {
     /// <summary>
-    /// Interaction logic for SignUp.xaml
+    /// Interaction logic for AdminBookDetail.xaml
     /// </summary>
-    public partial class SignUp : UserControl
+    public partial class AdminBookDetail : UserControl
     {
-        //LoginPage loginPage = new LoginPage();
-
-        public SignUp()
+        public AdminBookDetail()
         {
             InitializeComponent();
-        }
-        private void Created_Account(object sender, RoutedEventArgs e)
-        {
-            //SignInContent.Content = loginPage;
-        }
-        private void Back_To_Login(object sender, RoutedEventArgs e)
-        {
-            //SignInContent.Content = loginPage;
         }
     }
 }

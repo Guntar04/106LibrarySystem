@@ -65,6 +65,18 @@
     </ApplicationDefinition>
     <Compile Include="book.cs" />
     <Compile Include="BookViewModel.cs" />
+    <Compile Include="AdminBookDetail.xaml.cs">
+      <DependentUpon>AdminBookDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminBrowsing.xaml.cs">
+      <DependentUpon>AdminBrowsing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.xaml.cs">
+      <DependentUpon>AdminHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
@@ -83,6 +95,22 @@
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminBookDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdminBrowsing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="HomeScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

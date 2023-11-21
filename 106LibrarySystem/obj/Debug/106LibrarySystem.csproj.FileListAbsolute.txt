@@ -1,6 +1,5 @@
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.AssemblyReference.cache
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.SuggestedBindingRedirects.cache
-D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AccountScreen.g.cs
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\MainWindow.g.cs
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\App.g.cs
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem_MarkupCompile.cache
@@ -8,7 +7,6 @@ D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\106Library
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\bin\Debug\106LibrarySystem.exe
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\bin\Debug\106LibrarySystem.pdb
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\MainWindow.baml
-D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AccountScreen.baml
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.g.resources
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\_106LibrarySystem.Properties.Resources.resources
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.GenerateResource.cache
@@ -102,3 +100,19 @@ C:\106LibrarySystem\106LibrarySystem\bin\Debug\Dapper.xml
 C:\106LibrarySystem\106LibrarySystem\bin\Debug\System.Data.SQLite.xml
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBrowsing.baml
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.CopyComplete
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.g.cs
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.g.cs
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBookDetail.g.cs
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\LoginPage.baml
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBookDetail.baml
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBookDetail.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBrowsing.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminHome.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBrowsing.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBookDetail.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBrowsing.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminHome.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBrowsing.baml

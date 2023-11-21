@@ -20,10 +20,15 @@ namespace LibraryDatabase
     /// </summary>
     public partial class MemberBrowsing : UserControl
     {
+        //HomeScreen homeScreen = new HomeScreen();
         public MemberBrowsing()
         {
             InitializeComponent();
             DataContext = new BookViewModel();
+        }
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            //MemberBrowse.Content = homeScreen;
         }
     }
 }

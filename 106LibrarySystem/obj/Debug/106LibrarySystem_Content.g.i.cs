@@ -8,12 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book2.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book3.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book4.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book5.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/homebanner.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/profilepic.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book10.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book11.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book12.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book13.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book14.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book15.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book16.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book7.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book8.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/book9.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/checkbox.png")]
 
 

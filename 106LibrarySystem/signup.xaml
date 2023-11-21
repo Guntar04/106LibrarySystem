@@ -15,12 +15,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="White"
-                   Grid.ColumnSpan="3"/>
-        <Image Source="Images/SignUpImage.png"
-           Grid.Column="0"  Margin="-114,-48,0,-44"/>
 
-        <StackPanel Grid.Column="2" Margin="0 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Rectangle Fill="White" Grid.ColumnSpan="3"/>
+
+        <Image Source="Images/SignUpImage.png"
+               Grid.Column="0" Margin="-114,-48,0,-44"/>
+
+        <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Source="Images/image 2.png"
                Margin="0 00 0 0"
                Height="76" 
@@ -57,22 +58,24 @@
                      Width="160" 
                      Foreground="Gray"
                      Text="Password"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button 
-                Foreground="White"
-                Background="#89A894"
-                FontSize="13"
-                Width="117"
-                Margin="0 20 0 0" Content="Create Account"/>
-                <Button 
-                Foreground="White"
-                Background="#89A894"
-                FontSize="14"
-                Width="73"
-                Margin=" 20 20 0 0" Content="Login"/>
-            </StackPanel>
 
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Click="Created_Account"
+                        Foreground="White"
+                        Background="#89A894"
+                        FontSize="13"
+                        Width="117"
+                        Content="Create Account"/>
+                <Button Click="Back_To_Login"
+                        Foreground="White"
+                        Background="#89A894"
+                        FontSize="14"
+                        Width="73"
+                        Margin="20,0,0,0"
+                        Content="Login"/>
+            </StackPanel>
         </StackPanel>
-        <ContentControl Name="SignInContent" Grid.ColumnSpan="2"/>
+
+        <ContentControl x:Name="SignInContent"/>
     </Grid>
 </UserControl>
