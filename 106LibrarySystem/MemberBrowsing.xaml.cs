@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _106LibrarySystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace LibraryDatabase
     /// </summary>
     public partial class MemberBrowsing : UserControl
     {
-        //HomeScreen homeScreen = new HomeScreen();
+        
         public MemberBrowsing()
         {
             InitializeComponent();
@@ -28,7 +29,13 @@ namespace LibraryDatabase
         }
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            //MemberBrowse.Content = homeScreen;
+            HomeScreen homeScreen = new HomeScreen();
+            MemberBrowse.Content = homeScreen;
+        }
+        private void Profile_Click(object sender, RoutedEventArgs e)
+        {
+            MemberPage memberPage = new MemberPage();
+            MemberBrowse.Content = memberPage;
         }
     }
 }
