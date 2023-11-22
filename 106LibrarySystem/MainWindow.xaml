@@ -16,7 +16,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <Rectangle Fill="White"
+                   Grid.ColumnSpan="2"/>
         <Image Source="Images/image.png"
             Grid.Column="0"  Margin="-100 -37 0 -48"/>
 

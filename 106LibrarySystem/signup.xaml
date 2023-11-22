@@ -20,7 +20,7 @@
 
         <Image Source="Images/SignUpImage.png"
                Grid.Column="0" Margin="-114,-48,0,-44"/>
-
+        
         <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Source="Images/image 2.png"
                Margin="0 00 0 0"
@@ -76,6 +76,6 @@
             </StackPanel>
         </StackPanel>
 
-        <ContentControl x:Name="SignInContent"/>
+        <ContentControl x:Name="SignInContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </UserControl>

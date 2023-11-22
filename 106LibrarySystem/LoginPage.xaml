@@ -15,9 +15,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <Rectangle Fill="White"
+                   Grid.ColumnSpan="2"/>
         <Image Source="Images/image.png"
-       Grid.Column="0"  Margin="-100 -37 0 -48"/>
+            Grid.Column="0"  Margin="-105,-44,0,-48"/>
 
         <StackPanel Grid.Column="2" Margin="0 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Source="Images/image 2.png"

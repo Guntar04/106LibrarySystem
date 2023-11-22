@@ -20,7 +20,7 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class SignUp : UserControl
     {
-        //LoginPage loginPage = new LoginPage();
+        
 
         public SignUp()
         {
@@ -28,11 +28,13 @@ namespace _106LibrarySystem
         }
         private void Created_Account(object sender, RoutedEventArgs e)
         {
-            //SignInContent.Content = loginPage;
+            LoginPage loginPage = new LoginPage();
+            SignInContent.Content = loginPage;
         }
         private void Back_To_Login(object sender, RoutedEventArgs e)
         {
-            //SignInContent.Content = loginPage;
+            LoginPage loginPage = new LoginPage();
+            SignInContent.Content = loginPage;
         }
     }
 }
