@@ -22,7 +22,22 @@ namespace LibraryDatabase
         public int date { get; set; }
 
         public string ImagePath { get; set; }
-        public string DisplayInfo => $"{Id}, {name} by {author}, {genre}, {availability} available";
+
+        public string DisplayAvailability
+        {
+            get
+            {
+                return availability > 0 ? "Available" : "Unavailable";
+            }
+        }
+
+        public string AvailabilityColor
+        {
+            get
+            {
+                return availability > 0 ? "Green" : "Red";
+            }
+        }
 
     }
 

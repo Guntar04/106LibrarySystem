@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:_106LibrarySystem"
              mc:Ignorable="d" 
-             d:DesignHeight="1300" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -14,7 +14,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Rectangle  Fill="white" 
@@ -81,11 +81,11 @@
                     <Rectangle Fill="#FF011936"
                                Height="670" 
                                Width="2" 
-                               Margin="15 -400 0 0"/>
+                               Margin="15 0 0 0"/>
             <StackPanel 
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                Margin="20,50,0,0"
+                Margin="15,30,0,0"
                 Height="700">
 
                 <TextBlock FontWeight="Bold" FontSize="15">Advanced Search</TextBlock>
@@ -177,24 +177,25 @@
                         <TextBlock  FontWeight="Bold"
                             FontSize="23"
                             Height="38"
-                            Margin="25 0 -50 -20">BROWSING CATALOGUE</TextBlock>
+                            Margin="25 -20 -50 -20">BROWSING CATALOGUE</TextBlock>
+                        
                         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="72 18 0 0">
                             <Rectangle Fill="#A3B6CC" 
                    Height="30"
-                   Width="250"
+                   Width="230"
                    RadiusX="5"  
                    RadiusY="5"
-                   Margin="20"/>
-                            <TextBlock  Width="100" Margin="-400,26,0,26">Search Library...</TextBlock>
+                   Margin="55 -20 0 0"/>
+                            <TextBlock  Width="100" Margin="-340,10,0,28" FontStyle="Italic">Search Library...</TextBlock>
                             <Image Source="Images/searchIcon.png"
                                Width="18"
-                               Height="18" Margin="-50,26,113,26"/>
+                               Height="18" Margin="-30,6,113,26"/>
                         </StackPanel>
                 </StackPanel>
                     <Rectangle
                        Fill="#FF011936" Height="2"
                        Width="280"
-                       Margin="0 -20 294 0"/>
+                       Margin="0 -35 294 0"/>
                     <ItemsControl Grid.Column="2"
                           Grid.Row="2"
                 ItemsSource="{Binding Books}">
@@ -206,12 +207,13 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="20">
-                                    <Image Source="{Binding ImagePath}" Width="100" Margin="0 0 20 0"/>
-                                    <TextBlock Text="{Binding DisplayInfo}" Margin="0 0 0 0"/>
+                                    <Image Source="{Binding ImagePath}" Width="115" Margin="0 0 0 0"/>
+                                    <TextBlock Text="{Binding name}" FontWeight="Bold" FontSize="14" Margin="0 5 0 0"/>
+                                    <TextBlock Text="{Binding author}" FontSize="12" Margin="0 0 0 0"/>
+                                    <TextBlock Text="{Binding DisplayAvailability}" Foreground="{Binding AvailabilityColor}" FontSize="12" FontWeight="Bold" Margin="0 0 0 0"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
-
                     </ItemsControl>
                 </StackPanel>
             </StackPanel>
