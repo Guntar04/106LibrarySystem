@@ -6,6 +6,49 @@
              xmlns:local="clr-namespace:_106LibrarySystem"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="NormalBookTemplate" TargetType="Button">
+            <Border Background="Transparent" BorderThickness="0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="0" Opacity="0"/>
+                </Border.Effect>
+                <ContentPresenter />
+            </Border>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="HoverBookTemplate" TargetType="Button">
+            <Border Background="Transparent" BorderThickness="1">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"/>
+                    <!-- Set ShadowDepth to 0 when not hovered -->
+                </Border.Effect>
+                <Grid>
+                    <!-- The card content, adjust as needed -->
+                    <Border Background="White" CornerRadius="5">
+                        <StackPanel>
+                            <!-- Replace the following placeholders with your actual book and text details content -->
+                            <Image Source="{Binding ImagePath}" Width="100" Height="150" Margin="0 0 0 10"/>
+                            <TextBlock Text="{Binding name}" FontWeight="Bold" FontSize="14" Margin="0 5 0 0" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding author}" FontSize="12" Margin="0 0 0 0" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding DisplayAvailability}" Foreground="{Binding AvailabilityColor}" FontSize="12" FontWeight="Bold" Margin="0 0 0 0" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+
+        <Style x:Key="BookButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template" Value="{StaticResource NormalBookTemplate}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Template" Value="{StaticResource HoverBookTemplate}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -197,8 +240,8 @@
                        Width="280"
                        Margin="0 -35 294 0"/>
                     <ItemsControl Grid.Column="2"
-                          Grid.Row="2"
-                ItemsSource="{Binding Books}">
+              Grid.Row="2"
+              ItemsSource="{Binding Books}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <UniformGrid Columns="4" Rows="2" />
@@ -206,35 +249,14 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button>
-                                    <Button.Style>
-                                        <Style TargetType="Button">
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="Button">
-                                                        <Border Background="Transparent">
-                                                            <ContentPresenter />
-                                                        </Border>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="RenderTransform">
-                                                        <Setter.Value>
-                                                            <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                    <Setter Property="FontWeight" Value="Bold"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Button.Style>
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="20">
+                                <Button Style="{StaticResource BookButtonStyle}">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="15,15,0,0">
                                         <Image Source="{Binding ImagePath}" Width="115" Margin="0 0 0 0"/>
-                                        <TextBlock Text="{Binding name}" FontWeight="Bold" FontSize="14" Margin="0 5 0 0" TextWrapping="Wrap" HorizontalAlignment="Center"/>
-                                        <TextBlock Text="{Binding author}" FontSize="12" Margin="0 0 0 0" HorizontalAlignment="Center"/>
-                                        <TextBlock Text="{Binding DisplayAvailability}" Foreground="{Binding AvailabilityColor}" FontSize="12" FontWeight="Bold" Margin="0 0 0 0" HorizontalAlignment="Center"/>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding name}" FontWeight="Normal" FontSize="14" Margin="0 5 0 0" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{Binding author}" FontSize="12" Margin="0 0 0 0" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{Binding DisplayAvailability}" Foreground="{Binding AvailabilityColor}" FontSize="12" FontWeight="Bold" Margin="0 0 0 0" HorizontalAlignment="Center"/>
+                                        </StackPanel>
                                     </StackPanel>
                                 </Button>
                             </DataTemplate>
