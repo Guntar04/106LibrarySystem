@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\106LibrarySystem\106LibrarySystem\obj\Debug\
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\
 _106LibrarySystem
 none
 false
 DEBUG;TRACE
-C:\106LibrarySystem\106LibrarySystem\App.xaml
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\App.xaml
 121577124499
 1727723544
 19541810541
-15170076409
+15-996582413
 AddBookWindow.xaml;AdminBookDetail.xaml;AdminBrowsing.xaml;AdminHome.xaml;AdminPage.xaml;HomeScreen.xaml;LoginPage.xaml;MainWindow.xaml;MemberBookDetail.xaml;MemberBrowsing.xaml;MemberPage.xaml;SignUp.xaml;
 
 True

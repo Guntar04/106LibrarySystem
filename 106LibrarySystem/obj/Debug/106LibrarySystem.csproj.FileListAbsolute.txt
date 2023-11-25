@@ -160,3 +160,5 @@ D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminPage.baml
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBookDetail.baml
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\MemberBrowsing.baml
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.CopyComplete
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AddBookWindow.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AddBookWindow.baml

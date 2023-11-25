@@ -6,55 +6,8 @@
              xmlns:local="clr-namespace:_106LibrarySystem"
              mc:Ignorable="d" 
              ResizeMode="NoResize"
-             Title="MainWindow" Height="600" Width="800">
+             Title="MainWindow" Height="600" Width="800" Loaded="MainWindow_Loaded">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Rectangle Fill="White"
-                   Grid.ColumnSpan="2"/>
-        <Image Source="Images/image.png"
-            Grid.Column="0"  Margin="-100 -37 0 -48"/>
-
-        <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Image Source="/Images/image 2.png"
-                Margin="0 00 0 0"
-                Height="76" 
-                Width="83"/>
-            <TextBlock Margin="0 20 0 15"
-                    FontSize="18"
-                    TextAlignment="Center"
-                    Foreground="Black">Login</TextBlock>
-            <TextBox x:Name="ItemBox" 
-                    Width="160" 
-                    Foreground="Gray"
-                    Text="Username"/>
-            <TextBox x:Name="ItemBox2" 
-                    Margin="0 10 0 10"
-                    Width="160" 
-                    Foreground="Gray"
-                    Text="Password"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Click="Button_Click"
-                        Foreground="White"
-                        Background="#89A894"
-                        FontSize="13"
-                        Width="100"
-                        Margin="0 20 0 0" Content="Login"/>
-                <Button Click="Button_Click_1"
-                        Foreground="White"
-                        Background="#A3B6CC"
-                        FontSize="14"
-                        Width="100"
-                        Margin="20 20 0 0" Content="Sign Up"/>
-            </StackPanel>
-        </StackPanel>
-
-        <ContentControl x:Name="MainContent" Grid.ColumnSpan="2"></ContentControl>
+        <ContentControl x:Name="loginCover" />
     </Grid>
 </Window>

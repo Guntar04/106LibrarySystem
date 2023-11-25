@@ -16,45 +16,44 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Rectangle Fill="White"
-                   Grid.ColumnSpan="2"/>
+               Grid.ColumnSpan="2"/>
         <Image Source="Images/image.png"
-            Grid.Column="0"  Margin="-105,-44,0,-48"/>
+        Grid.Column="0"  Margin="-104,-45,0,-44"/>
 
-        <StackPanel Grid.Column="2" Margin="0 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Image Source="Images/image 2.png"
-           Margin="0 00 0 0"
-           Height="76" 
-           Width="83"/>
+        <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Source="/Images/image 2.png"
+            Margin="0 00 0 0"
+            Height="76" 
+            Width="83"/>
             <TextBlock Margin="0 20 0 15"
-               FontSize="18"
-               FontFamily="Fonts/#Karla"
-               TextAlignment="Center"
-               Foreground="Black"><Run Text="Login"/></TextBlock>
+                FontSize="18"
+                TextAlignment="Center"
+                Foreground="Black">Login</TextBlock>
             <TextBox x:Name="ItemBox" 
-             Width="160" 
-             Foreground="Gray"
-             Text="Username"/>
+                Width="160" 
+                Foreground="Gray"
+                Text="Username"/>
             <TextBox x:Name="ItemBox2" 
-             Margin="0 10 0 10"
-             Width="160" 
-             Foreground="Gray"
-             Text="Password"/>
+                Margin="0 10 0 10"
+                Width="160" 
+                Foreground="Gray"
+                Text="Password"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Click="Button_Click"
-            Foreground="White"
-            Background="#89A894"
-            FontSize="13"
-            Width="100px"
-            Margin="0 20 0 0" Content="Login"/>
+                    Foreground="White"
+                    Background="#89A894"
+                    FontSize="13"
+                    Width="100"
+                    Margin="0 20 0 0" Content="Login"/>
                 <Button Click="Button_Click_1"
-            Foreground="White"
-            Background="#A3B6CC"
-            FontSize="14"
-            Width="100px"
-            Margin=" 20 20 0 0" Content="Sign Up"/>
+                    Foreground="White"
+                    Background="#A3B6CC"
+                    FontSize="14"
+                    Width="100"
+                    Margin="20 20 0 0" Content="Sign Up"/>
             </StackPanel>
-
         </StackPanel>
-        <ContentControl Name="LoginContent" Grid.ColumnSpan="2"></ContentControl>
+
+        <ContentControl x:Name="MainContent" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </UserControl>
