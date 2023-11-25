@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Data;
+using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,30 +16,59 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Dapper;
 
 namespace _106LibrarySystem
 {
-    /// <summary>
-    /// Interaction logic for SignUp.xaml
-    /// </summary>
     public partial class SignUp : UserControl
     {
-        
-
         public SignUp()
         {
             InitializeComponent();
         }
-        private void Created_Account(object sender, RoutedEventArgs e)
-        {
-            LoginPage loginPage = new LoginPage();
-            SignInContent.Content = loginPage;
-        }
+
         private void Back_To_Login(object sender, RoutedEventArgs e)
         {
             LoginPage loginPage = new LoginPage();
             SignInContent.Content = loginPage;
+        }
+
+        private void Created_Account(object sender, RoutedEventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            string username = ItemBox.Text;
+            string firstName = ItemBox2.Text;
+            string lastName = ItemBox3.Text;
+            string emailAddress = ItemBox4.Text;
+            string phoneNumber = ItemBox5.Text;
+            string password = ItemBox6.Text;
+            string databaseFileName = "LibraryDatabase.db";
+            string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
+
+            // Perform validation or error handling for the input fields if required
+
+            // Add the user details to the database
+            // Replace "LibraryDatabase" with the actual name of your database
+
+            using (IDbConnection connection = new SQLiteConnection(source))
+            {
+                connection.Open();
+                connection.Execute(
+                    "INSERT INTO users (userName, firstName, lastName, emailAddress, phoneNumber, password) " +
+                    "VALUES (@UserName, @FirstName, @LastName, @EmailAddress, @PhoneNumber, @Password)",
+                    new
+                    {
+                        UserName = username,
+                        FirstName = firstName,
+                        LastName = lastName,
+                        EmailAddress = emailAddress,
+                        PhoneNumber = phoneNumber,
+                        Password = password
+                    });
+
+                MessageBox.Show("Sign Up Successful!");
+                SignInContent.Content = loginPage;
+            }
         }
     }
 }

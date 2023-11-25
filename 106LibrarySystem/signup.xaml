@@ -40,7 +40,7 @@
                      Width="160" 
                      Foreground="Gray"
                      Text="First Name"/>
-            <TextBox x:Name="ItemBo3" 
+            <TextBox x:Name="ItemBox3" 
                      Width="160" 
                      Foreground="Gray"
                      Text="Last Name"/>
