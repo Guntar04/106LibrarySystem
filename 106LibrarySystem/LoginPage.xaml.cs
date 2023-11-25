@@ -23,7 +23,8 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class LoginPage : UserControl
     {
-        HomeScreen homePage = new HomeScreen();
+        HomeScreen memberHomePage = new HomeScreen();
+        AdminHome adminHomePage = new AdminHome();
         SignUp signUp = new SignUp();
 
         public LoginPage()
@@ -38,12 +39,9 @@ namespace _106LibrarySystem
             string databaseFileName = "LibraryDatabase.db";
             string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
 
-            // Establish a connection with the SQLite database
             using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
-
-                // Query the database for a user with the entered username and password
                 string query = "SELECT COUNT(*) FROM users WHERE userName = @userName AND password = @password";
                 using (SQLiteCommand command = new SQLiteCommand(query, (SQLiteConnection)connection))
                 {
@@ -54,13 +52,32 @@ namespace _106LibrarySystem
 
                     if (count > 0)
                     {
-                        // User authenticated, grant access to the application
                         MessageBox.Show("Login Successful!");
-                        MainContent.Content = homePage;
+
+                        string roleQuery = "SELECT role FROM users WHERE userName = @userName";
+                        using (SQLiteCommand roleCommand = new SQLiteCommand(roleQuery, (SQLiteConnection)connection))
+                        {
+                            roleCommand.Parameters.AddWithValue("@userName", username);
+                            string role = roleCommand.ExecuteScalar()?.ToString();
+
+                            if (role == "Admin")
+                            {
+                                MessageBox.Show("You are logged in as an Admin.");
+                                MainContent.Content = adminHomePage;
+                            }
+                            else if (role == "Member")
+                            {
+                                MessageBox.Show("You are logged in as a Member.");
+                                MainContent.Content = memberHomePage;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Unknown role.");
+                            }
+                        }
                     }
                     else
                     {
-                        // Show an error message indicating invalid credentials
                         MessageBox.Show("Invalid username or password");
                     }
                 }

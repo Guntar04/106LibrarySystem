@@ -45,11 +45,6 @@ namespace _106LibrarySystem
             string databaseFileName = "LibraryDatabase.db";
             string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
 
-            // Perform validation or error handling for the input fields if required
-
-            // Add the user details to the database
-            // Replace "LibraryDatabase" with the actual name of your database
-
             using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
