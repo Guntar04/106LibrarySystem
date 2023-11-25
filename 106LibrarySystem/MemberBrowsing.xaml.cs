@@ -37,5 +37,14 @@ namespace LibraryDatabase
             MemberPage memberPage = new MemberPage();
             MemberBrowse.Content = memberPage;
         }
+
+        private void AddBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddBookWindow addBookWindow = new AddBookWindow();
+            addBookWindow.Owner = Window.GetWindow(this); // Set the owner to enable proper interaction
+            addBookWindow.ShowDialog(); // Show the window as a modal dialog
+        }
+
+
     }
 }
