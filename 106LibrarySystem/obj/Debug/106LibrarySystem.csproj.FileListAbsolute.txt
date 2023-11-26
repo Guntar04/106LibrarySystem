@@ -171,3 +171,7 @@ C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AddBo
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem_Content.g.cs
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AddBookWindow.baml
 C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\106LibrarySystem.csproj.CopyComplete
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.baml
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.baml

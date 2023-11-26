@@ -29,7 +29,7 @@ namespace _106LibrarySystem
         {
         InitializeComponent();
         DisplayUserData();
-    }
+        }
 
         private void Log_Out(object sender, RoutedEventArgs e)
         {
@@ -37,15 +37,30 @@ namespace _106LibrarySystem
             AdminContent.Content = loginPage;
         }
 
-        private void DisplayUserData ()
-    {
-    using (IDbConnection connection = new SQLiteConnection (source))
-    {
-        connection.Open();
-                var users = connection.Query ("SELECT * FROM users");
+        private void User_List(object sender, RoutedEventArgs e)
+        {
+            AdminUserList userList = new AdminUserList();
+            AdminDetails.Content = userList;
+        }
+        private void Books_Due(object sender, RoutedEventArgs e)
+        {
+            AdminBooksDueWindow booksDue = new AdminBooksDueWindow();
+            AdminDetails.Content = booksDue;
+        }
+        private void Books_Loaned(object sender, RoutedEventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            AdminDetails.Content = loginPage;
+        }
 
-            userGrid.ItemsSource = users;
+        private void DisplayUserData ()
+        {
+            using (IDbConnection connection = new SQLiteConnection (source))
+            {
+                connection.Open();
+                var users = connection.Query ("SELECT * FROM users");
+                userGrid.ItemsSource = users;
+            }
+        }
     }
-}
-}
 }

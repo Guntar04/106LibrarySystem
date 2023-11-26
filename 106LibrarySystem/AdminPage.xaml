@@ -15,7 +15,8 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="223"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Rectangle  Fill="white" 
@@ -142,21 +143,33 @@
                         VerticalAlignment="Top">Log Out</Button>
 
         </Grid>
-        <Rectangle  Fill="#FF011936" Height="359" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,191,0,0" Grid.RowSpan="2"/>
-        <Grid Grid.Column="1"
-              Grid.Row="2">
-            <TextBlock FontSize="12" FontWeight="Bold" Margin="150,-55,-13,210">Books Due</TextBlock>
-            <TextBlock FontSize="12" Margin="231,-55,-93,210">Watch List</TextBlock>
-            <TextBlock FontSize="12" Margin="306,-55,-170,210">History</TextBlock>
-
-            <Rectangle Fill="black" Height="18" Width="0.8" Margin="218,-206,281,213"></Rectangle>
-            <Rectangle Fill="black" Height="18" Width="0.8" Margin="296,-206,203,213"></Rectangle>
-            <Rectangle Fill="black" Height="3" Width="75" Margin="144,-187,281,211"></Rectangle>
-            <Rectangle Fill="LightGray" Height="3" Width="78" Margin="218.8,-187,203,211"></Rectangle>
-            <Rectangle Fill="LightGray" Height="3" Width="53" Margin="297,-36,150,360"></Rectangle>
-        </Grid>
-        <StackPanel Grid.ColumnSpan="3"
+        <Rectangle  Fill="#FF011936" Height="359" VerticalAlignment="Top" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,0,0,0" Grid.RowSpan="2"/>
+        <StackPanel Grid.Column="1"
                     Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Click="User_List"
+                    FontSize="12" 
+                    Background="Transparent"
+                    BorderBrush="Transparent">Member List</Button>
+            <Rectangle Fill="black" 
+                       Width="1"
+                       Margin="10 0 10 0"/>
+            <Button Click="Books_Loaned"
+                    FontSize="12"
+                    Background="Transparent"
+                    BorderBrush="Transparent">Books Loaned</Button>
+            <Rectangle Fill="black"  
+                       Width="1"
+                       Margin="10 0 10 0"/>
+            <Button Click="Books_Due"
+                    FontSize="12"
+                    Background="Transparent"
+                    BorderBrush="Transparent">Books Due</Button>
+            
+        </StackPanel>
+        <StackPanel Grid.ColumnSpan="3"
+                    Grid.Row="3"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top">
@@ -173,10 +186,12 @@
                     <DataGridTextColumn Header="Join Date" Binding="{Binding joinDate}" />
                 </DataGrid.Columns>
             </DataGrid>
-
         </StackPanel>
+        <ContentControl Name="AdminDetails"
+                        Grid.ColumnSpan="3"
+                        Grid.Row="3"/>
         <ContentControl Name="AdminContent" 
                         Grid.ColumnSpan="3"
-                        Grid.RowSpan="4"/>
+                        Grid.RowSpan="4" Margin="-8,0,8,0"/>
     </Grid>
 </UserControl>
