@@ -54,6 +54,7 @@
             </StackPanel>
         </StackPanel>
 
-        <ContentControl x:Name="MainContent" Grid.ColumnSpan="2"></ContentControl>
+        <ContentControl x:Name="MainContent" 
+                        Grid.ColumnSpan="2"/>
     </Grid>
 </UserControl>

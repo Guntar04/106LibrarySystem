@@ -132,16 +132,17 @@
                         Margin="400,30,0,0"/>
             <TextBlock Width="50" Height="10" Margin="406 0 0 146" FontSize="9" Foreground="white" >Edit Details</TextBlock>
 
-            <Button  
-                Background="#FF011936" 
-                        Height="20" 
-                        Width="70" 
-                        Margin="400,55,0,0"
-                        VerticalAlignment="Top"/>
+            <Button Click="Log_Out" 
+                    Background="#FF011936"
+                    Height="20" 
+                    Width="70" 
+                    Margin="400,55,0,0"
+                    Foreground="White"
+                    FontSize="9"
+                        VerticalAlignment="Top">Log Out</Button>
 
-            <TextBlock Width="50" Height="20" Margin="406 0 0 87" FontSize="9" Foreground="white" >Log out</TextBlock>
         </Grid>
-        <Rectangle  Fill="#FF011936" Height="360" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,191,0,0" Grid.RowSpan="2"/>
+        <Rectangle  Fill="#FF011936" Height="359" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,191,0,0" Grid.RowSpan="2"/>
         <Grid Grid.Column="1"
               Grid.Row="2">
             <TextBlock FontSize="12" FontWeight="Bold" Margin="150,-55,-13,210">Books Due</TextBlock>
@@ -152,22 +153,30 @@
             <Rectangle Fill="black" Height="18" Width="0.8" Margin="296,-206,203,213"></Rectangle>
             <Rectangle Fill="black" Height="3" Width="75" Margin="144,-187,281,211"></Rectangle>
             <Rectangle Fill="LightGray" Height="3" Width="78" Margin="218.8,-187,203,211"></Rectangle>
-            <Rectangle Fill="LightGray" Height="3" Width="53" Margin="296.7,-187,150,191"></Rectangle>
+            <Rectangle Fill="LightGray" Height="3" Width="53" Margin="297,-36,150,360"></Rectangle>
         </Grid>
         <StackPanel Grid.ColumnSpan="3"
                     Grid.Row="2"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top">
-            <Image Source="/Images/book1.png" Width="120" Height="205" Margin="15"/>
-            <Image Source="/Images/book2.png" Width="120" Height="190" Margin="15"/>
-            <Image Source="/Images/book3.png" Width="120" Margin="15"/>
-            <Image Source="/Images/book4.png" Width="120" Margin="15" Height="195"/>
-            <Image Source="/Images/book5.png" Width="130" Margin="15" Height="186"/>
+            <DataGrid x:Name="userGrid" AutoGenerateColumns="False" Height="296">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Username" Binding="{Binding userName}" />
+                    <DataGridTextColumn Header="First Name" Binding="{Binding firstName}" />
+                    <DataGridTextColumn Header="Last Name" Binding="{Binding lastName}" />
+                    <DataGridTextColumn Header="Email Address" Binding="{Binding emailAddress}" />
+                    <DataGridTextColumn Header="Phone Number" Binding="{Binding phoneNumber}" />
+                    <DataGridTextColumn Header="Password" Binding="{Binding password}" />
+                    <DataGridTextColumn Header="Role" Binding="{Binding role}" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
+                    <DataGridTextColumn Header="Join Date" Binding="{Binding joinDate}" />
+                </DataGrid.Columns>
+            </DataGrid>
 
         </StackPanel>
-        <ContentControl Name="MemberContent" 
-                        Grid.ColumnSpan="1"
-                        Grid.RowSpan="1" Margin="10,-37,-10,37"></ContentControl>
+        <ContentControl Name="AdminContent" 
+                        Grid.ColumnSpan="3"
+                        Grid.RowSpan="4"/>
     </Grid>
 </UserControl>
