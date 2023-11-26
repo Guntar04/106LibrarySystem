@@ -49,8 +49,8 @@ namespace _106LibrarySystem
             {
                 connection.Open();
                 connection.Execute(
-                    "INSERT INTO users (userName, firstName, lastName, emailAddress, phoneNumber, password) " +
-                    "VALUES (@UserName, @FirstName, @LastName, @EmailAddress, @PhoneNumber, @Password)",
+                    "INSERT INTO users (userName, firstName, lastName, emailAddress, phoneNumber, password, role) " +
+                    "VALUES (@UserName, @FirstName, @LastName, @EmailAddress, @PhoneNumber, @Password, @Role)",
                     new
                     {
                         UserName = username,
@@ -58,7 +58,8 @@ namespace _106LibrarySystem
                         LastName = lastName,
                         EmailAddress = emailAddress,
                         PhoneNumber = phoneNumber,
-                        Password = password
+                        Password = password,
+                        Role = "Member"
                     });
 
                 MessageBox.Show("Sign Up Successful!");
