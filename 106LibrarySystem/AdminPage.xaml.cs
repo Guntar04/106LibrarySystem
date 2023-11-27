@@ -52,7 +52,21 @@ namespace _106LibrarySystem
             AdminLoanedBooksWindow loanedBooks = new AdminLoanedBooksWindow();
             AdminDetails.Content = loanedBooks;
         }
-
+        private void Home_Page(object sender, RoutedEventArgs e)
+        {
+            AdminHome adminHome = new AdminHome();
+            AdminContent.Content = adminHome;
+        }
+        private void Catalouge_Page(object sender, RoutedEventArgs e)
+        {
+            AdminBrowsing adminBrowsing = new AdminBrowsing();
+            AdminContent.Content = adminBrowsing;
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AdminPage adminPage = new AdminPage();
+            AdminContent.Content = adminPage;
+        }
         private void DisplayUserData ()
         {
             using (IDbConnection connection = new SQLiteConnection (source))

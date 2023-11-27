@@ -177,3 +177,11 @@ D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.g.cs
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.baml
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.g.cs
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.baml
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AddBookWindow.g.cs
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.g.cs
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.g.cs
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.g.cs
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AddBookWindow.baml
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.baml
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.baml
+D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.baml
