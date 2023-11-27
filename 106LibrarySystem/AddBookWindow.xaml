@@ -5,18 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_106LibrarySystem"
         mc:Ignorable="d"
-        Title="AddBookWindow" Height="450" Width="800">
+        Title="AddBookWindow" Height="450" Width="250">
+
     <Grid>
         <!-- Design your layout with input fields and buttons -->
+        <Button Content="x"  VerticalAlignment="Top" Margin="220 0 0 0" Foreground="IndianRed"  Background="white" BorderBrush="white" FontSize="20" Click="CancelButton_Click"></Button>
         <StackPanel Margin="20">
-            <!-- Your input fields (TextBox, ComboBox, etc.) -->
-            <TextBox Name="TitleTextBox"/>
+            <TextBlock Margin="0 20 0 15"
+                   FontSize="18"
+                   FontFamily="Fonts/#Karla"
+                   TextAlignment="Center"
+                   Foreground="Black"><Run Text="Add Book"/></TextBlock>
+            <StackPanel>
+                <TextBox x:Name="ItemBox" 
+                     Width="160"
+                     Foreground="Gray"
+                         FontStyle="Italic"
+                         GotFocus="ItemBox_GotFocus"
+                        LostFocus="ItemBox_LostFocus"
+                     Text="{Binding name, UpdateSourceTrigger=PropertyChanged, FallbackValue='Book Title'}"/>
+                <TextBox x:Name="ItemBox2" 
+                     Margin="0 10 0 10"
+                     Width="160" 
+                     Foreground="Gray"
+                             FontStyle="Italic"
+                          GotFocus="ItemBox2_GotFocus"
+         LostFocus="ItemBox2_LostFocus"
+                     Text="{Binding author, UpdateSourceTrigger=PropertyChanged, FallbackValue='Author'}"/>
+                <TextBox x:Name="ItemBox3" 
+                     Width="160" 
+                     Foreground="Gray"
+                         FontStyle="Italic"
+                          GotFocus="ItemBox3_GotFocus"
+         LostFocus="ItemBox3_LostFocus"
+                     Text="{Binding genre, UpdateSourceTrigger=PropertyChanged, FallbackValue='Genre'}"/>
+                <TextBox x:Name="ItemBox4" 
+                     Margin="0 10 0 10"
+                     Width="160" 
+                     Foreground="Gray"
+                         FontStyle="Italic"
+                          GotFocus="ItemBox4_GotFocus"
+         LostFocus="ItemBox4_LostFocus"
+                     Text="{Binding availability, UpdateSourceTrigger=PropertyChanged, FallbackValue='Availability'}"/>
+                <TextBox x:Name="ItemBox5" 
+                     Width="160" 
+                     Foreground="Gray"
+                         FontStyle="Italic"
+                          GotFocus="ItemBox5_GotFocus"
+         LostFocus="ItemBox5_LostFocus"
+                     Text="{Binding language, UpdateSourceTrigger=PropertyChanged, FallbackValue='Language'}"/>
+                <TextBox x:Name="ItemBox6" 
+                     Margin="0 10 0 10"
+                     Width="160" 
+                     Foreground="Gray"
+                         FontStyle="Italic"
+                          GotFocus="ItemBox6_GotFocus"
+         LostFocus="ItemBox6_LostFocus"
+                     Text="{Binding pageNum, UpdateSourceTrigger=PropertyChanged, FallbackValue='Page Number'}"/>
+                <TextBox x:Name="ItemBox7" 
+                     Width="160" 
+                     Foreground="Gray"
+                         FontStyle="Italic"
+                          GotFocus="ItemBox7_GotFocus"
+         LostFocus="ItemBox7_LostFocus"
+                     Text="{Binding date, UpdateSourceTrigger=PropertyChanged, FallbackValue='Date'}"/>
+            </StackPanel>
+
+
             <!-- Add other input fields as needed -->
 
             <!-- Buttons (e.g., Save, Cancel) -->
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+
+            <StackPanel>
+                <Button Width="80" Margin="0,20,80,0" Content="Upload Image" Click="UploadImageButton_Click"/>
+                <Image x:Name="BookImage" Width="70" Height="100" Margin="100,-20,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
                 <Button Content="Save" Click="SaveButton_Click"/>
-                <Button Content="Cancel" Click="CancelButton_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
