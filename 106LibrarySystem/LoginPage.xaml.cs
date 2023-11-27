@@ -40,7 +40,6 @@ namespace _106LibrarySystem
                 textBox.Foreground = Brushes.Black;
             }
         }
-
         private void ItemBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;

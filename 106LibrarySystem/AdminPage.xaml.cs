@@ -49,8 +49,8 @@ namespace _106LibrarySystem
         }
         private void Books_Loaned(object sender, RoutedEventArgs e)
         {
-            LoginPage loginPage = new LoginPage();
-            AdminDetails.Content = loginPage;
+            AdminLoanedBooksWindow loanedBooks = new AdminLoanedBooksWindow();
+            AdminDetails.Content = loanedBooks;
         }
 
         private void DisplayUserData ()

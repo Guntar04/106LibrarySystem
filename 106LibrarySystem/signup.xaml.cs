@@ -26,7 +26,114 @@ namespace _106LibrarySystem
         {
             InitializeComponent();
         }
-
+        private void ItemBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "Username")
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+        private void ItemBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = "Username";
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
+        private void ItemBox2_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "First Name")
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+        private void ItemBox2_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = "First Name";
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
+        private void ItemBox3_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "Last Name")
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+        private void ItemBox3_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = "Last Name";
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
+        private void ItemBox4_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "Email Address")
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+        private void ItemBox4_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = "Email Address";
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
+        private void ItemBox5_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "Phone Number")
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+        private void ItemBox5_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = "Phone Number";
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
+        private void ItemBox6_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "Password")
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+        private void ItemBox6_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = "Password";
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
         private void Back_To_Login(object sender, RoutedEventArgs e)
         {
             LoginPage loginPage = new LoginPage();
@@ -44,6 +151,18 @@ namespace _106LibrarySystem
             string password = ItemBox6.Text;
             string databaseFileName = "LibraryDatabase.db";
             string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
+
+            // Check if any of the required textboxes are empty
+            if(string.IsNullOrEmpty(username) || username == "Username" ||
+               string.IsNullOrEmpty(firstName) || firstName == "First Name" ||
+               string.IsNullOrEmpty(lastName) || lastName == "Last Name" ||
+               string.IsNullOrEmpty(emailAddress) || emailAddress == "Email Address" ||
+               string.IsNullOrEmpty(phoneNumber) || phoneNumber == "Phone Number" ||
+               string.IsNullOrEmpty(password) || password == "Password")
+            {
+                MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return; // Exit the method without appending the data
+            }
 
             using (IDbConnection connection = new SQLiteConnection(source))
             {

@@ -175,3 +175,5 @@ D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.baml
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.g.cs
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.baml
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.baml
