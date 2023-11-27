@@ -30,14 +30,18 @@
                 TextAlignment="Center"
                 Foreground="Black">Login</TextBlock>
             <TextBox x:Name="ItemBox" 
-                Width="160" 
-                Foreground="Gray"
-                Text="Username"/>
+                    Width="160" 
+                    Foreground="Gray"
+                     Text="Username"
+                    GotFocus="ItemBox_GotFocus"
+                    LostFocus="ItemBox_LostFocus"/>
             <TextBox x:Name="ItemBox2" 
-                Margin="0 10 0 10"
-                Width="160" 
-                Foreground="Gray"
-                Text="Password"/>
+                    Margin="0 10 0 10"
+                    Width="160" 
+                    Foreground="Gray"
+                    Text="Password"
+                    GotFocus="ItemBox2_GotFocus"
+                    LostFocus="ItemBox2_LostFocus"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Click="Button_Click"
                     Foreground="White"

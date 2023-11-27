@@ -31,7 +31,44 @@ namespace _106LibrarySystem
         {
             InitializeComponent();
         }
+        private void ItemBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "Username")
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
 
+        private void ItemBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = "Username";
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
+        private void ItemBox2_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "Password")
+            {
+                textBox.Text = string.Empty;
+                textBox.Foreground = Brushes.Black;
+            }
+        }
+
+        private void ItemBox2_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                textBox.Text = "Password";
+                textBox.Foreground = Brushes.Gray;
+            }
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string username = ItemBox.Text;
