@@ -17,13 +17,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.Mail;
+using System.ComponentModel;
 
 namespace _106LibrarySystem
 {
     public partial class AdminPage : UserControl
     {
-    static string databaseFileName = "LibraryDatabase.db";
-    static string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
+        static string databaseFileName = "LibraryDatabase.db";
+        static string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
 
         public AdminPage()
         {
@@ -68,12 +70,12 @@ namespace _106LibrarySystem
             AdminPage adminPage = new AdminPage();
             AdminContent.Content = adminPage;
         }
-        private void DisplayUserData ()
+        private void DisplayUserData()
         {
-            using (IDbConnection connection = new SQLiteConnection (source))
+            using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
-                var users = connection.Query ("SELECT * FROM users");
+                var users = connection.Query("SELECT * FROM users");
                 userGrid.ItemsSource = users;
             }
         }
@@ -91,7 +93,7 @@ namespace _106LibrarySystem
             string phoneNumber = PhoneNumber.Text;
             string password = Password.Text;
             string role = Role.Text;
-            DateTime joinDate = DateTime.Today; 
+            DateTime joinDate = DateTime.Today;
             string formattedJoinDate = joinDate.ToString("dd/MM/yyyy");
             int booksLoaned = 0;
             int overDueBooks = 0;
@@ -121,33 +123,72 @@ namespace _106LibrarySystem
             AddUserPopup.IsOpen = false;
             DisplayUserData();
         }
+        private int currentUserID;
         private void Edit_User(object sender, RoutedEventArgs e)
         {
-            AddUserPopup.IsOpen = true;
+            EditUserIDPopup.IsOpen = true;
+        }
+
+        private void EditUserIDOK_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(UserIDTextBox.Text, out currentUserID))
+            {
+                EditUserIDPopup.IsOpen = false;
+                PopulateEditUserPopup(currentUserID);
+                EditUserPopup.IsOpen = true;
+            }
+            else
+            {
+                MessageBox.Show("Invalid User ID. Please enter a valid number.");
+            }
+        }
+
+        private void PopulateEditUserPopup(int userID)
+        {
+            User user = DatabaseHelper.GetUserByID(userID);
+
+            if (user != null)
+            {
+                // Update the TextBoxes in EditUserPopup with the fetched details
+                UserName1.Text = user.UserName;
+                FirstName1.Text = user.FirstName;
+                LastName1.Text = user.LastName;
+                EmailAddress1.Text = user.EmailAddress;
+                PhoneNumber1.Text = user.PhoneNumber;
+                Password1.Text = user.Password;
+                Role1.Text = user.Role;
+            }
+            else
+            {
+                // Handle the case where the user with the specified ID is not found
+                MessageBox.Show("User not found in the database.");
+            }
         }
 
         private void UpdateUser_Click(object sender, RoutedEventArgs e)
         {
-            using (IDbConnection connection = new SQLiteConnection(source))
+            // Get the updated user details from EditUserPopup
+            User updatedUser = new User
             {
-                connection.Open();
-                string updateQuery = @"
-                    UPDATE users
-                    SET UserName = @UserName, FirstName = @FirstName, LastName = @LastName, EmailAddress = @EmailAddress,
-                        PhoneNumber = @PhoneNumber, Password = @Password, Role = @Role, JoinDate = @JoinDate,
-                        BooksLoaned = @BooksLoaned, OverDueBooks = @OverDueBooks
-                    WHERE ID = @ID
-                ";
+                UserName = UserName1.Text,
+                FirstName = FirstName1.Text,
+                LastName = LastName1.Text,
+                EmailAddress = EmailAddress1.Text,
+                PhoneNumber = PhoneNumber1.Text,
+                Password = Password1.Text,
+                Role = Role1.Text
+            };
 
-                connection.Execute(updateQuery, new
-                {
- 
-                });
-            }
-            AddUserPopup.IsOpen = false;
+            // Update the user in the database
+            DatabaseHelper.UpdateUser(updatedUser);
+
+            // Close the EditUserPopup
+            EditUserPopup.IsOpen = false;
+
+            // Refresh the user data grid or perform any necessary updates
             DisplayUserData();
         }
-        private void ItemBox_GotFocus(object sender, RoutedEventArgs e)
+    private void ItemBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             if (textBox.Text == "Username")
