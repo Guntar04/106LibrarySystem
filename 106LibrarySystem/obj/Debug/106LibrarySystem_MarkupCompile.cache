@@ -5,7 +5,6 @@ winexe
 C#
 .cs
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\
-C:\106LibrarySystem\106LibrarySystem\obj\Debug\
 _106LibrarySystem
 none
 false
@@ -13,14 +12,9 @@ DEBUG;TRACE
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\App.xaml
 15-433845352
 1727723544
-21-1985181518
+22833004157
 15-95769371
-C:\106LibrarySystem\106LibrarySystem\App.xaml
-15-433845352
-1727723544
-22227697160
-15170076409
 AddBookWindow.xaml;AdminBookDetail.xaml;AdminBooksDueWindow.xaml;AdminBrowsing.xaml;AdminHome.xaml;AdminLoanedBooksWindow.xaml;AdminPage.xaml;AdminUserList.xaml;HomeScreen.xaml;LoginPage.xaml;MainWindow.xaml;MemberBookDetail.xaml;MemberBrowsing.xaml;MemberPage.xaml;SignUp.xaml;
 
-True
+False
 

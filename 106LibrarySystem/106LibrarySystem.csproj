@@ -107,6 +107,7 @@
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Page Include="AddBookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

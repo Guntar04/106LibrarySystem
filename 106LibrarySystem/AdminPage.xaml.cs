@@ -27,8 +27,9 @@ namespace _106LibrarySystem
 
         public AdminPage()
         {
-        InitializeComponent();
-        DisplayUserData();
+            InitializeComponent();
+            DisplayUserData();
+            DataContext = typeof(User);
         }
 
         private void Log_Out(object sender, RoutedEventArgs e)

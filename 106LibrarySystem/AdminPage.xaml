@@ -121,26 +121,46 @@
             <StackPanel 
                     Orientation="Horizontal"
                     HorizontalAlignment="Left">
-                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold"><Run Text="Joined:"/></TextBlock>
-                <TextBlock Foreground="White" FontSize="13"><Run Text=" 17/03/2020"/></TextBlock>
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           FontWeight="Bold" 
+                           Text="Joined:"/>
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           Text="{x:Static local:User.JoinDate}"/>
             </StackPanel>
             <StackPanel 
                     Orientation="Horizontal"
                     HorizontalAlignment="Left">
-                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold"><Run Text="DOB:"/></TextBlock>
-                <TextBlock Foreground="White" FontSize="13" ><Run Text=" 24/05/2003"/></TextBlock>
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           FontWeight="Bold" 
+                           Text="Username:"/>
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           Text="{x:Static local:User.UserName}"/>
             </StackPanel>
             <StackPanel 
                     Orientation="Horizontal"
                     HorizontalAlignment="Left">
-                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" ><Run Text="Email:"/></TextBlock>
-                <TextBlock Foreground="White" FontSize="13" ><Run Text=" arthur.h.werner@gmail.com"/></TextBlock>
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           FontWeight="Bold"
+                           Text="Email:"/>
+                <TextBlock Foreground="White"
+                           FontSize="13" 
+                           Text="{x:Static local:User.Email}"/>
             </StackPanel>
             <StackPanel 
                     Orientation="Horizontal"
                     HorizontalAlignment="Left">
-                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" ><Run Text="Gender:"/></TextBlock>
-                <TextBlock Foreground="White" FontSize="13" ><Run Text=" Male"/></TextBlock>
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           FontWeight="Bold"
+                           Text="ID:"/>
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           Text="{x:Static local:User.ID}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right">
                 <TextBlock Foreground="White" FontSize="12" Margin="0 -3 10 0 "><Run Text=" Member ID: 204167"/></TextBlock>
