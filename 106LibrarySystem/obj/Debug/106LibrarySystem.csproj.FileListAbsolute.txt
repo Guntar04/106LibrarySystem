@@ -185,3 +185,11 @@ D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AddBookWin
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.baml
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.baml
 D:\Users\270304444\Github\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.baml
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.g.cs
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.baml

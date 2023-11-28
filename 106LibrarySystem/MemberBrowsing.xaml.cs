@@ -48,6 +48,13 @@ namespace LibraryDatabase
             addBookWindow.ShowDialog(); // Show the window as a modal dialog
         }
 
+        private void EditCatalogueButton_Click(object sender, RoutedEventArgs e)
+        {
+            EditCatalogueWindow editCatalogueWindow = new EditCatalogueWindow();
+            editCatalogueWindow.Owner = Window.GetWindow(this); // Set the owner to enable proper interaction
+            editCatalogueWindow.ShowDialog(); // Show the window as a modal dialog
+        }
+
         private void RemoveBook_Click(object sender, RoutedEventArgs e)
         {
             // Show a confirmation dialog
@@ -72,10 +79,8 @@ namespace LibraryDatabase
 
 
             }
+
         }
-
-
-
 
     }
 }
