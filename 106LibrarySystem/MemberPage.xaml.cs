@@ -37,6 +37,10 @@ namespace _106LibrarySystem
         {
             MemberContent.Content = memberBrowsing;
         }
-
+        private void Log_Out(object sender, RoutedEventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            MemberContent.Content = loginPage;
+        }
     }
 }
