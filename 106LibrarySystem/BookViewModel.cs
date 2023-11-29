@@ -31,6 +31,38 @@ namespace LibraryDatabase
             }
         }
 
+        public void ApplySearch(string searchText)
+        {
+            // Filter the books based on the search text
+            ICollectionView view = CollectionViewSource.GetDefaultView(Books);
+            if (view != null)
+            {
+                if (string.IsNullOrWhiteSpace(searchText))
+                {
+                    // If search text is empty, show all books
+                    view.Filter = null;
+                }
+                else
+                {
+                    // Otherwise, filter based on the search text and availability
+                    view.Filter = item =>
+                    {
+                        var book = (Book)item;
+                        bool matchesText = book.name.ToLower().Contains(searchText) ||
+                                           book.author.ToLower().Contains(searchText) ||
+                                           book.genre.ToLower().Contains(searchText);
+
+                        // Include availability in the search
+                        bool matchesAvailability = searchText.ToLower() == "available" && book.availability > 0 ||
+                                          searchText.ToLower() == "unavailable" && book.availability <= 0;
+
+                        return matchesText || matchesAvailability;
+                    };
+                }
+            }
+        }
+
+
         public bool IsRemoveButtonVisible
         {
             get { return _isRemoveButtonVisible; }

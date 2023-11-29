@@ -37,8 +37,9 @@
             <!-- Search Bar -->
             <Grid>
                 <Rectangle Fill="#A3B6CC" Height="23" Width="300" RadiusX="5" RadiusY="5"/>
-                <TextBlock Text="Search Library..." FontSize="11" Width="100" Margin="10,7,180,0"/>
-                <Image Source="Images/searchIcon.png" Width="13" Height="18" Margin="270,6,0,6"/>
+                <TextBox x:Name="searchTextBox" Text="Search Library..." Background="#A3B6CC" BorderBrush="transparent" FontSize="11" Width="255" Height="18" Margin="10,0,40,0"
+             GotFocus="SearchTextBox_GotFocus" LostFocus="SearchTextBox_LostFocus" KeyDown="SearchTextBox_KeyDown"/>
+                <Image Source="Images/searchIcon.png" Width="13" Height="18" Margin="270,6,0,6" MouseDown="SearchButton_Click"/>
             </Grid>
         </StackPanel>
 
