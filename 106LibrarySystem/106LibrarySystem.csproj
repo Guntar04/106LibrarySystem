@@ -76,6 +76,9 @@
       <DependentUpon>AdminUserList.xaml</DependentUpon>
     </Compile>
     <Compile Include="book.cs" />
+    <Compile Include="BookEditWindow.xaml.cs">
+      <DependentUpon>BookEditWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BookViewModel.cs" />
     <Compile Include="AdminBookDetail.xaml.cs">
       <DependentUpon>AdminBookDetail.xaml</DependentUpon>
@@ -140,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminUserList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BookEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

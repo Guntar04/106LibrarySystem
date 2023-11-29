@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LibraryDatabase;
 
-namespace _106LibrarySystem
+namespace LibraryDatabase
 {
     /// <summary>
     /// Interaction logic for EditCatalogueWindow.xaml
@@ -22,13 +22,23 @@ namespace _106LibrarySystem
     public partial class EditCatalogueWindow : Window
     {
 
-        public EditCatalogueWindow()
+        public EditCatalogueWindow(BookViewModel sharedViewModel)
         {
             InitializeComponent();
-            var bookViewModel = new BookViewModel();
-            DataContext = bookViewModel;
+            DataContext = sharedViewModel;
         }
 
-       
+        private void BookButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (Button)sender;
+            var book = (Book)button.DataContext;
+
+            // Pass the shared BookViewModel instance to BookEditWindow
+            var bookEditWindow = new BookEditWindow(book, (BookViewModel)DataContext);
+            bookEditWindow.ShowDialog();
+
+            // Update MemberBrowsing with changes
+            ((BookViewModel)DataContext).UpdateBooks();
+        }
     }
 }

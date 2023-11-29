@@ -75,6 +75,7 @@ namespace LibraryDatabase
             // Example query (replace with your actual database schema and query)
             string query = "SELECT ImagePath FROM books WHERE Id = @BookId";
             return connection.ExecuteScalar<string>(query, new { BookId = bookId }) ?? "";
+
         }
 
         public void AddBook(Book newBook)
@@ -157,6 +158,11 @@ namespace LibraryDatabase
 
             // Remove the book from the collection
             Books.Remove(book);
+        }
+
+        public void UpdateBooks()
+        {
+            OnPropertyChanged(nameof(Books));
         }
 
 

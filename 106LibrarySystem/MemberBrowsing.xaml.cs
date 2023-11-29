@@ -50,9 +50,9 @@ namespace LibraryDatabase
 
         private void EditCatalogueButton_Click(object sender, RoutedEventArgs e)
         {
-            EditCatalogueWindow editCatalogueWindow = new EditCatalogueWindow();
-            editCatalogueWindow.Owner = Window.GetWindow(this); // Set the owner to enable proper interaction
-            editCatalogueWindow.ShowDialog(); // Show the window as a modal dialog
+            EditCatalogueWindow editCatalogueWindow = new EditCatalogueWindow((BookViewModel)DataContext);
+            editCatalogueWindow.Owner = Window.GetWindow(this);
+            editCatalogueWindow.ShowDialog();
         }
 
         private void RemoveBook_Click(object sender, RoutedEventArgs e)

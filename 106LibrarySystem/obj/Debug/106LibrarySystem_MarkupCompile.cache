@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\106LibrarySystem\106LibrarySystem\App.xaml
-161794519321
+1787403328
 1727723544
-23-655421156
+24-1733611491
 15170076409
-AddBookWindow.xaml;AdminBookDetail.xaml;AdminBooksDueWindow.xaml;AdminBrowsing.xaml;AdminHome.xaml;AdminLoanedBooksWindow.xaml;AdminPage.xaml;AdminUserList.xaml;EditCatalogueWindow.xaml;HomeScreen.xaml;LoginPage.xaml;MainWindow.xaml;MemberBookDetail.xaml;MemberBrowsing.xaml;MemberPage.xaml;SignUp.xaml;
+AddBookWindow.xaml;AdminBookDetail.xaml;AdminBooksDueWindow.xaml;AdminBrowsing.xaml;AdminHome.xaml;AdminLoanedBooksWindow.xaml;AdminPage.xaml;AdminUserList.xaml;BookEditWindow.xaml;EditCatalogueWindow.xaml;HomeScreen.xaml;LoginPage.xaml;MainWindow.xaml;MemberBookDetail.xaml;MemberBrowsing.xaml;MemberPage.xaml;SignUp.xaml;
 
 False
 
