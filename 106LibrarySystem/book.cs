@@ -75,6 +75,7 @@ namespace LibraryDatabase
                 }
             }
         }
+        public string description { get; set; }
 
         public string DisplayAvailability
         {

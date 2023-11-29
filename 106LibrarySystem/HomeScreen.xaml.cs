@@ -12,18 +12,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using _106LibrarySystem;
+using System.Xml.Linq;
 using LibraryDatabase;
+using System.Data;
+using System.Net.Mail;
+using System.IO;
+using System.Data.SQLite;
+using Dapper;
 
 namespace _106LibrarySystem
 {
-    /// <summary>
-    /// Interaction logic for HomeScreen.xaml
-    /// </summary>
     public partial class HomeScreen : UserControl
-    {            
+    {
+        private string databaseFileName = "LibraryDatabase.db";
+        private string source;
+
         public HomeScreen()
         {
             InitializeComponent();
+            source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,10 +39,48 @@ namespace _106LibrarySystem
             MemberPage memberPage = new MemberPage();
             HomeContent.Content = memberPage;
         }
+
         private void Image_Click(object sender, MouseButtonEventArgs e)
         {
-            MemberBookDetail memberBookDetail = new MemberBookDetail();
-            HomeContent.Content = memberBookDetail;
+            using (IDbConnection connection = new SQLiteConnection(source))
+            {
+                connection.Open();
+                string bookName = (string)((Image)sender).Tag;
+                string query = "SELECT * FROM books WHERE name = @BookName";
+                var book = connection.QueryFirstOrDefault<Book>(query, new { BookName = bookName });
+
+                if (book != null)
+                {
+                    string name = book.name;
+                    string author = book.author;
+                    string genre = book.genre;
+                    int availability = book.availability;
+                    string language = book.language;
+                    int pageNum = book.pageNum;
+                    int date = book.date;
+                    string imagePath = book.ImagePath;
+                    string description = book.description;
+
+                    Book selectedBook = new Book
+                    {
+                        name = name,
+                        author = author,
+                        genre = genre,
+                        availability = availability,
+                        language = language,
+                        pageNum = pageNum,
+                        date = date,
+                        ImagePath = imagePath,
+                        description = description
+                    };
+                    MemberBookDetail memberBookDetail = new MemberBookDetail(selectedBook);
+                    HomeContent.Content = memberBookDetail;
+                }
+                else
+                {
+                    MessageBox.Show("Book not found in the database.");
+                }
+            }
         }
         private void Catalogue_Click(object sender, RoutedEventArgs e)
         {
