@@ -48,9 +48,9 @@
          TextWrapping="Wrap"/>
             <TextBox x:Name="AuthorTextBox"  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding author, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
             <TextBox x:Name="AvailabilityTextBox"  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding availability, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
-            <TextBox x:Name="LanguageTextBox"  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding language, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
-            <TextBox x:Name="pageNumTextBox"  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding pageNum, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
-            <TextBox x:Name="dateTextBox"  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding date, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
+            <TextBox  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding language}" IsReadOnly="False"/>
+            <TextBox  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding pageNum}" IsReadOnly="False"/>
+            <TextBox   FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding date}" IsReadOnly="False"/>
 
         </StackPanel>
 

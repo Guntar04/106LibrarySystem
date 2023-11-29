@@ -5,20 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_106LibrarySystem"
         mc:Ignorable="d"
-        Title="AddBookWindow" Height="450" Width="250">
+        Title="AddBookWindow" Height="450" Width="350">
 
+    
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Rectangle  Fill="#FF011936" Height="10" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Rectangle  Fill="#FF00487C" Height="10" Margin="0,10,0,0" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="2"/>
         <!-- Design your layout with input fields and buttons -->
-        <Button Content="x"  VerticalAlignment="Top" Margin="220 0 0 0" Foreground="IndianRed"  Background="white" BorderBrush="white" FontSize="20" Click="CancelButton_Click"></Button>
-        <StackPanel Margin="20">
-            <TextBlock Margin="0 20 0 15"
+
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="0 -30 0 350"
                    FontSize="18"
                    FontFamily="Fonts/#Karla"
                    TextAlignment="Center"
                    Foreground="Black"><Run Text="Add Book"/></TextBlock>
+
+        <StackPanel Margin="0 50 0 0" Grid.Row="2" Grid.Column="2">
             <StackPanel>
                 <TextBox x:Name="ItemBox" 
                      Width="160"
+                         Height="20"
                      Foreground="Gray"
                          FontStyle="Italic"
                          GotFocus="ItemBox_GotFocus"
@@ -27,6 +44,7 @@
                 <TextBox x:Name="ItemBox2" 
                      Margin="0 10 0 10"
                      Width="160" 
+                         Height="20"
                      Foreground="Gray"
                              FontStyle="Italic"
                           GotFocus="ItemBox2_GotFocus"
@@ -34,6 +52,7 @@
                      Text="{Binding author, UpdateSourceTrigger=PropertyChanged, FallbackValue='Author'}"/>
                 <TextBox x:Name="ItemBox3" 
                      Width="160" 
+                         Height="20"
                      Foreground="Gray"
                          FontStyle="Italic"
                           GotFocus="ItemBox3_GotFocus"
@@ -42,6 +61,7 @@
                 <TextBox x:Name="ItemBox4" 
                      Margin="0 10 0 10"
                      Width="160" 
+                         Height="20"
                      Foreground="Gray"
                          FontStyle="Italic"
                           GotFocus="ItemBox4_GotFocus"
@@ -49,6 +69,7 @@
                      Text="{Binding availability, UpdateSourceTrigger=PropertyChanged, FallbackValue='Availability'}"/>
                 <TextBox x:Name="ItemBox5" 
                      Width="160" 
+                         Height="20"
                      Foreground="Gray"
                          FontStyle="Italic"
                           GotFocus="ItemBox5_GotFocus"
@@ -57,6 +78,7 @@
                 <TextBox x:Name="ItemBox6" 
                      Margin="0 10 0 10"
                      Width="160" 
+                         Height="20"
                      Foreground="Gray"
                          FontStyle="Italic"
                           GotFocus="ItemBox6_GotFocus"
@@ -76,13 +98,22 @@
 
             <!-- Buttons (e.g., Save, Cancel) -->
 
-            <StackPanel>
-                <Button Width="80" Margin="0,20,80,0" Content="Upload Image" Click="UploadImageButton_Click"/>
-                <Image x:Name="BookImage" Width="70" Height="100" Margin="100,-20,0,0"/>
-            </StackPanel>
+           
+            <Button  Content="Save" Click="SaveButton_Click" FontStyle="Italic" Background="#A3B6CC" FontSize="13" BorderBrush="transparent" Height="20" Width="60" Margin="100 80 0 0">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" BlurRadius="5" Opacity="0.8" Color="Black"/>
+                </Button.Effect>
+            </Button>
+        </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                <Button Content="Save" Click="SaveButton_Click"/>
+        <StackPanel Grid.ColumnSpan="1" Grid.Row="2" Orientation="Vertical" VerticalAlignment="Bottom" Width="114" Margin="0 0 0 0">
+            <Image x:Name="BookImage" Width="120" Height="180" Margin="10,0,0,20"/>
+            <StackPanel>
+                <Button Width="80" Margin="30,0,0,110" Content="Upload Image" Click="UploadImageButton_Click" FontStyle="Italic" FontSize="11" Background="#A3B6CC" BorderBrush="transparent" Height="20">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="1" BlurRadius="5" Opacity="0.8" Color="Black"/>
+                    </Button.Effect>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>
