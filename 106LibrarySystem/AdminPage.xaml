@@ -323,7 +323,7 @@
                              Foreground="Gray"
                              Text="User ID"/>
 
-                    <Button Content="OK" Click="UpdateUser_Click" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                    <Button Content="OK" Click="EditUserIDOK_Click" HorizontalAlignment="Center" Margin="0 10 0 0"/>
                 </StackPanel>
             </Border>
         </Popup>
@@ -379,7 +379,7 @@
                              Foreground="Gray" 
                              Text="Last Name"/>
                     <Button Content="Save" 
-                            Click="EditUserIDOK_Click" 
+                            Click="UpdateUser_Click" 
                             HorizontalAlignment="Center" 
                             Margin="0 10 0 0"/>
                 </StackPanel>

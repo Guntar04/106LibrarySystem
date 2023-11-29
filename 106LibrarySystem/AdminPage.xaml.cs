@@ -24,14 +24,14 @@ namespace _106LibrarySystem
 {
     public partial class AdminPage : UserControl
     {
-        static string databaseFileName = "LibraryDatabase.db";
-        static string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
+        private static readonly string databaseFileName = "LibraryDatabase.db";
+        private static readonly string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
+        private int currentUserID;
 
         public AdminPage()
         {
             InitializeComponent();
             DisplayUserData();
-            DataContext = typeof(User);
         }
 
         private void Log_Out(object sender, RoutedEventArgs e)
@@ -123,7 +123,6 @@ namespace _106LibrarySystem
             AddUserPopup.IsOpen = false;
             DisplayUserData();
         }
-        private int currentUserID;
         private void Edit_User(object sender, RoutedEventArgs e)
         {
             EditUserIDPopup.IsOpen = true;
@@ -170,6 +169,7 @@ namespace _106LibrarySystem
             // Get the updated user details from EditUserPopup
             User updatedUser = new User
             {
+                ID = currentUserID,
                 UserName = UserName1.Text,
                 FirstName = FirstName1.Text,
                 LastName = LastName1.Text,
@@ -188,7 +188,7 @@ namespace _106LibrarySystem
             // Refresh the user data grid or perform any necessary updates
             DisplayUserData();
         }
-    private void ItemBox_GotFocus(object sender, RoutedEventArgs e)
+        private void ItemBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             if (textBox.Text == "Username")

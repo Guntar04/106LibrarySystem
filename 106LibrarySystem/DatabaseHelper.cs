@@ -31,16 +31,16 @@ namespace _106LibrarySystem
             {
                 connection.Open();
                 string updateQuery = @"
-                UPDATE users
-                SET UserName = @UserName, 
-                    FirstName = @FirstName, 
-                    LastName = @LastName, 
-                    EmailAddress = @EmailAddress,
-                    PhoneNumber = @PhoneNumber, 
-                    Password = @Password, 
-                    Role = @Role
-                WHERE ID = @ID
-            ";
+                    UPDATE users
+                    SET UserName = @UserName, 
+                        FirstName = @FirstName, 
+                        LastName = @LastName, 
+                        EmailAddress = @EmailAddress,
+                        PhoneNumber = @PhoneNumber, 
+                        Password = @Password, 
+                        Role = @Role
+                    WHERE ID = @ID
+                ";
 
                 connection.Execute(updateQuery, user);
             }

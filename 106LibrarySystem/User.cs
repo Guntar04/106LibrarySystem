@@ -17,6 +17,5 @@ namespace _106LibrarySystem
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
-        // Add other properties as needed
     }
 }
