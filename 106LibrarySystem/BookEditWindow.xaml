@@ -19,9 +19,9 @@
 
         <!-- Right column containing book details -->
         <StackPanel Grid.Column="1" Margin="20 0 50 0">
-            <TextBox FontWeight="Bold" FontSize="20" Margin="10 10 0 0" Text="{Binding name}" IsReadOnly="False"/>
-            <TextBox FontWeight="Bold" FontSize="20" Margin="10 10 0 0" Text="{Binding author}" IsReadOnly="False"/>
-            <TextBox FontWeight="Bold" FontSize="20" Margin="10 10 0 0" Text="{Binding availability}" IsReadOnly="False"/>
+            <TextBox x:Name="NameTextBox" FontWeight="Bold" FontSize="20" Margin="10 10 0 0" Text="{Binding name, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
+            <TextBox x:Name="AuthorTextBox" FontWeight="Bold" FontSize="20" Margin="10 10 0 0" Text="{Binding author, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
+            <TextBox x:Name="AvailabilityTextBox" FontWeight="Bold" FontSize="20" Margin="10 10 0 0" Text="{Binding availability, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
             <TextBox Margin="10" Text="{Binding language}" IsReadOnly="False"/>
             <TextBox Margin="10" Text="{Binding pageNum}" IsReadOnly="False"/>
             <TextBox Margin="10" Text="{Binding date}" IsReadOnly="False"/>

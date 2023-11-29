@@ -71,10 +71,30 @@ namespace LibraryDatabase
             // Update the book information from the textboxes
              UpdateBookInformation();
 
+            UpdateBindings();
+
             // Close the window or perform other actions
             Close();
         }
 
+        private void UpdateBindings()
+        {
+            // Manually update the bindings to apply changes immediately
+            BindingExpression be;
+
+            // Update 'name' binding
+            be = NameTextBox.GetBindingExpression(TextBox.TextProperty);
+            be?.UpdateSource();
+
+            // Update 'author' binding
+            be = AuthorTextBox.GetBindingExpression(TextBox.TextProperty);
+            be?.UpdateSource();
+
+            be = AvailabilityTextBox.GetBindingExpression(TextBox.TextProperty);
+            be?.UpdateSource();
+
+            // Update other bindings as needed
+        }
 
         private void UpdateBookInformation()
         {
@@ -82,16 +102,20 @@ namespace LibraryDatabase
             var existingBook = BookViewModel.Books.FirstOrDefault(b => b.Id == BookViewModel.CurrentBook.Id);
             if (existingBook != null)
             {
+               
                 existingBook.name = BookViewModel.CurrentBook.name;
                 existingBook.author = BookViewModel.CurrentBook.author;
+                existingBook.genre = BookViewModel.CurrentBook.genre;
                 existingBook.availability = BookViewModel.CurrentBook.availability;
                 existingBook.language = BookViewModel.CurrentBook.language;
                 existingBook.pageNum = BookViewModel.CurrentBook.pageNum;
                 existingBook.date = BookViewModel.CurrentBook.date;
                 existingBook.ImagePath = BookViewModel.CurrentBook.ImagePath;
 
+                
                 // Notify the UI about the changes (if needed)
             }
         }
+
     }
 }
