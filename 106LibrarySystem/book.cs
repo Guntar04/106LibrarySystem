@@ -12,17 +12,12 @@ namespace LibraryDatabase
         public string name { get; set; }
         public string author { get; set; }
         public string genre { get; set; }
-
         public int availability { get; set; }
-
         public string language { get; set; }
-
         public int pageNum { get; set; }
-
         public int date { get; set; }
-
         public string ImagePath { get; set; }
-
+        public string description { get; set; }
         public string DisplayAvailability
         {
             get
@@ -38,7 +33,5 @@ namespace LibraryDatabase
                 return availability > 0 ? "Green" : "Red";
             }
         }
-
     }
-
 }

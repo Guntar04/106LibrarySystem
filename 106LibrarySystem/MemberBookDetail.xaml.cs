@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,15 +18,36 @@ using System.Windows.Shapes;
 
 namespace _106LibrarySystem
 {
-    /// <summary>
-    /// Interaction logic for MemberBookDetail.xaml
-    /// </summary>
     public partial class MemberBookDetail : UserControl
     {
-        public MemberBookDetail()
+        public MemberBookDetail(Book selectedBook)
         {
             InitializeComponent();
+            DisplayBookDetails(selectedBook);
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            HomeScreen homeScreen = new HomeScreen();
+            BookDetails.Content = homeScreen;
+        }
+        private void Catalogue_Click(object sender, RoutedEventArgs e)
+        {
+            MemberBrowsing memberBrowsing = new MemberBrowsing();
+            BookDetails.Content = memberBrowsing;
+        }
+
+        private void DisplayBookDetails(Book selectedBook)
+        {
+            BookName.Text = selectedBook.name;
+            Author.Text = selectedBook.author;
+            Genre.Text = selectedBook.genre;
+            Availability.Text = selectedBook.DisplayAvailability;
+            Language.Text = selectedBook.language;
+            PageNum.Text = selectedBook.pageNum.ToString();
+            Date.Text = selectedBook.date.ToString();
+            Description.Text = selectedBook.description;
+            BookImage.Source = new BitmapImage(new Uri(selectedBook.ImagePath, UriKind.RelativeOrAbsolute));
         }
     }
-    
 }

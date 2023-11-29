@@ -28,14 +28,14 @@
             <Image Source="Images/image 2.png"
                    Margin="20 0 10 0" 
                    />
-            <Button 
+            <Button Click="Home_Click"
                 Foreground="Black"
                 Background="White"
                 BorderBrush="White"
                 FontSize="13"
                 Width="100px"
                 Margin="20 5 5 5">Home</Button>
-            <Button 
+            <Button Click="Catalogue_Click"
                 Foreground="Black"
                 Background="white"
                     BorderBrush="White"
@@ -84,40 +84,54 @@
                            Height="5"/>
                 <StackPanel Margin="50 20 50 0"
                             Orientation="Horizontal">
-                    <Image Source="Images/book7.png"  
-                   Width="200"/>
+                    <Image x:Name="BookImage" 
+                           Width="200"/>
                     <StackPanel Margin="20 0 0 0">
 
-                        <TextBlock FontWeight="Bold"
+                        <TextBlock x:Name="BookName"
+                                   Text="Book Name"
+                                   FontWeight="Bold"
                                    FontSize="20"
-                                   Margin="10 10 0 0">Harry Potter And the Sorcerer’s Stone</TextBlock>
-                        <TextBlock Margin="10">By J.K. Rowling</TextBlock>
+                                   Margin="10 10 0 0"/>
+                        <TextBlock x:Name="Author"
+                                   Text="Book Name"
+                                   Margin="10"/>
                         <Rectangle Height="2"
                                    Margin="10"
                                    Fill=" Black"/>
-                        <StackPanel Orientation="Horizontal" Margin="10">
+                        <StackPanel Orientation="Horizontal" 
+                                    Margin="10">
                             <TextBlock FontWeight="Bold">Book Details:</TextBlock>
-                            <TextBlock>2 Books Available</TextBlock>
+                            <TextBlock x:Name="Availability"
+                                       Text="Availability"
+                                       Margin="10 0 0 0"/>
+                            <TextBlock Margin="5 0 0 0">Books Available</TextBlock>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="10">
+                        <StackPanel Orientation="Horizontal" 
+                                    Margin="10">
                             <TextBlock FontWeight="Bold">Genre:</TextBlock>
-                            <TextBlock>Fantasy Literature</TextBlock>
+                            <TextBlock x:Name="Genre"
+                                       Text="Genre"
+                                       Margin="10 0 0 0"/>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="10">
+                        <StackPanel Orientation="Horizontal" 
+                                    Margin="10">
                             <TextBlock FontWeight="Bold">Language:</TextBlock>
-                            <TextBlock>English</TextBlock>
+                            <TextBlock x:Name="Language"
+                                       Text="Language"
+                                       Margin="10 0 0 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="10">
                             <TextBlock FontWeight="Bold">Book Length:</TextBlock>
-                            <TextBlock>352 Pages</TextBlock>
+                            <TextBlock x:Name="PageNum"
+                                       Text="PageNum"
+                                       Margin="10 0 0 0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="10">
                             <TextBlock FontWeight="Bold">Publication Date:</TextBlock>
-                            <TextBlock>16 Oct 2014</TextBlock>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="10">
-                            <TextBlock FontWeight="Bold">Publisher:</TextBlock>
-                            <TextBlock>Bloomsbury Publishing PLC</TextBlock>
+                            <TextBlock x:Name="Date"
+                                       Text="Date"
+                                       Margin="10 0 0 0"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -162,29 +176,20 @@
                            Margin="0 20 0 0"
                            TextAlignment="Center">Description</TextBlock>
                         <TextBlock Foreground="White"
-                           Width="500"
-                           Height="200"
-                           FontSize="15"
-                           Margin="0 20 0 0"
-                           TextWrapping="Wrap"
-                           TextAlignment="Center">Harry Potter has never even heard of Hogwarts when the letters start dropping on 
-    the doormat at number four, Privet Drive. Addressed in green ink on yellowish 
-    parchment with a purple seal, they are swiftly confiscated by his grisly aunt and 
-    uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called 
-    Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, 
-    and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible 
-    adventure is about to begin!
-
-    These new editions of the classic and internationally bestselling, multi-award-winning 
-    series feature instantly pick-up-able new jackets by Jonny Duddle, with huge child 
-    appeal, to bring Harry Potter to the next generation of readers. It's time to PASS THE 
-    MAGIC ON ...</TextBlock>
+                                   Width="500"
+                                   Height="200"
+                                   FontSize="15"
+                                   Margin="0 20 0 0"
+                                   TextWrapping="Wrap"
+                                   TextAlignment="Center"
+                                   x:Name="Description"
+                                   Text="Description"/>
                     </StackPanel>
                 </Grid>
                 <TextBlock Margin="0 20 0 0"
                            FontSize="15"
                            FontWeight="Bold"
-                           TextAlignment="Center">SUGGESTED BOOKS BASED ON ‘HARRY POTTER AND THE SORCERER’S STONE</TextBlock>
+                           TextAlignment="Center">SUGGESTED BOOKS</TextBlock>
                 <Rectangle Fill="Black"
                            Height="2"
                            Margin="50 20 50 20"/>

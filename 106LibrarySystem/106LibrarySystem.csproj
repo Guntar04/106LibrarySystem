@@ -75,7 +75,7 @@
     <Compile Include="AdminUserList.xaml.cs">
       <DependentUpon>AdminUserList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="book.cs" />
+    <Compile Include="Book.cs" />
     <Compile Include="BookEditWindow.xaml.cs">
       <DependentUpon>BookEditWindow.xaml</DependentUpon>
     </Compile>
@@ -210,6 +210,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Images\book17.png" />
     <Content Include="LibraryDatabase.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
