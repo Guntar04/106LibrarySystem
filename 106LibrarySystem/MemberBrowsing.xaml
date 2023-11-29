@@ -20,17 +20,45 @@
         </ControlTemplate>
 
         <ControlTemplate x:Key="HoverBookTemplate" TargetType="Button">
-            <Border Background="Transparent" BorderThickness="1">
+            <Border Background="Transparent" BorderThickness="0">
                 <Border.Effect>
-                    <DropShadowEffect ShadowDepth="1"/>
-                    <!-- Set ShadowDepth to 0 when not hovered -->
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="0" Opacity="0"/>
                 </Border.Effect>
                 <Grid>
-                    <Button Content="Remove Book" FontWeight="Bold" FontSize="15" Foreground="Red" Click="RemoveBook_Click" DataContext="{Binding}" Grid.Column="1" Margin="0,5,5,5" Visibility="{Binding DataContext.IsRemoveButtonVisible, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <StackPanel>
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding DataContext.IsRemoveButtonVisible, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <Border Background="White" CornerRadius="5" BorderThickness="1" BorderBrush="Gray">
+                            <StackPanel>
+                                <Image Source="{Binding ImagePath}" Width="100" Height="150" Margin="0 0 0 10"/>
+                                <TextBlock Text="{Binding name}" FontWeight="Bold" FontSize="14" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding author}" FontSize="12" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding DisplayAvailability}" Foreground="{Binding AvailabilityColor}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <Button Content="Remove Book" FontWeight="Bold" FontSize="15" Foreground="Red" Click="RemoveBook_Click" DataContext="{Binding}" Grid.Column="1" Margin="0,5,5,5">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding DataContext.IsRemoveButtonVisible, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
                 </Grid>
             </Border>
         </ControlTemplate>
-
 
 
         <Style x:Key="BookButtonStyle" TargetType="Button">
