@@ -149,41 +149,52 @@ namespace _106LibrarySystem
             string emailAddress = ItemBox4.Text;
             string phoneNumber = ItemBox5.Text;
             string password = ItemBox6.Text;
+            DateTime joinDate = DateTime.Today;
+            string formattedJoinDate = joinDate.ToString("dd/MM/yyyy");
+            int booksLoaned = 0;
+            int overDueBooks = 0;
             string databaseFileName = "LibraryDatabase.db";
             string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
 
-            // Check if any of the required textboxes are empty
-            if(string.IsNullOrEmpty(username) || username == "Username" ||
-               string.IsNullOrEmpty(firstName) || firstName == "First Name" ||
-               string.IsNullOrEmpty(lastName) || lastName == "Last Name" ||
-               string.IsNullOrEmpty(emailAddress) || emailAddress == "Email Address" ||
-               string.IsNullOrEmpty(phoneNumber) || phoneNumber == "Phone Number" ||
-               string.IsNullOrEmpty(password) || password == "Password")
+            if (string.IsNullOrEmpty(username) || username == "Username" ||
+                string.IsNullOrEmpty(firstName) || firstName == "First Name" ||
+                string.IsNullOrEmpty(lastName) || lastName == "Last Name" ||
+                string.IsNullOrEmpty(emailAddress) || emailAddress == "Email Address" ||
+                string.IsNullOrEmpty(phoneNumber) || phoneNumber == "Phone Number" ||
+                string.IsNullOrEmpty(password) || password == "Password")
             {
                 MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return; // Exit the method without appending the data
+                return;
             }
 
             using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
+
+                int nextID = connection.ExecuteScalar<int>("SELECT COALESCE(MAX(ID), 0) + 1 FROM users");
+
                 connection.Execute(
-                    "INSERT INTO users (userName, firstName, lastName, emailAddress, phoneNumber, password, role) " +
-                    "VALUES (@UserName, @FirstName, @LastName, @EmailAddress, @PhoneNumber, @Password, @Role)",
+                    "INSERT INTO users (ID, userName, firstName, lastName, emailAddress, phoneNumber, password, role, joinDate) " +
+                    "VALUES (@ID, @UserName, @FirstName, @LastName, @EmailAddress, @PhoneNumber, @Password, @Role, @JoinDate)",
                     new
                     {
+                        ID = nextID,
                         UserName = username,
                         FirstName = firstName,
                         LastName = lastName,
                         EmailAddress = emailAddress,
                         PhoneNumber = phoneNumber,
                         Password = password,
-                        Role = "Member"
+                        Role = "Member",
+                        JoinDate = formattedJoinDate,
+                        BooksLoaned = booksLoaned,
+                        OverDueBooks = overDueBooks
                     });
 
                 MessageBox.Show("Sign Up Successful!");
                 SignInContent.Content = loginPage;
             }
         }
+
     }
 }

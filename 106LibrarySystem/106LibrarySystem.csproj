@@ -92,6 +92,7 @@
     <Compile Include="AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseHelper.cs" />
     <Compile Include="EditCatalogueWindow.xaml.cs">
       <DependentUpon>EditCatalogueWindow.xaml</DependentUpon>
     </Compile>

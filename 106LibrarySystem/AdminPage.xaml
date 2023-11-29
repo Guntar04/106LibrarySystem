@@ -18,6 +18,7 @@
             <RowDefinition Height="200"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Rectangle  Fill="white" 
                     Grid.ColumnSpan="3"
@@ -125,9 +126,9 @@
                            FontSize="13" 
                            FontWeight="Bold" 
                            Text="Joined:"/>
-                <TextBlock Foreground="White" 
+                <!--<TextBlock Foreground="White" 
                            FontSize="13" 
-                           Text="{x:Static local:User.JoinDate}"/>
+                           Text="adwadi"/>-->
             </StackPanel>
             <StackPanel 
                     Orientation="Horizontal"
@@ -136,9 +137,9 @@
                            FontSize="13" 
                            FontWeight="Bold" 
                            Text="Username:"/>
-                <TextBlock Foreground="White" 
+                <!--<TextBlock Foreground="White" 
                            FontSize="13" 
-                           Text="{x:Static local:User.UserName}"/>
+                           Text="adwadi"/>-->
             </StackPanel>
             <StackPanel 
                     Orientation="Horizontal"
@@ -147,9 +148,9 @@
                            FontSize="13" 
                            FontWeight="Bold"
                            Text="Email:"/>
-                <TextBlock Foreground="White"
+                <!--<TextBlock Foreground="White" 
                            FontSize="13" 
-                           Text="{x:Static local:User.Email}"/>
+                           Text="adwadi"/>-->
             </StackPanel>
             <StackPanel 
                     Orientation="Horizontal"
@@ -158,9 +159,9 @@
                            FontSize="13" 
                            FontWeight="Bold"
                            Text="ID:"/>
-                <TextBlock Foreground="White" 
+                <!--<TextBlock Foreground="White" 
                            FontSize="13" 
-                           Text="{x:Static local:User.ID}"/>
+                           Text="adwadi"/>-->
             </StackPanel>
             <StackPanel HorizontalAlignment="Right">
                 <TextBlock Foreground="White" FontSize="12" Margin="0 -3 10 0 "><Run Text=" Member ID: 204167"/></TextBlock>
@@ -218,7 +219,7 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top">
-            <DataGrid x:Name="userGrid" AutoGenerateColumns="False" Height="296">
+            <DataGrid x:Name="userGrid" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
                     <DataGridTextColumn Header="Username" Binding="{Binding userName}" />
@@ -232,11 +233,164 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+        <StackPanel Grid.Row="4"
+                    Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Click="Add_User"
+                    Margin="0 7 10 7">Add User</Button>
+            <Button Click="Edit_User"
+                    Margin="10 7 0 7">Edit User</Button>
+        </StackPanel>
+        <Popup x:Name="AddUserPopup" IsOpen="False" StaysOpen="False" Placement="Center">
+            <Border BorderBrush="Black" BorderThickness="2" Background="White" Width="300" Height="400">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Add User" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 10"/>
+
+                    <TextBox x:Name="UserName" 
+                             Margin="0 10 0 10"
+                             Width="160" 
+                             Foreground="Gray"
+                             Text="Username"
+                             GotFocus="ItemBox_GotFocus"
+                             LostFocus="ItemBox_LostFocus"/>
+                    <TextBox x:Name="FirstName" 
+                             Margin="0 10 0 10"
+                             Width="160" 
+                             Foreground="Gray"
+                             Text="First Name"
+                             GotFocus="ItemBox_GotFocus2"
+                             LostFocus="ItemBox_LostFocus2"/>
+                    <TextBox x:Name="LastName" 
+                             Margin="0 10 0 10"
+                             Width="160" 
+                             Foreground="Gray"
+                             Text="Last Name"
+                             GotFocus="ItemBox_GotFocus3"
+                             LostFocus="ItemBox_LostFocus3"/>
+                    <TextBox x:Name="EmailAddress" 
+                             Margin="0 10 0 10"
+                             Width="160" 
+                             Foreground="Gray"
+                             Text="Email Address"
+                             GotFocus="ItemBox_GotFocus4"
+                             LostFocus="ItemBox_LostFocus4"/>
+                    <TextBox x:Name="PhoneNumber" 
+                             Margin="0 10 0 10"
+                             Width="160" 
+                             Foreground="Gray"
+                             Text="Phonenumber"
+                             GotFocus="ItemBox_GotFocus5"
+                             LostFocus="ItemBox_LostFocus5"/>
+                    <TextBox x:Name="Password" 
+                             Margin="0 10 0 10"
+                             Width="160" 
+                             Foreground="Gray"
+                             Text="Password"
+                             GotFocus="ItemBox_GotFocus6"
+                             LostFocus="ItemBox_LostFocus6"/>
+                    <TextBox x:Name="Role" 
+                             Margin="0 10 0 10"
+                             Width="160" 
+                             Foreground="Gray"
+                             Text="User's Role"
+                             GotFocus="ItemBox_GotFocus7"
+                             LostFocus="ItemBox_LostFocus7"/>
+                    <Button Content="Save"  
+                            Click="SaveUser_Click" 
+                            HorizontalAlignment="Center" 
+                            Margin="0 10 0 0"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+        <Popup x:Name="EditUserIDPopup" 
+               IsOpen="False" 
+               StaysOpen="False" 
+               Placement="Center">
+            <Border BorderBrush="Black" 
+                    BorderThickness="2" 
+                    Background="White" 
+                    Width="300" 
+                    Height="400">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Edit User" 
+                               FontWeight="Bold" 
+                               HorizontalAlignment="Center" 
+                               Margin="0 0 0 10"/>
+                    <TextBox x:Name="UserIDTextBox"
+                             Width="160"
+                             Margin="0 10 0 10"
+                             Foreground="Gray"
+                             Text="User ID"/>
+
+                    <Button Content="OK" Click="EditUserIDOK_Click" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+        <Popup x:Name="EditUserPopup" 
+               IsOpen="False" 
+               StaysOpen="False" 
+               Placement="Center">
+            <Border BorderBrush="Black" 
+                    BorderThickness="2" 
+                    Background="White" 
+                    Width="300" 
+                    Height="400">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Edit User" 
+                               FontWeight="Bold" 
+                               HorizontalAlignment="Center" 
+                               Margin="0 0 0 10"/>
+
+                    <TextBox x:Name="UserName1" 
+                             Margin="0 10 0 10" 
+                             Width="160" 
+                             Foreground="Gray" 
+                             Text="Username"/>
+                    <TextBox x:Name="FirstName1" 
+                             Margin="0 10 0 10" 
+                             Width="160" 
+                             Foreground="Gray" 
+                             Text="First Name"/>
+                    <TextBox x:Name="LastName1" 
+                             Margin="0 10 0 10" 
+                             Width="160" 
+                             Foreground="Gray" 
+                             Text="Last Name"/>
+                    <TextBox x:Name="EmailAddress1" 
+                             Margin="0 10 0 10" 
+                             Width="160" 
+                             Foreground="Gray" 
+                             Text="Last Name"/>
+                    <TextBox x:Name="PhoneNumber1" 
+                             Margin="0 10 0 10" 
+                             Width="160" 
+                             Foreground="Gray"
+                             Text="Last Name"/>
+                    <TextBox x:Name="Password1" 
+                             Margin="0 10 0 10" 
+                             Width="160" 
+                             Foreground="Gray" 
+                             Text="Last Name"/>
+                    <TextBox x:Name="Role1" 
+                             Margin="0 10 0 10" 
+                             Width="160" 
+                             Foreground="Gray" 
+                             Text="Last Name"/>
+                    <Button Content="Save" 
+                            Click="UpdateUser_Click" 
+                            HorizontalAlignment="Center" 
+                            Margin="0 10 0 0"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+
         <ContentControl Name="AdminDetails"
                         Grid.ColumnSpan="3"
                         Grid.Row="3"/>
         <ContentControl Name="AdminContent" 
                         Grid.ColumnSpan="3"
-                        Grid.RowSpan="4"/>
+                        Grid.RowSpan="5"/>
     </Grid>
 </UserControl>

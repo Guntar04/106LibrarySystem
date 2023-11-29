@@ -50,15 +50,6 @@
                 FontSize="13"
                 Width="100px"
                 Margin="0 5 0 5">Catalogue</Button>
-
-            <Button 
-                Foreground="Black"
-                Background="white"
-                    BorderBrush="White"
-                FontSize="13"
-                Width="100px"
-                Margin="0 5 0 5">Blogs</Button>
-
             <Button 
                 Foreground="Black"
                 Background="white"
@@ -125,21 +116,24 @@
 
         <Grid Grid.Column="1"
               Grid.Row="1">
-            <Rectangle  Fill="#FF011936" 
-                        Height="20" 
-                        Width="70" 
-                        VerticalAlignment="Top"
-                        Margin="400,30,0,0"/>
-            <TextBlock Width="50" Height="10" Margin="406 0 0 146" FontSize="9" Foreground="white" >Edit Details</TextBlock>
+            <Button 
+                    Background="#FF011936"
+                    Height="20" 
+                    Width="70" 
+                    Margin="400,30,0,0"
+                    Foreground="White"
+                    FontSize="9"
+                    VerticalAlignment="Top">Edit Details</Button>
 
-            <Button  
-                Background="#FF011936" 
-                        Height="20" 
-                        Width="70" 
-                        Margin="400,55,0,0"
-                        VerticalAlignment="Top"/>
+            <Button Click="Log_Out" 
+                    Background="#FF011936"
+                    Height="20" 
+                    Width="70" 
+                    Margin="400,55,0,0"
+                    Foreground="White"
+                    FontSize="9"
+                        VerticalAlignment="Top">Log Out</Button>
 
-            <TextBlock Width="50" Height="20" Margin="406 0 0 87" FontSize="9" Foreground="white" >Log out</TextBlock>
         </Grid>
         <Rectangle  Fill="#FF011936" Height="360" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,191,0,0" Grid.RowSpan="2"/>
         <Grid Grid.Column="1"
@@ -167,7 +161,7 @@
 
         </StackPanel>
         <ContentControl Name="MemberContent" 
-                        Grid.ColumnSpan="1"
-                        Grid.RowSpan="1" Margin="10,-37,-10,37"></ContentControl>
+                        Grid.ColumnSpan="3"
+                        Grid.RowSpan="3" />
     </Grid>
 </UserControl>

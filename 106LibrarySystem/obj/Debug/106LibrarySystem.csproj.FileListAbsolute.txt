@@ -195,3 +195,5 @@ C:\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.g.cs
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.baml
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\BookEditWindow.g.cs
 C:\106LibrarySystem\106LibrarySystem\obj\Debug\BookEditWindow.baml
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.g.cs
+D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.baml

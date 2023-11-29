@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace _106LibrarySystem
 {
-    internal class User
+    public class User
     {
-        public static string UserName { get; private set; }
-        public static string Email { get; private set; }
-        public static string ID { get; private set; }
-        public static string JoinDate { get; private set; }
-
-        public static void SetCurrentUser(string userName, string email, string iD, string joinDate)
-        {
-            UserName = userName;
-            Email = email;
-            ID = iD;
-            JoinDate = joinDate;
-        }
+        public int ID { get; set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailAddress { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
     }
 }

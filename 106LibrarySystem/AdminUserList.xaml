@@ -18,7 +18,7 @@
             Orientation="Horizontal"
             HorizontalAlignment="Center"
             VerticalAlignment="Top">
-            <DataGrid x:Name="userGrid" AutoGenerateColumns="False" Height="296">
+            <DataGrid x:Name="userGrid" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
                     <DataGridTextColumn Header="Username" Binding="{Binding userName}" />
