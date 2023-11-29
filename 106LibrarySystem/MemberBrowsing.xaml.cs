@@ -82,5 +82,14 @@ namespace LibraryDatabase
 
         }
 
+        private void ToggleRemoveButtons_Click(object sender, RoutedEventArgs e)
+        {
+            BookViewModel bookViewModel = (BookViewModel)DataContext;
+
+            // Toggle the visibility of "Remove Book" buttons
+            bookViewModel.IsRemoveButtonVisible = !bookViewModel.IsRemoveButtonVisible;
+        }
+
+
     }
 }

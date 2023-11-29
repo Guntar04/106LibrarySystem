@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\
+C:\106LibrarySystem\106LibrarySystem\obj\Debug\
 _106LibrarySystem
 none
 false
@@ -14,6 +14,8 @@ D:\Files\GitHub\106LibrarySystem\106LibrarySystem\App.xaml
 1727723544
 25-394656114
 15-996582413
+25-395734226
+15170076409
 AddBookWindow.xaml;AdminBookDetail.xaml;AdminBooksDueWindow.xaml;AdminBrowsing.xaml;AdminHome.xaml;AdminLoanedBooksWindow.xaml;AdminPage.xaml;AdminUserList.xaml;BookEditWindow.xaml;EditCatalogueWindow.xaml;HomeScreen.xaml;LoginPage.xaml;MainWindow.xaml;MemberBookDetail.xaml;MemberBrowsing.xaml;MemberPage.xaml;SignUp.xaml;
 
 False

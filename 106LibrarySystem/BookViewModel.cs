@@ -14,7 +14,7 @@ namespace LibraryDatabase
 {
     public class BookViewModel : INotifyPropertyChanged
     {
-
+        private bool _isRemoveButtonVisible = false;
 
         private ObservableCollection<Book> _books = new ObservableCollection<Book>();
 
@@ -31,6 +31,18 @@ namespace LibraryDatabase
             }
         }
 
+        public bool IsRemoveButtonVisible
+        {
+            get { return _isRemoveButtonVisible; }
+            set
+            {
+                if (_isRemoveButtonVisible != value)
+                {
+                    _isRemoveButtonVisible = value;
+                    OnPropertyChanged(nameof(IsRemoveButtonVisible));
+                }
+            }
+        }
 
         public BookViewModel()
         {
@@ -131,6 +143,9 @@ namespace LibraryDatabase
 
         public void RemoveBook(Book book)
         {
+
+            IsRemoveButtonVisible = true;
+
             if (book == null)
             {
                 // Handle the case where 'book' is null (optional)
@@ -158,6 +173,8 @@ namespace LibraryDatabase
 
             // Remove the book from the collection
             Books.Remove(book);
+
+           
         }
 
         public void UpdateBooks()
