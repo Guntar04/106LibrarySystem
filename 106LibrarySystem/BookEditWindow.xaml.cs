@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,9 +70,11 @@ namespace LibraryDatabase
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             // Update the book information from the textboxes
-             UpdateBookInformation();
+            UpdateBookInformation();
 
             UpdateBindings();
+
+            BookViewModel.UpdateBooks();
 
             // Close the window or perform other actions
             Close();
@@ -102,7 +105,8 @@ namespace LibraryDatabase
             var existingBook = BookViewModel.Books.FirstOrDefault(b => b.Id == BookViewModel.CurrentBook.Id);
             if (existingBook != null)
             {
-               
+
+
                 existingBook.name = BookViewModel.CurrentBook.name;
                 existingBook.author = BookViewModel.CurrentBook.author;
                 existingBook.genre = BookViewModel.CurrentBook.genre;
@@ -112,7 +116,6 @@ namespace LibraryDatabase
                 existingBook.date = BookViewModel.CurrentBook.date;
                 existingBook.ImagePath = BookViewModel.CurrentBook.ImagePath;
 
-                
                 // Notify the UI about the changes (if needed)
             }
         }
