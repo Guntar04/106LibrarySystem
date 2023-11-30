@@ -37,6 +37,7 @@ namespace _106LibrarySystem
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MemberPage memberPage = new MemberPage();
+            memberPage.SetCurrentUser(currentUser);
             HomeContent.Content = memberPage;
         }
 
@@ -86,6 +87,11 @@ namespace _106LibrarySystem
         {
             MemberBrowsing memberBrowsing = new MemberBrowsing();
             HomeContent.Content = memberBrowsing;
+        }
+        public User currentUser;
+        public void SetCurrentUser(User user)
+        {
+            currentUser = user;
         }
     }
 }

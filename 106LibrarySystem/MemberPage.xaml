@@ -15,7 +15,8 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="223"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Rectangle  Fill="white" 
@@ -70,47 +71,70 @@
         <Rectangle  Fill="#FF00487C" Height="126" Width="500" Margin="0,13,0,0"  VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"/>
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
             <Image Source="/Images/member_profile.png" 
-                       Height="89" Width="89" Margin="15,0,0,80"/>
+                       Height="89" Width="89" Margin="15,0,0,0"/>
         </StackPanel>
         <StackPanel Grid.Column="1"
             Grid.Row="1"
                     Orientation="Horizontal" HorizontalAlignment="Center">
 
-            <TextBlock Foreground="White" Height="30" FontSize="16" Margin="40,-15,0,140"><Run Text="Arthur Werner"/></TextBlock>
+            <TextBlock x:Name="tbFirstname"
+                       Text="FirstName"
+                       Foreground="White" 
+                       Height="30" FontSize="16" 
+                       Margin="40,-15,0,50"/>
             <TextBlock Foreground="White" Height="30" Margin="7,-9,0,140" FontSize="13" FontStyle="Italic"><Run Text="- Member"/></TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1"
                     Grid.Row="1"
                     Orientation="Vertical"
                     VerticalAlignment="Top"
-                    Margin="130,50,0,0"
+                    Margin="130,60,0,0"
                     Height="79">
             <StackPanel 
                     Orientation="Horizontal"
                     HorizontalAlignment="Left">
-                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold"><Run Text="Joined:"/></TextBlock>
-                <TextBlock Foreground="White" FontSize="13"><Run Text=" 17/03/2020"/></TextBlock>
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           FontWeight="Bold"
+                           Text="Joined:"/>
+                <TextBlock x:Name="tbJoinDate"
+                           Text="JoinDate"
+                           Foreground="White" 
+                           FontSize="13"/>
             </StackPanel>
-            <StackPanel 
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left">
-                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold"><Run Text="DOB:"/></TextBlock>
-                <TextBlock Foreground="White" FontSize="13" ><Run Text=" 24/05/2003"/></TextBlock>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left">
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           FontWeight="Bold"
+                           Text="PhoneNumber:"/>
+                <TextBlock x:Name="tbPhoneNumber"
+                           Text="PhoneNumber"
+                           Foreground="White" 
+                           FontSize="13"/>
             </StackPanel>
-            <StackPanel 
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left">
-                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" ><Run Text="Email:"/></TextBlock>
-                <TextBlock Foreground="White" FontSize="13" ><Run Text=" arthur.h.werner@gmail.com"/></TextBlock>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left">
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           FontWeight="Bold" 
+                           Text="Email:"/>
+                <TextBlock x:Name="tbEmailAddress"
+                           Text="Email"
+                           Foreground="White" 
+                           FontSize="13" />
             </StackPanel>
-            <StackPanel 
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left">
-                <TextBlock Foreground="White" FontSize="13" FontWeight="Bold" ><Run Text="Gender:"/></TextBlock>
-                <TextBlock Foreground="White" FontSize="13" ><Run Text=" Male"/></TextBlock>
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Right">
-                <TextBlock Foreground="White" FontSize="12" Margin="0 -3 10 0 "><Run Text=" Member ID: 204167"/></TextBlock>
+            <StackPanel HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                <TextBlock Foreground="White" 
+                           FontSize="12" 
+                           Margin="0 0 5 0 "
+                           Text=" Member ID:"/>
+                <TextBlock x:Name="tbID"
+                           Text="ID"
+                           Foreground="White" 
+                           FontSize="12"
+                           Margin="0 0 10 0"/>
             </StackPanel>
         </StackPanel>
 
@@ -135,33 +159,50 @@
                         VerticalAlignment="Top">Log Out</Button>
 
         </Grid>
-        <Rectangle  Fill="#FF011936" Height="360" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,191,0,0" Grid.RowSpan="2"/>
-        <Grid Grid.Column="1"
-              Grid.Row="2">
-            <TextBlock FontSize="12" FontWeight="Bold" Margin="150,-55,-13,210">Books Due</TextBlock>
-            <TextBlock FontSize="12" Margin="231,-55,-93,210">Watch List</TextBlock>
-            <TextBlock FontSize="12" Margin="306,-55,-170,210">History</TextBlock>
-           
-            <Rectangle Fill="black" Height="18" Width="0.8" Margin="218,-206,281,213"></Rectangle>
-            <Rectangle Fill="black" Height="18" Width="0.8" Margin="296,-206,203,213"></Rectangle>
-            <Rectangle Fill="black" Height="3" Width="75" Margin="144,-187,281,211"></Rectangle>
-            <Rectangle Fill="LightGray" Height="3" Width="78" Margin="218.8,-187,203,211"></Rectangle>
-            <Rectangle Fill="LightGray" Height="3" Width="53" Margin="296.7,-187,150,191"></Rectangle>
-        </Grid>
-        <StackPanel Grid.ColumnSpan="3"
+        <Rectangle  Fill="#FF011936" 
+                    Height="360" 
+                    VerticalAlignment="Top" 
+                    Grid.Row="3" 
+                    Grid.ColumnSpan="3"/>
+        <StackPanel Grid.Column="1"
                     Grid.Row="2"
                     Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top">
-            <Image Source="/Images/book1.png" Width="120" Height="205" Margin="15"/>
-            <Image Source="/Images/book2.png" Width="120" Height="190" Margin="15"/>
-            <Image Source="/Images/book3.png" Width="120" Margin="15"/>
-            <Image Source="/Images/book4.png" Width="120" Margin="15" Height="195"/>
-            <Image Source="/Images/book5.png" Width="130" Margin="15" Height="186"/>
+                    HorizontalAlignment="Center">
+            <TextBlock FontSize="12"
+                       Height="15">Books Due</TextBlock>
 
+            <Rectangle Fill="black" 
+                       Height="18" 
+                       Width="0.8"
+                       Margin="10 0 10 0"/>
+            <TextBlock FontSize="12"
+                       Height="15">Watch List</TextBlock>
+            <Rectangle Fill="black" 
+                       Height="18" 
+                       Width="0.8"
+                       Margin="10 0 10 0"/>
+            <TextBlock FontSize="12"
+                       Height="15">History</TextBlock>
+
+            
         </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Grid.Row="3"
+                    Orientation="Vertical">
+            <TextBlock Text="Your Books" 
+                       Foreground="White" 
+                       FontSize="20" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Top" 
+                       Margin="0,10,0,20"/>   
+            <StackPanel x:Name="BookStackPanel"
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Center"/>
+        </StackPanel>
+        
+
         <ContentControl Name="MemberContent" 
                         Grid.ColumnSpan="3"
-                        Grid.RowSpan="3" />
+                        Grid.RowSpan="4" />
     </Grid>
 </UserControl>
