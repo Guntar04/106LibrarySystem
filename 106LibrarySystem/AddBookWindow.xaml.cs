@@ -95,12 +95,6 @@ namespace LibraryDatabase
             Close();
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Handle cancel logic here
-            Close(); // Close the window
-        }
-
         private void ItemBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;

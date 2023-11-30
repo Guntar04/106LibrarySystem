@@ -5,33 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryDatabase"
         mc:Ignorable="d"
-        Title="BookEditWindow" Height="450" Width="800">
+        Title="BookEditWindow" Height="450" Width="622">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="50 20 50 0" Orientation="Horizontal">
-            <Image x:Name="bookImage" Source="{Binding ImagePath}" Width="200"/>
-            <Button Content="Change Image" Click="ChangeImageButton_Click" Margin="10"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5">
+            <Image Source="Images/image 2.png" Margin="20,0,10,0" Width="60"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="85 15 0 0">
+                <TextBlock Text="UPDATE BOOK DETAILS" FontSize="24" FontWeight="Bold" Foreground="Black"/>
+            </StackPanel>
         </StackPanel>
+
+        <Rectangle  Fill="#FF011936" Height="10" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Rectangle  Fill="#FF00487C" Height="10" Margin="0,10,0,0" VerticalAlignment="Top"  Grid.Row="1" Grid.ColumnSpan="2"/>
+
+        <StackPanel Grid.Row="2" Margin="50 20 50 0" Orientation="Vertical" VerticalAlignment="Bottom">
+            <Image x:Name="bookImage" Source="{Binding ImagePath}" Width="150"/>
+
+            <Button Content="Upload Image" Click="ChangeImageButton_Click" FontStyle="Italic" Background="#A3B6CC" BorderBrush="transparent" Height="25" Width="100" Margin="5 30 0 20">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" BlurRadius="5" Opacity="0.8" Color="Black"/>
+                </Button.Effect>
+            </Button>
+        </StackPanel>
+
 
         <!-- Right column containing book details -->
-        <StackPanel Grid.Column="1" Margin="20 0 50 0">
-            <TextBox x:Name="NameTextBox" FontWeight="Bold" FontSize="20" Margin="10 10 0 0" Text="{Binding name, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
-            <TextBox x:Name="AuthorTextBox" FontWeight="Bold" FontSize="20" Margin="10 10 0 0" Text="{Binding author, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
-            <TextBox x:Name="AvailabilityTextBox" FontWeight="Bold" FontSize="20" Margin="10 10 0 0" Text="{Binding availability, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
-            <TextBox Margin="10" Text="{Binding language}" IsReadOnly="False"/>
-            <TextBox Margin="10" Text="{Binding pageNum}" IsReadOnly="False"/>
-            <TextBox Margin="10" Text="{Binding date}" IsReadOnly="False"/>
-            <Rectangle Height="2" Margin="10" Fill="Black"/>
+        <StackPanel Grid.Column="1" Grid.Row="2" Margin="0 40 0 0">
+            <TextBox x:Name="NameTextBox" FontSize="15" Width="250" Margin="10 10 0 0" 
+         Text="{Binding name, UpdateSourceTrigger=Explicit}" 
+         IsReadOnly="False"
+         VerticalAlignment="Top"
+         VerticalContentAlignment="Top"
+         TextWrapping="Wrap"/>
+            <TextBox x:Name="AuthorTextBox"  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding author, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
+            <TextBox x:Name="AvailabilityTextBox"  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding availability, UpdateSourceTrigger=Explicit}" IsReadOnly="False"/>
+            <TextBox  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding language}" IsReadOnly="False"/>
+            <TextBox  FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding pageNum}" IsReadOnly="False"/>
+            <TextBox   FontSize="15" Width="250" Margin="10 10 0 0" Text="{Binding date}" IsReadOnly="False"/>
 
-            <!-- Other details... Add more TextBox elements as needed -->
-
-            <!-- Save Button -->
-            <Button Content="Save" Click="SaveButton_Click" Margin="10"/>
         </StackPanel>
 
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Bottom" Margin="230 0 0 12">
+            <Button Content="Save" Click="SaveButton_Click" FontStyle="Italic" Background="#A3B6CC" FontSize="14" BorderBrush="transparent" Height="25" Width="80" Margin="10">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" BlurRadius="5" Opacity="0.8" Color="Black"/>
+                </Button.Effect>
+            </Button>
+        </StackPanel>
+        <Rectangle  Fill="#FF011936" Height="10" VerticalAlignment="Bottom"  Grid.Row="2" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

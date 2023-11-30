@@ -292,8 +292,6 @@
                 <Button Content="Add Book" Click="AddBookButton_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-110 0 0 210"/>
                 <Button Content="Edit Catalogue" Click="EditCatalogueButton_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-110 0 0 20"/>
                 <Button Content="Toggle Remove Book Buttons" Click="ToggleRemoveButtons_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-110 0 0 30"/>
-
-
             </StackPanel>
         </ScrollViewer>
         <ContentControl Name="MemberBrowse" 
