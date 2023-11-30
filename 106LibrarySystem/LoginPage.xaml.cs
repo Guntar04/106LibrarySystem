@@ -15,12 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Dapper;
 
 namespace _106LibrarySystem
 {
-    /// <summary>
-    /// Interaction logic for LoginPage.xaml
-    /// </summary>
     public partial class LoginPage : UserControl
     {
         HomeScreen memberHomePage = new HomeScreen();
@@ -104,7 +102,28 @@ namespace _106LibrarySystem
                             else if (role == "Member")
                             {
                                 MessageBox.Show("You are logged in as a Member.");
-                                MainContent.Content = memberHomePage;
+
+                                string userDetailsQuery = "SELECT * FROM users WHERE userName = @userName";
+                                using (SQLiteCommand userDetailsCommand = new SQLiteCommand(userDetailsQuery, (SQLiteConnection)connection))
+                                {
+                                    userDetailsCommand.Parameters.AddWithValue("@userName", username);
+                                    using (SQLiteDataReader reader = userDetailsCommand.ExecuteReader())
+                                    {
+                                        if (reader.Read())
+                                        {
+                                            User loggedInUser = new User
+                                            {
+                                                ID = Convert.ToInt32(reader["ID"]),
+                                                FirstName = reader["firstName"].ToString(),
+                                                JoinDate = reader["joinDate"].ToString(),
+                                                PhoneNumber = reader["phoneNumber"].ToString(),
+                                                EmailAddress = reader["emailAddress"].ToString()
+                                            };
+                                            memberHomePage.SetCurrentUser(loggedInUser);
+                                            MainContent.Content = memberHomePage;
+                                        }
+                                    }
+                                }
                             }
                             else
                             {
@@ -119,6 +138,7 @@ namespace _106LibrarySystem
                 }
             }
         }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MainContent.Content = signUp;
