@@ -133,6 +133,27 @@
                                        Text="Date"
                                        Margin="10 0 0 0"/>
                         </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="Borrow"
+                                    Click="Borrow_Click"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    Foreground="Green"
+                                    FontWeight="Bold"
+                                    FontSize="15"
+                                    Margin="10 0 0 0">Borrow Book</Button>
+                            <Button x:Name="Pre_Book"
+                                    Click="Pre_Book_Click"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    Foreground="DarkOrange"
+                                    FontWeight="Bold"
+                                    FontSize="15"
+                                    Margin="10 0 0 0">Pre-Book</Button>
+                            
+                        </StackPanel>
+                        
+
                     </StackPanel>
                 </StackPanel>
 

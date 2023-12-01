@@ -42,6 +42,7 @@ namespace _106LibrarySystem
             AdminPage adminPage = new AdminPage();
             AdminBookContent.Content = adminPage;
         }
+
         private void DisplayBookDetails(Book selectedBook)
         {
             BookName.Text = selectedBook.name;
