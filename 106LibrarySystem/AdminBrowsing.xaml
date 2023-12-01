@@ -240,12 +240,15 @@
                         <TextBlock Margin="5 9 0 0">Available online</TextBlock>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Width="626">
+                <StackPanel Orientation="Vertical" 
+                            VerticalAlignment="Top" 
+                            Width="626">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  FontWeight="Bold"
-                            FontSize="23"
-                            Height="38"
-                            Margin="25 -20 -50 -20">BROWSING CATALOGUE</TextBlock>
+                                    FontSize="23"
+                                    Height="38"
+                                    Margin="25 -20 -50 -20"
+                                    Text="BROWSING CATALOGUE"/>
 
                         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="72 18 0 0">
                             <Rectangle Fill="#A3B6CC" 
@@ -266,8 +269,8 @@
                        Margin="0 -35 294 0"/>
 
                     <ItemsControl Grid.Column="2"
-              Grid.Row="2"
-              ItemsSource="{Binding Books}">
+                                  Grid.Row="2"
+                                  ItemsSource="{Binding Books}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <UniformGrid Columns="4" Rows="2" />
@@ -288,15 +291,25 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
-                </StackPanel>
-                <Button Content="Add Book" Click="AddBookButton_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-110 0 0 210"/>
-                <Button Content="Edit Catalogue" Click="EditCatalogueButton_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-110 0 0 20"/>
-                <Button Content="Toggle Remove Book Buttons" Click="ToggleRemoveButtons_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-110 0 0 30"/>
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Right">
-                    <Button Margin="10">Edit Catalogue</Button>
-                    <Button Margin="10">Remove Books</Button>
-                    <Button Margin="10">Add Books</Button>
+                    <StackPanel Orientation="Horizontal" 
+                                HorizontalAlignment="Right"
+                                Margin="10">
+                        <Button Content="Add Book" 
+                                Click="AddBookButton_Click" 
+                                HorizontalAlignment="Left" 
+                                VerticalAlignment="Bottom" 
+                                Margin="10"/>
+                        <Button Content="Edit Catalogue" 
+                                Click="EditCatalogueButton_Click" 
+                                HorizontalAlignment="Left" 
+                                VerticalAlignment="Bottom"
+                                Margin="10"/>
+                        <Button Content="Toggle Remove Book Buttons" 
+                                Click="ToggleRemoveButtons_Click" 
+                                HorizontalAlignment="Left" 
+                                VerticalAlignment="Bottom" 
+                                Margin="10"/>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
