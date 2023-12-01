@@ -99,7 +99,12 @@
     <Compile Include="HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LibraryContext.cs" />
+    <Compile Include="LibraryDatabase\DbContext.cs" />
+    <Compile Include="LibraryDatabase\DbSet.cs" />
+    <Compile Include="LibraryDatabase\LibraryDatabase.cs" />
     <Compile Include="loanedBooks.cs" />
+    <Compile Include="Loans.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>

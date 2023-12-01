@@ -80,7 +80,10 @@ namespace _106LibrarySystem
                         ImagePath = imagePath,
                         description = description
                     };
-                    MemberBookDetail memberBookDetail = new MemberBookDetail(selectedBook, bookViewModel);
+
+                    // Pass the currentUser to the constructor of MemberBookDetail
+                    MemberBookDetail memberBookDetail = new MemberBookDetail(selectedBook, currentUser);
+
                     HomeContent.Content = memberBookDetail;
                 }
                 else

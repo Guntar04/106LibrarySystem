@@ -5,7 +5,6 @@ using System.Data;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using LibraryDatabase;
 using System.Windows.Media.Imaging;
 
@@ -14,7 +13,7 @@ namespace _106LibrarySystem
     public partial class MemberPage : UserControl
     {
         public User currentUser;
-        public List<loanedBooks> userBooks = new List<loanedBooks>();
+        public List<Loans> userBooks = new List<Loans>();
         HomeScreen homeScreen = new HomeScreen();
         MemberBrowsing memberBrowsing = new MemberBrowsing();
 
@@ -43,7 +42,11 @@ namespace _106LibrarySystem
         {
             currentUser = user;
             UpdateUserDetails();
-            DisplayUserBooks(currentUser.ID);
+            if (currentUser != null)
+            {
+                DisplayUserBooks(currentUser.ID);
+            }
+
         }
 
         private void UpdateUserDetails()
@@ -60,42 +63,37 @@ namespace _106LibrarySystem
 
         private void GenerateBookImages()
         {
-            // Clear existing images
             BookStackPanel.Items.Clear();
 
             if (userBooks != null)
-            {
-                Console.WriteLine($"Generating {userBooks.Count} book images.");
+            {              
 
-                foreach (loanedBooks book in userBooks)
+                foreach (Loans book in userBooks)
                 {
                     if (book.Book != null && !string.IsNullOrEmpty(book.Book.Name))
                     {
+
+                        BitmapImage image = null;
+
+                        if (!string.IsNullOrEmpty(book.Book.ImagePath) && File.Exists(book.Book.ImagePath))
+                        {
+                            image = new BitmapImage(new Uri(book.Book.ImagePath));
+                        }
+
                         BookStackPanel.Items.Add(new
                         {
-                            ImageUri = !string.IsNullOrEmpty(book.Book.ImagePath) ? new BitmapImage(new Uri(book.Book.ImagePath)) : null,
+                            ImageUri = book.Book.ImagePath,
                             BookName = book.Book.Name,
                             DueDate = $"Due Date: {book.dueDate.ToShortDateString()}"
                         });
                     }
-                    else
-                    {
-                        Console.WriteLine($"Skipping book {book.bookID} due to null or empty bookName.");
-                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("No user books found.");
             }
         }
 
-
         public void DisplayUserBooks(int userID)
         {
-            try
-            {
-                userBooks.Clear();
+            userBooks.Clear();
 
                 string databaseFileName = "LibraryDatabase.db";
                 string source = $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
@@ -105,7 +103,7 @@ namespace _106LibrarySystem
                     connection.Open();
 
                     string query = @"
-                        SELECT lb.*, b.name AS bookName
+                        SELECT lb.*, b.name AS bookName, b.ImagePath AS bookImagePath
                         FROM loanedBooks lb
                         INNER JOIN books b ON lb.bookID = b.ID
                         WHERE lb.userID = @userID AND (lb.loanStatus = 'Loaned' OR lb.loanStatus = 'Overdue')
@@ -124,7 +122,7 @@ namespace _106LibrarySystem
                         {
                             while (reader.Read())
                             {
-                                loanedBooks book = new loanedBooks
+                                Loans book = new Loans
                                 {
                                     bookID = Convert.ToInt32(reader["bookID"]),
                                     userID = Convert.ToInt32(reader["userID"]),
@@ -132,25 +130,20 @@ namespace _106LibrarySystem
                                     dueDate = Convert.ToDateTime(reader["dueDate"]),
                                     returnDate = reader["returnDate"] != DBNull.Value ? Convert.ToDateTime(reader["returnDate"]) : (DateTime?)null,
                                     loanStatus = reader["loanStatus"].ToString(),
-                                    Book = new Book { Name = reader["bookName"].ToString() }
+                                    Book = new Book
+                                    {
+                                        Name = reader["bookName"].ToString(),
+                                        ImagePath = reader["bookImagePath"].ToString()
+                                    }
                                 };
-
                                 userBooks.Add(book);
                             }
                         }
                     }
-
-                    // Log the count of userBooks after retrieval
-                    Console.WriteLine($"UserID: {userID}, UserBooks Count: {userBooks.Count}");
                 }
+            // Generate and display book images
+            GenerateBookImages();
 
-                // Generate and display book images
-                GenerateBookImages();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error in DisplayUserBooks: {ex.Message}");
-            }
         }
     }
 }

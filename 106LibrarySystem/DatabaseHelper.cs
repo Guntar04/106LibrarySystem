@@ -25,9 +25,9 @@ namespace _106LibrarySystem
                 return connection.QueryFirstOrDefault<User>(selectQuery, new { ID = userID });
             }
         }
-        public static List<loanedBooks> GetUserBooks(int userId)
+        public static List<Loans> GetUserBooks(int userId)
         {
-            List<loanedBooks> userBooks = new List<loanedBooks>();
+            List<Loans> userBooks = new List<Loans>();
 
             using (IDbConnection connection = new SQLiteConnection(source))
             {
@@ -42,7 +42,7 @@ namespace _106LibrarySystem
                     {
                         while (reader.Read())
                         {
-                            loanedBooks book = new loanedBooks
+                            Loans book = new Loans
                             {
                                 bookID = Convert.ToInt32(reader["bookID"]),
                                 userID = Convert.ToInt32(reader["userID"]),

@@ -87,6 +87,8 @@ namespace LibraryDatabase
             get { return availability > 0 ? "Green" : "Red"; }
         }
 
+        public string ImageUri { get; internal set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
