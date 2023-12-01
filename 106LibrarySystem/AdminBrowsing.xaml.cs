@@ -27,18 +27,18 @@ namespace LibraryDatabase
             InitializeComponent();
             var bookViewModel = new BookViewModel();
             DataContext = bookViewModel;
-            AdminBrowse.DataContext = bookViewModel;
+            AdminBrowsingContent.DataContext = bookViewModel;
         }
 
-        private void Home_Click(object sender, RoutedEventArgs e)
+        private void Home_Admin(object sender, RoutedEventArgs e)
         {
             HomeScreen homeScreen = new HomeScreen();
-            AdminBrowse.Content = homeScreen;
+            AdminBrowsingContent.Content = homeScreen;
         }
-        private void Profile_Click(object sender, RoutedEventArgs e)
+        private void Profile_Admin(object sender, RoutedEventArgs e)
         {
             AdminPage adminPage = new AdminPage();
-            AdminBrowse.Content = adminPage;
+            AdminBrowsingContent.Content = adminPage;
         }
 
         private void AddBookButton_Click(object sender, RoutedEventArgs e)
