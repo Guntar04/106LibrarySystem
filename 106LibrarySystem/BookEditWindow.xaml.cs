@@ -74,8 +74,6 @@ namespace LibraryDatabase
 
             UpdateBindings();
 
-            BookViewModel.UpdateBooks();
-
             // Close the window or perform other actions
             Close();
         }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LibraryDatabase;
 
 namespace _106LibrarySystem
 {
@@ -34,6 +35,11 @@ namespace _106LibrarySystem
         private void Image_Click(object sender, MouseButtonEventArgs e)
         {
             AdminHomeContent.Content = adminBookDetail;
+        }
+        private void Catalogue_Click(object sender, RoutedEventArgs e)
+        {
+            AdminBrowsing adminBrowsing = new AdminBrowsing();
+            AdminHomeContent.Content = adminBrowsing;
         }
     }
 }
