@@ -22,49 +22,13 @@ namespace LibraryDatabase
     public partial class EditCatalogueWindow : Window
     {
 
-        private BookViewModel _viewModel;
         public EditCatalogueWindow(BookViewModel sharedViewModel)
         {
             InitializeComponent();
             DataContext = sharedViewModel;
-            _viewModel = new BookViewModel();
-            DataContext = _viewModel;
         }
 
-        private void SearchTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                ApplySearch();
-            }
-        }
 
-        private void SearchButton_Click(object sender, MouseButtonEventArgs e)
-        {
-            ApplySearch();
-        }
-
-        private void ApplySearch()
-        {
-            string searchText = searchTextBox.Text.ToLower();
-            _viewModel.ApplySearch(searchText);
-        }
-
-        private void SearchTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (searchTextBox.Text == "Search Library...")
-            {
-                searchTextBox.Text = "";
-            }
-        }
-
-        private void SearchTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(searchTextBox.Text))
-            {
-                searchTextBox.Text = "Search Library...";
-            }
-        }
 
 private void BookButton_Click(object sender, RoutedEventArgs e)
         {

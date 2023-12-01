@@ -70,9 +70,11 @@ namespace LibraryDatabase
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             // Update the book information from the textboxes
-            UpdateBookInformation();
+            //UpdateBookInformation();
 
             UpdateBindings();
+
+            UpdateBookInformation();
 
             // Close the window or perform other actions
             Close();
