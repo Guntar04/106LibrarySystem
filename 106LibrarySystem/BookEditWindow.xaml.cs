@@ -116,6 +116,8 @@ namespace LibraryDatabase
                 existingBook.date = BookViewModel.CurrentBook.date;
                 existingBook.ImagePath = BookViewModel.CurrentBook.ImagePath;
 
+                BookViewModel.OnBookUpdated(existingBook);
+
                 // Notify the UI about the changes (if needed)
             }
         }

@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 using Dapper;
+using System;
 
 namespace LibraryDatabase
 {
@@ -28,6 +29,23 @@ namespace LibraryDatabase
                     _books = value;
                     OnPropertyChanged(nameof(Books));
                 }
+            }
+        }
+
+        public event EventHandler<BookUpdatedEventArgs> BookUpdated;
+
+        public virtual void OnBookUpdated(Book updatedBook)
+        {
+            BookUpdated?.Invoke(this, new BookUpdatedEventArgs(updatedBook));
+        }
+
+        public class BookUpdatedEventArgs : EventArgs
+        {
+            public Book UpdatedBook { get; }
+
+            public BookUpdatedEventArgs(Book updatedBook)
+            {
+                UpdatedBook = updatedBook;
             }
         }
 

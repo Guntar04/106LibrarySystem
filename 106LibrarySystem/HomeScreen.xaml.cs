@@ -27,11 +27,15 @@ namespace _106LibrarySystem
     {
         private string databaseFileName = "LibraryDatabase.db";
         private string source;
+        private BookViewModel bookViewModel;
+
 
         public HomeScreen()
         {
             InitializeComponent();
             source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
+
+            bookViewModel = new BookViewModel();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,6 +43,8 @@ namespace _106LibrarySystem
             MemberPage memberPage = new MemberPage();
             memberPage.SetCurrentUser(currentUser);
             HomeContent.Content = memberPage;
+
+           
         }
 
         private void Image_Click(object sender, MouseButtonEventArgs e)
@@ -74,7 +80,7 @@ namespace _106LibrarySystem
                         ImagePath = imagePath,
                         description = description
                     };
-                    MemberBookDetail memberBookDetail = new MemberBookDetail(selectedBook);
+                    MemberBookDetail memberBookDetail = new MemberBookDetail(selectedBook, bookViewModel);
                     HomeContent.Content = memberBookDetail;
                 }
                 else
