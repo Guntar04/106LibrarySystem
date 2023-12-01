@@ -32,8 +32,8 @@ namespace LibraryDatabase
 
         private void Home_Admin(object sender, RoutedEventArgs e)
         {
-            HomeScreen homeScreen = new HomeScreen();
-            AdminBrowsingContent.Content = homeScreen;
+            AdminHome adminHome = new AdminHome();
+            AdminBrowsingContent.Content = adminHome;
         }
         private void Profile_Admin(object sender, RoutedEventArgs e)
         {

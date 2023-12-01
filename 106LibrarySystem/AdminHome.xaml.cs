@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Dapper;
+using System.IO;
 
 namespace _106LibrarySystem
 {
@@ -29,6 +30,7 @@ namespace _106LibrarySystem
         public AdminHome()
         {
             InitializeComponent();
+            source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -80,11 +82,6 @@ namespace _106LibrarySystem
         }
 
         private void Catalouge_Admin(object sender, RoutedEventArgs e)
-        {
-            AdminBrowsing adminBrowsing = new AdminBrowsing();
-            AdminHomeContent.Content = adminBrowsing;
-        }
-        private void Catalogue_Click(object sender, RoutedEventArgs e)
         {
             AdminBrowsing adminBrowsing = new AdminBrowsing();
             AdminHomeContent.Content = adminBrowsing;
