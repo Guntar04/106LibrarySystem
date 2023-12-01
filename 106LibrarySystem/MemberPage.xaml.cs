@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using LibraryDatabase;
+using System.Windows.Media.Imaging;
 
 namespace _106LibrarySystem
 {
@@ -60,7 +61,7 @@ namespace _106LibrarySystem
         private void GenerateBookImages()
         {
             // Clear existing images
-            BookStackPanel.Children.Clear();
+            BookStackPanel.Items.Clear();
 
             if (userBooks != null)
             {
@@ -70,31 +71,12 @@ namespace _106LibrarySystem
                 {
                     if (book.Book != null && !string.IsNullOrEmpty(book.Book.Name))
                     {
-                        StackPanel bookPanel = new StackPanel
+                        BookStackPanel.Items.Add(new
                         {
-                            Orientation = Orientation.Vertical,
-                            Margin = new Thickness(15)
-                        };
-
-                        TextBlock bookNameText = new TextBlock
-                        {
-                            Text = book.Book.Name,
-                            Foreground = Brushes.White,
-                            FontWeight = FontWeights.Bold,
-                            Margin = new Thickness(0, 0, 0, 5)
-                        };
-
-                        TextBlock dueDateText = new TextBlock
-                        {
-                            Text = $"Due Date: {book.dueDate.ToShortDateString()}",
-                            Foreground = Brushes.White,
-                            FontStyle = FontStyles.Italic
-                        };
-
-                        bookPanel.Children.Add(bookNameText);
-                        bookPanel.Children.Add(dueDateText);
-
-                        BookStackPanel.Children.Add(bookPanel);
+                            ImageUri = !string.IsNullOrEmpty(book.Book.ImagePath) ? new BitmapImage(new Uri(book.Book.ImagePath)) : null,
+                            BookName = book.Book.Name,
+                            DueDate = $"Due Date: {book.dueDate.ToShortDateString()}"
+                        });
                     }
                     else
                     {
@@ -107,6 +89,7 @@ namespace _106LibrarySystem
                 MessageBox.Show("No user books found.");
             }
         }
+
 
         public void DisplayUserBooks(int userID)
         {

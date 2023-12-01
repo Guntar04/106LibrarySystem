@@ -82,7 +82,12 @@
                        Foreground="White" 
                        Height="30" FontSize="16" 
                        Margin="40,-15,0,50"/>
-            <TextBlock Foreground="White" Height="30" Margin="7,-9,0,140" FontSize="13" FontStyle="Italic"><Run Text="- Member"/></TextBlock>
+            <TextBlock Foreground="White" 
+                       Height="30" 
+                       Margin="7,-9,0,50" 
+                       FontSize="13" 
+                       FontStyle="Italic"
+                       Text="- Member"/>
         </StackPanel>
         <StackPanel Grid.Column="1"
                     Grid.Row="1"
@@ -186,21 +191,20 @@
 
             
         </StackPanel>
-        <StackPanel Grid.Column="1"
-                    Grid.Row="3"
-                    Orientation="Vertical">
-            <TextBlock Text="Your Books" 
-                       Foreground="White" 
-                       FontSize="20" 
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Top" 
-                       Margin="0,10,0,20"/>   
-            <StackPanel x:Name="BookStackPanel"
-                        Orientation="Horizontal" 
-                        HorizontalAlignment="Center"/>
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical">
+            <TextBlock Text="Your Books" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,20"/>
+            <ItemsControl x:Name="BookStackPanel" ItemsSource="{Binding}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="15">
+                            <Image Source="{Binding ImageUri}" Height="100" Width="80" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding BookName}" Foreground="White" FontWeight="Bold" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding DueDate}" Foreground="White" FontStyle="Italic"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </StackPanel>
-        
-
         <ContentControl Name="MemberContent" 
                         Grid.ColumnSpan="3"
                         Grid.RowSpan="4" />

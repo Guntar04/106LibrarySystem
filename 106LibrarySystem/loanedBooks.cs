@@ -14,6 +14,7 @@ namespace _106LibrarySystem
         public DateTime dueDate { get; set; }
         public DateTime? returnDate { get; set; }
         public string loanStatus { get; set; }
+        public string ImageUri { get; set; }
         public LibraryDatabase.Book Book { get; set; }
     }
 }

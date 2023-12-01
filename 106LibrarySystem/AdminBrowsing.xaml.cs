@@ -24,5 +24,15 @@ namespace _106LibrarySystem
         {
             InitializeComponent();
         }
+        private void Profile_Admin(object sender, RoutedEventArgs e)
+        {
+            AdminPage adminPage = new AdminPage();
+            AdminBrowsingContent.Content = adminPage;
+        }
+        private void Home_Admin(object sender, RoutedEventArgs e)
+        {
+            AdminHome adminHome = new AdminHome();
+            AdminBrowsingContent.Content = adminHome;
+        }
     }
 }

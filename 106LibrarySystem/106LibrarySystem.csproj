@@ -212,6 +212,15 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Images\book17.png" />
+    <Resource Include="Images\book10.png" />
+    <Resource Include="Images\book11.png" />
+    <Resource Include="Images\book12.png" />
+    <Resource Include="Images\book13.png" />
+    <Resource Include="Images\book14.png" />
+    <Resource Include="Images\book15.png" />
+    <Resource Include="Images\book16.png" />
+    <Resource Include="Images\book9.png" />
+    <Resource Include="Images\checkbox.png" />
     <Content Include="LibraryDatabase.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
