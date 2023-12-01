@@ -41,55 +41,5 @@ namespace LibraryDatabase
             MemberBrowse.Content = memberPage;
         }
 
-        private void AddBookButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddBookWindow addBookWindow = new AddBookWindow((BookViewModel)DataContext);
-            addBookWindow.Owner = Window.GetWindow(this); // Set the owner to enable proper interaction
-            addBookWindow.ShowDialog(); // Show the window as a modal dialog
-        }
-
-        private void EditCatalogueButton_Click(object sender, RoutedEventArgs e)
-        {
-            EditCatalogueWindow editCatalogueWindow = new EditCatalogueWindow((BookViewModel)DataContext);
-            editCatalogueWindow.Owner = Window.GetWindow(this);
-            editCatalogueWindow.ShowDialog();
-        }
-
-        private void RemoveBook_Click(object sender, RoutedEventArgs e)
-        {
-            // Show a confirmation dialog
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to remove this book?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            // If user clicks Yes, remove the book
-            if (result == MessageBoxResult.Yes)
-            {
-                // Get the book associated with the clicked button
-                BookViewModel bookViewModel = (BookViewModel)DataContext;
-                Book bookToRemove = ((Button)sender).DataContext as Book;
-
-                if (bookToRemove != null)
-                {
-                    // Remove the book from the database and UI
-                    bookViewModel.RemoveBook(bookToRemove);
-                }
-                else
-                {
-                    // Log or handle the case where 'bookToRemove' is null
-                }
-
-
-            }
-
-        }
-
-        private void ToggleRemoveButtons_Click(object sender, RoutedEventArgs e)
-        {
-            BookViewModel bookViewModel = (BookViewModel)DataContext;
-
-            // Toggle the visibility of "Remove Book" buttons
-            bookViewModel.IsRemoveButtonVisible = !bookViewModel.IsRemoveButtonVisible;
-        }
-
-
     }
 }

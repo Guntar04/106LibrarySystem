@@ -84,5 +84,10 @@ namespace _106LibrarySystem
             AdminBrowsing adminBrowsing = new AdminBrowsing();
             AdminHomeContent.Content = adminBrowsing;
         }
+        private void Catalogue_Click(object sender, RoutedEventArgs e)
+        {
+            AdminBrowsing adminBrowsing = new AdminBrowsing();
+            AdminHomeContent.Content = adminBrowsing;
+        }
     }
 }

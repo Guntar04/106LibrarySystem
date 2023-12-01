@@ -75,7 +75,7 @@ private void BookButton_Click(object sender, RoutedEventArgs e)
             var bookEditWindow = new BookEditWindow(book, (BookViewModel)DataContext);
             bookEditWindow.ShowDialog();
 
-            // Update MemberBrowsing with changes
+            // Update Browsing with changes
             ((BookViewModel)DataContext).UpdateBooks();
         }
     }
