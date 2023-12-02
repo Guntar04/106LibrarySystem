@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using _106LibrarySystem;
+using static LibraryDatabase.BookViewModel;
 
 namespace LibraryDatabase
 {
@@ -29,6 +31,7 @@ namespace LibraryDatabase
             BookViewModel = sharedViewModel;
             BookViewModel.CurrentBook = selectedBook;
             DataContext = BookViewModel.CurrentBook;
+
         }
 
         private void ChangeImageButton_Click(object sender, RoutedEventArgs e)
@@ -76,9 +79,13 @@ namespace LibraryDatabase
 
             UpdateBookInformation();
 
+
             // Close the window or perform other actions
             Close();
         }
+
+ 
+
 
         private void UpdateBindings()
         {
@@ -116,10 +123,11 @@ namespace LibraryDatabase
                 existingBook.date = BookViewModel.CurrentBook.date;
                 existingBook.ImagePath = BookViewModel.CurrentBook.ImagePath;
 
-                BookViewModel.OnBookUpdated(existingBook);
-
                 // Notify the UI about the changes (if needed)
+
             }
+
+            BookViewModel.UpdateBook(existingBook);
         }
 
     }

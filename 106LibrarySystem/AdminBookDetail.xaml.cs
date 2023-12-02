@@ -43,17 +43,44 @@ namespace _106LibrarySystem
             AdminBookContent.Content = adminPage;
         }
 
-        private void DisplayBookDetails(Book selectedBook)
+        public void DisplayBookDetails(Book selectedBook)
         {
-            BookName.Text = selectedBook.name;
-            Author.Text = selectedBook.author;
-            Genre.Text = selectedBook.genre;
-            Availability.Text = selectedBook.DisplayAvailability;
-            Language.Text = selectedBook.language;
-            PageNum.Text = selectedBook.pageNum.ToString();
-            Date.Text = selectedBook.date.ToString();
-            Description.Text = selectedBook.description;
-            BookImage.Source = new BitmapImage(new Uri(selectedBook.ImagePath, UriKind.RelativeOrAbsolute));
+            if (selectedBook != null)
+            {
+                BookName.Text = selectedBook.name;
+                Author.Text = selectedBook.author;
+                Genre.Text = selectedBook.genre;
+                Availability.Text = selectedBook.DisplayAvailability;
+                Language.Text = selectedBook.language;
+                PageNum.Text = selectedBook.pageNum.ToString();
+                Date.Text = selectedBook.date.ToString();
+                Description.Text = selectedBook.description;
+
+                if (!string.IsNullOrEmpty(selectedBook.ImagePath))
+                {
+                    // Check if ImagePath is not null or empty before creating Uri
+                    BookImage.Source = new BitmapImage(new Uri(selectedBook.ImagePath, UriKind.RelativeOrAbsolute));
+                }
+            }
+            else
+            {
+                // Handle the case where selectedBook is null
+                // For example, clear the existing values or display an error message
+                ClearBookDetails();
+            }
+        }
+
+        private void ClearBookDetails()
+        {
+            BookName.Text = string.Empty;
+            Author.Text = string.Empty;
+            Genre.Text = string.Empty;
+            Availability.Text = string.Empty;
+            Language.Text = string.Empty;
+            PageNum.Text = string.Empty;
+            Date.Text = string.Empty;
+            Description.Text = string.Empty;
+            BookImage.Source = null;
         }
     }
 }

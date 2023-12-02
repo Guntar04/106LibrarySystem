@@ -15,9 +15,13 @@ namespace LibraryDatabase
 {
     public class BookViewModel : INotifyPropertyChanged
     {
+
         private bool _isRemoveButtonVisible = false;
 
         private ObservableCollection<Book> _books = new ObservableCollection<Book>();
+
+
+
 
         public ObservableCollection<Book> Books
         {
@@ -32,22 +36,6 @@ namespace LibraryDatabase
             }
         }
 
-        public event EventHandler<BookUpdatedEventArgs> BookUpdated;
-
-        public virtual void OnBookUpdated(Book updatedBook)
-        {
-            BookUpdated?.Invoke(this, new BookUpdatedEventArgs(updatedBook));
-        }
-
-        public class BookUpdatedEventArgs : EventArgs
-        {
-            public Book UpdatedBook { get; }
-
-            public BookUpdatedEventArgs(Book updatedBook)
-            {
-                UpdatedBook = updatedBook;
-            }
-        }
 
         public void ApplySearch(string searchText)
         {
@@ -232,7 +220,33 @@ namespace LibraryDatabase
             OnPropertyChanged(nameof(Books));
         }
 
+        public void UpdateBook(Book book)
+        {
+            try
+            {
+                string databaseFileName = "C:\\106LibrarySystem\\106LibrarySystem\\LibraryDatabase.db";
+                string source = $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
 
+                using (SQLiteConnection connect = new SQLiteConnection(source))
+                {
+                    connect.Open();
+                    var sqlUpdate = connect.CreateCommand();
+
+                    sqlUpdate.CommandText = @"UPDATE books SET name = $name, author = $author WHERE id = $id ";
+
+                    sqlUpdate.Parameters.AddWithValue("$name", book.name);
+                    sqlUpdate.Parameters.AddWithValue("$author", book.author);
+                    sqlUpdate.Parameters.AddWithValue("$id", book.Id);
+
+                    sqlUpdate.ExecuteNonQuery();
+
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("error updating book:", ex.Message);
+            }
+        }
 
     }
 }

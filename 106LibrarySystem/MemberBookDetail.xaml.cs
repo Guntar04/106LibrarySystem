@@ -24,15 +24,8 @@ namespace _106LibrarySystem
             this.currentUser = currentUser;
             DisplayBookDetails(selectedBook);
 
-            // Subscribe to the BookUpdated event
-            bookViewModel.BookUpdated += BookViewModel_BookUpdated;
         }
 
-        private void BookViewModel_BookUpdated(object sender, BookUpdatedEventArgs e)
-        {
-            // Update displayed book details when the event is triggered
-            DisplayBookDetails(e.UpdatedBook);
-        }
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
@@ -44,7 +37,7 @@ namespace _106LibrarySystem
             BookDetails.Content = new MemberBrowsing();
         }
 
-        private void DisplayBookDetails(Book selectedBook)
+        public void DisplayBookDetails(Book selectedBook)
         {
             BookImage.Source = new BitmapImage(new Uri(selectedBook.ImagePath, UriKind.RelativeOrAbsolute));
             BookName.Text = selectedBook.name;
