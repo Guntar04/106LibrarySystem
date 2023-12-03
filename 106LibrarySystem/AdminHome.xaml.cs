@@ -46,13 +46,12 @@ namespace _106LibrarySystem
             using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
-                string bookID = (string)((Image)sender).Tag;
-                string query = "SELECT * FROM books WHERE Id = @BookID";
-                var book = connection.QueryFirstOrDefault<Book>(query, new { BookID = bookID });
+                string bookName = (string)((Image)sender).Tag;
+                string query = "SELECT * FROM books WHERE name = @BookName";
+                var book = connection.QueryFirstOrDefault<Book>(query, new { BookName = bookName });
 
                 if (book != null)
                 {
-                    int id = book.Id;
                     string name = book.name;
                     string author = book.author;
                     string genre = book.genre;
@@ -65,7 +64,6 @@ namespace _106LibrarySystem
 
                     Book selectedBook = new Book
                     {
-                        Id = id,
                         name = name,
                         author = author,
                         genre = genre,
@@ -76,10 +74,7 @@ namespace _106LibrarySystem
                         ImagePath = imagePath,
                         description = description
                     };
-
-                    // Pass the currentUser to the constructor of MemberBookDetail
-                    AdminBookDetail adminBookDetail = new AdminBookDetail(selectedBook, currentUser);
-
+                    AdminBookDetail adminBookDetail = new AdminBookDetail(selectedBook);
                     AdminHomeContent.Content = adminBookDetail;
                 }
                 else

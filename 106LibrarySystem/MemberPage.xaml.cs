@@ -110,6 +110,25 @@ namespace _106LibrarySystem
                         }
                     }
                 }
+            // Generate and display book images
+            GenerateBookImages();
+
+
+        }
+
+        // Display book details in a popup
+        
+
+        // Handle book return logic
+        private void ReturnBook(Loans selectedBook)
+        {
+            // Perform the necessary actions to return the book to the database
+            
+
+            // Remove the book from the user's book list
+            userBooks.Remove(selectedBook);
+
+            // Update the UI
             GenerateBookImages();
         }
         private void GenerateBookImages()
@@ -162,10 +181,24 @@ namespace _106LibrarySystem
                             }
                         };
 
+                        // Attach click event handler to each book button
+                        bookButton.Click += (sender, e) => ShowBookDetails(book);
+
                         BookStackPanel.Items.Add(bookButton);
                     }
                 }
             }
+        }
+        private void ShowBookDetails(Loans selectedBook)
+        {
+            // Set the details in the popup
+            BitmapImage bitmapImage = new BitmapImage(new Uri(selectedBook.Book.ImagePath, UriKind.RelativeOrAbsolute));
+            BookImagePopup.Source = bitmapImage;
+            BookNamePopup.Text = selectedBook.Book.Name;
+            DueDatePopup.Text = $"Due Date: {selectedBook.dueDate.ToShortDateString()}";
+
+            // Open the popup
+            BookDetailsPopup.IsOpen = true;
         }
     }
 }

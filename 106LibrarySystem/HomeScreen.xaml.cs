@@ -42,7 +42,9 @@ namespace _106LibrarySystem
         {
             MemberPage memberPage = new MemberPage();
             memberPage.SetCurrentUser(currentUser);
-            HomeContent.Content = memberPage;  
+            HomeContent.Content = memberPage;
+
+           
         }
 
         private void Image_Click(object sender, MouseButtonEventArgs e)

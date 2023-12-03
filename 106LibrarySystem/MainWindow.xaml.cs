@@ -24,6 +24,7 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MemberBookDetail MemberBookDetailInstance { get; private set; }
         public AdminBookDetail AdminBookDetailInstance { get; private set; }
         public MainWindow()
         {
