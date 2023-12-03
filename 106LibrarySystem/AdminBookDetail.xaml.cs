@@ -22,11 +22,19 @@ namespace _106LibrarySystem
     /// </summary>
     public partial class AdminBookDetail : UserControl
     {
-        public AdminBookDetail(Book selectedBook)
+        private Book selectedBook;
+
+        public AdminBookDetail(Book selectedBook, User currentUser)
         {
             InitializeComponent();
             DisplayBookDetails(selectedBook);
         }
+
+        public AdminBookDetail(Book selectedBook)
+        {
+            this.selectedBook = selectedBook;
+        }
+
         private void Home_Admin(object sender, RoutedEventArgs e)
         {
             AdminHome adminHome = new AdminHome();
