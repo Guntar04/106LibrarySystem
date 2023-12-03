@@ -1,25 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Data.SQLite;
+using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 
 namespace LibraryDatabase
 {
     public class LibraryContext
     {
-        private string ConnectionString { get; }
-        public List<Loans> Loans { get; set; } = new List<Loans>();
+        //private string ConnectionString { get; }
 
-        public LibraryContext(string connectionString)
+        private ObservableCollection<Loans> _loans = new ObservableCollection<Loans>();
+        //public List<Loans> Loans { get; set; } = new List<Loans>();
+
+        public ObservableCollection<Loans> Loans
         {
-            ConnectionString = connectionString;
+            get { return _loans; }
+            set
+            {
+                if (_loans != value)
+                {
+                    _loans = value;
+                    OnPropertyChanged(nameof(Loans));
+                }
+            }
+        }
+
+        public LibraryContext()
+        {
+            
         }
 
         public IEnumerable<Loans> GetLoans()
         {
+            string databaseFileName = "LibraryDatabase.db";
+            string source = $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
             // Implement logic to fetch loans from the database using ADO.NET
             // Example using SqlConnection and SqlCommand:
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(source))
             {
                 connection.Open();
 
@@ -49,27 +71,32 @@ namespace LibraryDatabase
 
         public void AddLoan(Loans loan)
         {
+            string databaseFileName = "LibraryDatabase.db";
+            string source = $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
             // Implement logic to add a loan to the database using ADO.NET
             // Example using SqlConnection and SqlCommand:
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SQLiteConnection connect = new SQLiteConnection(source))
             {
-                connection.Open();
 
-                // Example SQL command
-                string sql = "INSERT INTO Loans (bookID, userID, loanDate, dueDate, loanStatus) VALUES (@bookID, @userID, @loanDate, @dueDate, @loanStatus)";
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    // Add parameters
-                    command.Parameters.AddWithValue("@bookID", loan.bookID);
-                    command.Parameters.AddWithValue("@userID", loan.userID);
-                    command.Parameters.AddWithValue("@loanDate", loan.loanDate);
-                    command.Parameters.AddWithValue("@dueDate", loan.dueDate);
-                    command.Parameters.AddWithValue("@loanStatus", loan.loanStatus);
+                connect.Open();
+                var sqlUpdate = connect.CreateCommand();
 
-                    // Execute command
-                    command.ExecuteNonQuery();
-                }
+                sqlUpdate.CommandText = @"INSERT INTO loanedBooks (bookID, userID, loanDate, dueDate, loanStatus) VALUES ($bookID, $userID, $loanDate, $dueDate, $loanStatus)";
+
+                sqlUpdate.Parameters.AddWithValue("$bookID", loan.bookID);
+                sqlUpdate.Parameters.AddWithValue("$userID", loan.userID);
+                sqlUpdate.Parameters.AddWithValue("$loanDate", loan.loanDate);
+                sqlUpdate.Parameters.AddWithValue("$dueDate", loan.dueDate);
+                sqlUpdate.Parameters.AddWithValue("$loanStatus", loan.loanStatus);
+
+                sqlUpdate.ExecuteNonQuery();
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         // Add other methods for managing books, users, etc.

@@ -58,6 +58,7 @@ namespace _106LibrarySystem
 
                 if (book != null)
                 {
+                    int id = book.Id;
                     string name = book.name;
                     string author = book.author;
                     string genre = book.genre;
@@ -70,6 +71,7 @@ namespace _106LibrarySystem
 
                     Book selectedBook = new Book
                     {
+                        Id = id,
                         name = name,
                         author = author,
                         genre = genre,

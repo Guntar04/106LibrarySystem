@@ -39,7 +39,7 @@ namespace _106LibrarySystem
 
         public void DisplayBookDetails(Book selectedBook)
         {
-            BookImage.Source = new BitmapImage(new Uri(selectedBook.ImagePath, UriKind.RelativeOrAbsolute));
+            BookImage.Source = new BitmapImage(new Uri(selectedBook.ImagePath, UriKind.RelativeOrAbsolute));            
             BookName.Text = selectedBook.name;
             Author.Text = selectedBook.author;
             Genre.Text = selectedBook.genre;
@@ -52,6 +52,7 @@ namespace _106LibrarySystem
 
         private void Borrow_Click(object sender, RoutedEventArgs e)
         {
+            var context = new LibraryContext();
             if (currentUser != null && selectedBook != null && context != null)
             {
                 int bookID = selectedBook.Id;
@@ -69,7 +70,7 @@ namespace _106LibrarySystem
                     loanStatus = "Loaned"
                 };
 
-                context.Loans.Add(loan);
+                context.AddLoan(loan);
 
                 MessageBox.Show("Book borrowed successfully!");
             }
