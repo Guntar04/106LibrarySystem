@@ -27,6 +27,7 @@ namespace _106LibrarySystem
         private static readonly string databaseFileName = "LibraryDatabase.db";
         private static readonly string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
         private int currentUserID;
+        public User currentUser;
 
         public AdminPage()
         {
@@ -69,6 +70,22 @@ namespace _106LibrarySystem
         {
             AdminPage adminPage = new AdminPage();
             AdminContent.Content = adminPage;
+        }
+        public void SetCurrentUser(User user)
+        {
+            currentUser = user;
+            UpdateUserDetails();
+        }
+        private void UpdateUserDetails()
+        {
+            if (currentUser != null)
+            {
+                tbFirstname.Text = currentUser.FirstName;
+                tbJoinDate.Text = currentUser.JoinDate;
+                tbPhoneNumber.Text = currentUser.PhoneNumber;
+                tbEmailAddress.Text = currentUser.EmailAddress;
+                tbID.Text = currentUser.ID.ToString();
+            }
         }
         private void DisplayUserData()
         {

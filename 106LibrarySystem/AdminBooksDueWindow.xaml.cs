@@ -36,7 +36,13 @@ namespace _106LibrarySystem
             using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
-                var users = connection.Query("SELECT * FROM users WHERE overDueBooks > 0");
+
+                // Get the current date
+                DateTime currentDate = DateTime.Now.Date;
+
+                // Use a parameterized query to retrieve users with dueDates over the current date
+                IEnumerable<dynamic> users = connection.Query("SELECT * FROM loanedBooks WHERE dueDate > @CurrentDate", new { CurrentDate = currentDate });
+
                 userGrid.ItemsSource = users;
             }
         }

@@ -27,6 +27,8 @@ namespace _106LibrarySystem
     {
         private string databaseFileName = "LibraryDatabase.db";
         private string source;
+        private User currentUser;
+
         public AdminHome()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace _106LibrarySystem
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AdminPage adminPage = new AdminPage();
+            adminPage.SetCurrentUser(currentUser);
             AdminHomeContent.Content = adminPage;
         }
         private void Image_Click(object sender, MouseButtonEventArgs e)
@@ -85,6 +88,10 @@ namespace _106LibrarySystem
         {
             AdminBrowsing adminBrowsing = new AdminBrowsing();
             AdminHomeContent.Content = adminBrowsing;
+        }
+        public void SetCurrentUser(User user)
+        {
+            currentUser = user;
         }
     }
 }

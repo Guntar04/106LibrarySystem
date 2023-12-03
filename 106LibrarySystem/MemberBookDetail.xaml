@@ -105,7 +105,6 @@
                             <TextBlock x:Name="Availability"
                                        Text="Availability"
                                        Margin="10 0 0 0"/>
-                            <TextBlock Margin="5 0 0 0">Books Available</TextBlock>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" 
                                     Margin="10">

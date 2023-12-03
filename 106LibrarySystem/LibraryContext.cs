@@ -17,17 +17,13 @@ namespace LibraryDatabase
 
         public IEnumerable<Loans> GetLoans()
         {
-            // Implement logic to fetch loans from the database using ADO.NET
-            // Example using SqlConnection and SqlCommand:
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                // Example SQL command
                 string sql = "SELECT * FROM Loans";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    // Execute command and read results
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         // Parse results and return a collection of Loans
@@ -66,7 +62,6 @@ namespace LibraryDatabase
                     command.Parameters.AddWithValue("@dueDate", loan.dueDate);
                     command.Parameters.AddWithValue("@loanStatus", loan.loanStatus);
 
-                    // Execute command
                     command.ExecuteNonQuery();
                 }
             }

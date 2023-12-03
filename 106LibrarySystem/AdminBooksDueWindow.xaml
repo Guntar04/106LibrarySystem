@@ -15,13 +15,13 @@
             VerticalAlignment="Top">
             <DataGrid x:Name="userGrid" AutoGenerateColumns="False" Height="296">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
-                    <DataGridTextColumn Header="Username" Binding="{Binding userName}" />
-                    <DataGridTextColumn Header="First Name" Binding="{Binding firstName}" />
-                    <DataGridTextColumn Header="Last Name" Binding="{Binding lastName}" />
-                    <DataGridTextColumn Header="Email Address" Binding="{Binding emailAddress}" />
-                    <DataGridTextColumn Header="Phone Number" Binding="{Binding phoneNumber}" />
-                    <DataGridTextColumn Header="Due Books" Binding="{Binding overDueBooks}" />
+                    <DataGridTextColumn Header="Loan ID" Binding="{Binding loanID}" />
+                    <DataGridTextColumn Header="Book ID" Binding="{Binding bookID}" />
+                    <DataGridTextColumn Header="User ID" Binding="{Binding userID}" />
+                    <DataGridTextColumn Header="Loan Date" Binding="{Binding loanDate}" />
+                    <DataGridTextColumn Header="Due Date" Binding="{Binding dueDate}" />
+                    <DataGridTextColumn Header="Return Date" Binding="{Binding returnDate}" />
+                    <DataGridTextColumn Header="Loan Status" Binding="{Binding loanStatus}" />
                     
                 </DataGrid.Columns>
             </DataGrid>

@@ -107,64 +107,69 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Center">
 
+            <TextBlock x:Name="tbFirstname"
+                       Text="FirstName"
+                       Foreground="White" 
+                       Height="30" FontSize="16" 
+                       Margin="7,-9,0,140"/>
             <TextBlock Foreground="White" 
                        Height="30" 
-                       FontSize="16" 
-                       Margin="40,-15,0,140"><Run Text="Olivia Fatu"/></TextBlock>
-            <TextBlock Foreground="White" Height="30" Margin="7,-9,0,140" FontSize="13" FontStyle="Italic"><Run Text="- Admin"/></TextBlock>
+                       Margin="7,-9,0,140" 
+                       FontSize="13" 
+                       FontStyle="Italic"
+                       Text="- Admin"/>
         </StackPanel>
         <StackPanel Grid.Column="1"
                     Grid.Row="1"
                     Orientation="Vertical"
                     VerticalAlignment="Top"
-                    Margin="130,50,0,0"
+                    Margin="130,60,0,0"
                     Height="79">
             <StackPanel 
                     Orientation="Horizontal"
                     HorizontalAlignment="Left">
                 <TextBlock Foreground="White" 
                            FontSize="13" 
-                           FontWeight="Bold" 
+                           FontWeight="Bold"
                            Text="Joined:"/>
-                <!--<TextBlock Foreground="White" 
-                           FontSize="13" 
-                           Text="adwadi"/>-->
+                <TextBlock x:Name="tbJoinDate"
+                           Text="JoinDate"
+                           Foreground="White" 
+                           FontSize="13"/>
             </StackPanel>
-            <StackPanel 
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left">
+                <TextBlock Foreground="White" 
+                           FontSize="13" 
+                           FontWeight="Bold"
+                           Text="PhoneNumber:"/>
+                <TextBlock x:Name="tbPhoneNumber"
+                           Text="PhoneNumber"
+                           Foreground="White" 
+                           FontSize="13"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left">
                 <TextBlock Foreground="White" 
                            FontSize="13" 
                            FontWeight="Bold" 
-                           Text="Username:"/>
-                <!--<TextBlock Foreground="White" 
-                           FontSize="13" 
-                           Text="adwadi"/>-->
-            </StackPanel>
-            <StackPanel 
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left">
-                <TextBlock Foreground="White" 
-                           FontSize="13" 
-                           FontWeight="Bold"
                            Text="Email:"/>
-                <!--<TextBlock Foreground="White" 
-                           FontSize="13" 
-                           Text="adwadi"/>-->
+                <TextBlock x:Name="tbEmailAddress"
+                           Text="Email"
+                           Foreground="White" 
+                           FontSize="13" />
             </StackPanel>
-            <StackPanel 
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left">
+            <StackPanel HorizontalAlignment="Right"
+                        Orientation="Horizontal">
                 <TextBlock Foreground="White" 
-                           FontSize="13" 
-                           FontWeight="Bold"
-                           Text="ID:"/>
-                <!--<TextBlock Foreground="White" 
-                           FontSize="13" 
-                           Text="adwadi"/>-->
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Right">
-                <TextBlock Foreground="White" FontSize="12" Margin="0 -3 10 0 "><Run Text=" Member ID: 204167"/></TextBlock>
+                           FontSize="12" 
+                           Margin="0 0 5 0 "
+                           Text=" Member ID:"/>
+                <TextBlock x:Name="tbID"
+                           Text="ID"
+                           Foreground="White" 
+                           FontSize="12"
+                           Margin="0 0 10 0"/>
             </StackPanel>
         </StackPanel>
 

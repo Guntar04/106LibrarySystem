@@ -52,9 +52,9 @@ namespace _106LibrarySystem
             using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
-                string bookName = (string)((Image)sender).Tag;
-                string query = "SELECT * FROM books WHERE name = @BookName";
-                var book = connection.QueryFirstOrDefault<Book>(query, new { BookName = bookName });
+                string bookID = (string)((Image)sender).Tag;
+                string query = "SELECT * FROM books WHERE Id = @BookID";
+                var book = connection.QueryFirstOrDefault<Book>(query, new { BookID = bookID });
 
                 if (book != null)
                 {
