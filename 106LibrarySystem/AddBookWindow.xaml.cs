@@ -91,8 +91,8 @@ namespace LibraryDatabase
 
             MessageBox.Show("Successfully added a book!");
 
-            // Close the window
-            Close();
+            AdminBrowsing adminBrowsing = new AdminBrowsing();
+
         }
 
         private void ItemBox_GotFocus(object sender, RoutedEventArgs e)
