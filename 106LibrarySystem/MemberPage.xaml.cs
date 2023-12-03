@@ -60,37 +60,6 @@ namespace _106LibrarySystem
                 tbID.Text = currentUser.ID.ToString();
             }
         }
-
-        private void GenerateBookImages()
-        {
-            BookStackPanel.Items.Clear();
-
-            if (userBooks != null)
-            {              
-
-                foreach (Loans book in userBooks)
-                {
-                    if (book.Book != null && !string.IsNullOrEmpty(book.Book.Name))
-                    {
-
-                        BitmapImage image = null;
-
-                        if (!string.IsNullOrEmpty(book.Book.ImagePath) && File.Exists(book.Book.ImagePath))
-                        {
-                            image = new BitmapImage(new Uri(book.Book.ImagePath));
-                        }
-
-                        BookStackPanel.Items.Add(new
-                        {
-                            ImageUri = book.Book.ImagePath,
-                            BookName = book.Book.Name,
-                            DueDate = $"Due Date: {book.dueDate.ToShortDateString()}"
-                        });
-                    }
-                }
-            }
-        }
-
         public void DisplayUserBooks(int userID)
         {
             userBooks.Clear();
@@ -144,6 +113,92 @@ namespace _106LibrarySystem
             // Generate and display book images
             GenerateBookImages();
 
+
+        }
+
+        // Display book details in a popup
+        
+
+        // Handle book return logic
+        private void ReturnBook(Loans selectedBook)
+        {
+            // Perform the necessary actions to return the book to the database
+            
+
+            // Remove the book from the user's book list
+            userBooks.Remove(selectedBook);
+
+            // Update the UI
+            GenerateBookImages();
+        }
+        private void GenerateBookImages()
+        {
+            BookStackPanel.Items.Clear();
+
+            if (userBooks != null)
+            {
+                foreach (Loans book in userBooks)
+                {
+                    if (book.Book != null && !string.IsNullOrEmpty(book.Book.Name))
+                    {
+                        BitmapImage image = null;
+
+                        if (!string.IsNullOrEmpty(book.Book.ImagePath) && File.Exists(book.Book.ImagePath))
+                        {
+                            image = new BitmapImage(new Uri(book.Book.ImagePath));
+                        }
+
+                        Button bookButton = new Button
+                        {
+                            Content = new StackPanel
+                            {
+                                Orientation = Orientation.Vertical,
+                                Children =
+                        {
+                            new Image
+                            {
+                                Source = image,
+                                Height = 180,
+                                Width = 160,
+                                Margin = new Thickness(0, 0, 0, 5)
+                            },
+                            new TextBlock
+                            {
+                                Text = book.Book.Name,
+                                Foreground = System.Windows.Media.Brushes.White,
+                                HorizontalAlignment = HorizontalAlignment.Center,
+                                FontWeight = FontWeights.Bold,
+                                Margin = new Thickness(0, 0, 0, 5)
+                            },
+                            new TextBlock
+                            {
+                                Text = $"Due Date: {book.dueDate.ToShortDateString()}",
+                                Foreground = System.Windows.Media.Brushes.White,
+                                HorizontalAlignment = HorizontalAlignment.Center,
+                                FontStyle = FontStyles.Italic
+                            }
+                        }
+                            }
+                        };
+
+                        // Attach click event handler to each book button
+                        bookButton.Click += (sender, e) => ShowBookDetails(book);
+
+                        BookStackPanel.Items.Add(bookButton);
+                    }
+                }
+            }
+        }
+        private void ShowBookDetails(Loans selectedBook)
+        {
+            // Set the details in the popup
+            BitmapImage bitmapImage = new BitmapImage(new Uri(selectedBook.Book.ImagePath, UriKind.RelativeOrAbsolute));
+            BookImagePopup.Source = bitmapImage;
+            BookNamePopup.Text = selectedBook.Book.Name;
+            DueDatePopup.Text = $"Due Date: {selectedBook.dueDate.ToShortDateString()}";
+
+            // Open the popup
+            BookDetailsPopup.IsOpen = true;
         }
     }
 }

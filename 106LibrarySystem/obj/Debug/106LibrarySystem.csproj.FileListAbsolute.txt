@@ -199,3 +199,13 @@ D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.baml
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\BookEditWindow.g.cs
 D:\Files\GitHub\106LibrarySystem\106LibrarySystem\obj\Debug\BookEditWindow.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\BookEditWindow.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.g.cs
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminBooksDueWindow.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminLoanedBooksWindow.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\AdminUserList.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\BookEditWindow.baml
+C:\My Manual Files\Uni work\C#\106LibrarySystem\106LibrarySystem\obj\Debug\EditCatalogueWindow.baml

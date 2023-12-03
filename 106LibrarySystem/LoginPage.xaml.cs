@@ -73,6 +73,8 @@ namespace _106LibrarySystem
             string databaseFileName = "LibraryDatabase.db";
             string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
 
+
+
             using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
@@ -97,7 +99,27 @@ namespace _106LibrarySystem
                             if (role == "Admin")
                             {
                                 MessageBox.Show("You are logged in as an Admin.");
-                                MainContent.Content = adminHomePage;
+                                string userDetailsQuery = "SELECT * FROM users WHERE userName = @userName";
+                                using (SQLiteCommand userDetailsCommand = new SQLiteCommand(userDetailsQuery, (SQLiteConnection)connection))
+                                {
+                                    userDetailsCommand.Parameters.AddWithValue("@userName", username);
+                                    using (SQLiteDataReader reader = userDetailsCommand.ExecuteReader())
+                                    {
+                                        if (reader.Read())
+                                        {
+                                            User loggedInUser = new User
+                                            {
+                                                ID = Convert.ToInt32(reader["ID"]),
+                                                FirstName = reader["firstName"].ToString(),
+                                                JoinDate = reader["joinDate"].ToString(),
+                                                PhoneNumber = reader["phoneNumber"].ToString(),
+                                                EmailAddress = reader["emailAddress"].ToString()
+                                            };
+                                            adminHomePage.SetCurrentUser(loggedInUser);
+                                            MainContent.Content = adminHomePage;
+                                        }
+                                    }
+                                }
                             }
                             else if (role == "Member")
                             {

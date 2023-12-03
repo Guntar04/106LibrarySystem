@@ -45,11 +45,9 @@ namespace LibraryDatabase
             {
                 connection.Open();
 
-                // Example SQL command
                 string sql = "SELECT * FROM Loans";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    // Execute command and read results
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         // Parse results and return a collection of Loans
