@@ -307,19 +307,29 @@
                                 Margin="10">
                         <Button Content="Add Book" 
                                 Click="AddBookButton_Click" 
+                                Foreground="White"
+                                Background="#89A894"
+                                Height="25"
+                                Width="80"
                                 HorizontalAlignment="Left" 
                                 VerticalAlignment="Bottom" 
                                 Margin="10"/>
                         <Button Content="Edit Catalogue" 
+                                Foreground="White"
+                                Background="#89A894"
+                                Height="25"
+                                Width="100"
                                 Click="EditCatalogueButton_Click" 
                                 HorizontalAlignment="Left" 
                                 VerticalAlignment="Bottom"
                                 Margin="10"/>
                         <Button Content="Toggle Remove Book Buttons" 
-                                Click="ToggleRemoveButtons_Click" 
-                                HorizontalAlignment="Left" 
-                                VerticalAlignment="Bottom" 
-                                Margin="10"/>
+                                Foreground="White"
+                                Background="#89A894"
+                                Height="25"
+                                Width="190"
+                                Margin="10"
+                                Click="ToggleRemoveButtons_Click"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

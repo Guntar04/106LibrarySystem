@@ -27,7 +27,7 @@ namespace LibraryDatabase
     {
         private string databaseFileName = "LibraryDatabase.db";
         private string source;
-        private User currentUser;
+        private static User currentUser;
 
         public AdminBrowsing()
         {
@@ -46,6 +46,7 @@ namespace LibraryDatabase
         private void Profile_Admin(object sender, RoutedEventArgs e)
         {
             AdminPage adminPage = new AdminPage();
+            adminPage.UpdateUserDetails(currentUser);
             AdminBrowsingContent.Content = adminPage;
         }
 
@@ -138,6 +139,10 @@ namespace LibraryDatabase
                     MessageBox.Show("Book not found in the database.");
                 }
             }
+        }
+        public void SetCurrentUser(User user)
+        {
+            currentUser = user;
         }
     }
 }

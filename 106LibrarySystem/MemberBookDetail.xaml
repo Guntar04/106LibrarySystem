@@ -65,7 +65,7 @@
                    Grid.ColumnSpan="3" 
                    Height="40" 
                    Width="34"/>
-                    <Button 
+                    <Button Click="Profile_Click"
                         Height="40"
                         BorderBrush="Transparent"
                         Background="Transparent"/>
@@ -141,15 +141,6 @@
                                     FontWeight="Bold"
                                     FontSize="15"
                                     Margin="10 0 0 0">Borrow Book</Button>
-                            <Button x:Name="Pre_Book"
-                                    Click="Pre_Book_Click"
-                                    Background="Transparent"
-                                    BorderBrush="Transparent"
-                                    Foreground="DarkOrange"
-                                    FontWeight="Bold"
-                                    FontSize="15"
-                                    Margin="10 0 0 0">Pre-Book</Button>
-                            
                         </StackPanel>
                         
 

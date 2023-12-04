@@ -27,18 +27,17 @@ namespace _106LibrarySystem
     {
         private string databaseFileName = "LibraryDatabase.db";
         private string source;
-        private User currentUser;
+        private static User currentUser;
 
         public AdminHome()
         {
             InitializeComponent();
             source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AdminPage adminPage = new AdminPage();
-            adminPage.SetCurrentUser(currentUser);
+            adminPage.UpdateUserDetails(currentUser);
             AdminHomeContent.Content = adminPage;
         }
         private void Image_Click(object sender, MouseButtonEventArgs e)
@@ -77,9 +76,8 @@ namespace _106LibrarySystem
                         description = description
                     };
 
-                    // Pass the currentUser to the constructor of MemberBookDetail
                     AdminBookDetail adminBookDetail = new AdminBookDetail(selectedBook, currentUser);
-
+                    adminBookDetail.SetCurrentUser(currentUser);
                     AdminHomeContent.Content = adminBookDetail;
                 }
                 else
@@ -88,10 +86,10 @@ namespace _106LibrarySystem
                 }
             }
         }
-
         private void Catalouge_Admin(object sender, RoutedEventArgs e)
         {
             AdminBrowsing adminBrowsing = new AdminBrowsing();
+            adminBrowsing.SetCurrentUser(currentUser);
             AdminHomeContent.Content = adminBrowsing;
         }
         public void SetCurrentUser(User user)

@@ -14,20 +14,18 @@ namespace _106LibrarySystem
     public partial class MemberBookDetail : UserControl
     {
         private Book selectedBook;
-        private User currentUser;
+        private static User currentUser;
         private LibraryContext context;
 
         public MemberBookDetail(Book selectedBook, User currentUser)
         {
             InitializeComponent();
             this.selectedBook = selectedBook;
-            this.currentUser = currentUser;
             DisplayBookDetails(selectedBook);
 
         }
 
-
-        private void Home_Click(object sender, RoutedEventArgs e)
+            private void Home_Click(object sender, RoutedEventArgs e)
         {
             BookDetails.Content = new HomeScreen();
         }
@@ -58,21 +56,28 @@ namespace _106LibrarySystem
                 int bookID = selectedBook.Id;
                 int userID = currentUser.ID;
 
-                DateTime currentDate = DateTime.Now;
-                DateTime dueDate = currentDate.AddDays(7);
-
-                var loan = new Loans
+                if (selectedBook.availability <= 0)
                 {
-                    bookID = bookID,
-                    userID = userID,
-                    loanDate = currentDate,
-                    dueDate = dueDate,
-                    loanStatus = "Loaned"
-                };
+                    MessageBox.Show("Book not in stock!");
+                }
+                else
+                {
+                    DateTime currentDate = DateTime.Today;
+                    DateTime dueDate = currentDate.AddDays(7);
 
-                context.AddLoan(loan);
+                    var loan = new Loans
+                    {
+                        bookID = bookID,
+                        userID = userID,
+                        loanDate = currentDate,
+                        dueDate = dueDate,
+                        loanStatus = "Loaned"
+                    };
 
-                MessageBox.Show("Book borrowed successfully!");
+                    context.AddLoan(loan);
+
+                    MessageBox.Show("Book borrowed successfully!");
+                }  
             }
             else
             {
@@ -80,53 +85,15 @@ namespace _106LibrarySystem
             }
         }
 
-        private void Pre_Book_Click(object sender, RoutedEventArgs e)
+        private void Profile_Click(object sender, RoutedEventArgs e)
         {
-            BorrowOrPreBook("Pre-Booked");
+            MemberPage memberPage = new MemberPage();
+            memberPage.SetCurrentUser(currentUser);
+            BookDetails.Content = memberPage;
         }
-
-        private void BorrowOrPreBook(string status)
+        public void SetCurrentUser(User user)
         {
-            if (currentUser != null && selectedBook != null)
-            {
-                int loanID = GetNewLoanID();
-
-                DateTime currentDate = DateTime.Now;
-                DateTime dueDate = currentDate.AddDays(7);
-
-                Loans newLoan = new Loans
-                {
-                    loanID = loanID,
-                    bookID = selectedBook.Id,
-                    userID = currentUser.ID,
-                    loanDate = currentDate,
-                    dueDate = dueDate,
-                    loanStatus = status
-                };
-
-                AddNewLoanToDatabase(newLoan);
-                MessageBox.Show($"Book {status.ToLower()} successfully!");
-            }
-        }
-
-        private void AddNewLoanToDatabase(Loans newLoan)
-        {
-            context.Loans.Add(newLoan);
-        }
-
-        private int GetNewLoanID()
-        {
-            var existingLoans = context.Loans as IEnumerable<Loans>;
-
-            if (existingLoans != null && existingLoans.Any())
-            {
-                int maxLoanID = existingLoans.Max(l => l.loanID);
-                return maxLoanID + 1;
-            }
-            else
-            {
-                return 1;
-            }
+            currentUser = user;
         }
     }
 }

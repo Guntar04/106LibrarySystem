@@ -16,7 +16,6 @@ namespace LibraryDatabase
 
         private ObservableCollection<Loans> _loans = new ObservableCollection<Loans>();
         //public List<Loans> Loans { get; set; } = new List<Loans>();
-
         public ObservableCollection<Loans> Loans
         {
             get { return _loans; }
@@ -33,38 +32,6 @@ namespace LibraryDatabase
         public LibraryContext()
         {
             
-        }
-
-        public IEnumerable<Loans> GetLoans()
-        {
-            string databaseFileName = "LibraryDatabase.db";
-            string source = $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
-            // Implement logic to fetch loans from the database using ADO.NET
-            // Example using SqlConnection and SqlCommand:
-            using (SqlConnection connection = new SqlConnection(source))
-            {
-                connection.Open();
-
-                string sql = "SELECT * FROM Loans";
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        // Parse results and return a collection of Loans
-                        List<Loans> loans = new List<Loans>();
-                        while (reader.Read())
-                        {
-                            Loans loan = new Loans
-                            {
-                                // Populate properties from reader
-                                // e.g., loan.loanID = reader.GetInt32(reader.GetOrdinal("loanID"));
-                            };
-                            loans.Add(loan);
-                        }
-                        return loans;
-                    }
-                }
-            }
         }
 
         public void AddLoan(Loans loan)
@@ -96,7 +63,5 @@ namespace LibraryDatabase
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        // Add other methods for managing books, users, etc.
     }
 }

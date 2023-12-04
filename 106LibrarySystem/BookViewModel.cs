@@ -39,18 +39,15 @@ namespace LibraryDatabase
 
         public void ApplySearch(string searchText)
         {
-            // Filter the books based on the search text
             ICollectionView view = CollectionViewSource.GetDefaultView(Books);
             if (view != null)
             {
                 if (string.IsNullOrWhiteSpace(searchText))
                 {
-                    // If search text is empty, show all books
                     view.Filter = null;
                 }
                 else
                 {
-                    // Otherwise, filter based on the search text and availability
                     view.Filter = item =>
                     {
                         var book = (Book)item;
@@ -58,7 +55,6 @@ namespace LibraryDatabase
                                            book.author.ToLower().Contains(searchText) ||
                                            book.genre.ToLower().Contains(searchText);
 
-                        // Include availability in the search
                         bool matchesAvailability = searchText.ToLower() == "available" && book.availability > 0 ||
                                           searchText.ToLower() == "unavailable" && book.availability <= 0;
 
@@ -122,7 +118,6 @@ namespace LibraryDatabase
 
         private string GetImagePathFromDatabase(IDbConnection connection, int bookId)
         {
-            // Example query (replace with your actual database schema and query)
             string query = "SELECT ImagePath FROM books WHERE Id = @BookId";
             return connection.ExecuteScalar<string>(query, new { BookId = bookId }) ?? "";
 
@@ -130,7 +125,7 @@ namespace LibraryDatabase
 
         public void AddBook(Book newBook)
         {
-            // Save the new book to the database
+            // Saves the new book to the database
             string databaseFileName = "LibraryDatabase.db";
             string source = $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
 
@@ -186,11 +181,11 @@ namespace LibraryDatabase
 
             if (book == null)
             {
-                // Handle the case where 'book' is null (optional)
+                // Handles the case where 'book' is null (optional)
                 return;
             }
 
-            // Remove the book from the database
+            // Removes the book from the database
             string databaseFileName = "LibraryDatabase.db";
             string source = $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
 
@@ -198,21 +193,18 @@ namespace LibraryDatabase
             {
                 connection.Open();
 
-                // Add a null check for 'book.Id'
+                // Adds a null check for 'book.Id'
                 if (book.Id != 0)
                 {
                     connection.Execute("DELETE FROM books WHERE Id = @BookId", new { BookId = book.Id });
                 }
                 else
                 {
-                    // Log or handle the case where 'book.Id' is 0
                 }
             }
 
-            // Remove the book from the collection
+            // Removes the book from the collection
             Books.Remove(book);
-
-           
         }
 
         public void UpdateBooks()
@@ -247,6 +239,5 @@ namespace LibraryDatabase
                 MessageBox.Show("error updating book:", ex.Message);
             }
         }
-
     }
 }

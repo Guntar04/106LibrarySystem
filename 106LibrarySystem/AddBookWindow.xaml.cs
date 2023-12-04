@@ -47,7 +47,6 @@ namespace LibraryDatabase
                 author = Author,
                 genre = Genre,
                 language = Language,
-                // You may want to set other properties like ImagePath
             };
 
             int availability;
@@ -82,8 +81,6 @@ namespace LibraryDatabase
                 MessageBox.Show("Invalid date format. Please enter a valid integer.");
                 return; // Exit the method if parsing fails
             }
-
-            // Set other properties
             newBook.ImagePath = _bookViewModel.CurrentBook.ImagePath;
 
             _bookViewModel.AddBook(newBook);

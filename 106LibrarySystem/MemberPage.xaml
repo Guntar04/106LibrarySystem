@@ -22,28 +22,18 @@
         <Rectangle  Fill="white" 
                     Grid.ColumnSpan="3"
                     Grid.RowSpan="3"/>
-        <StackPanel Orientation="Horizontal" 
-                    HorizontalAlignment="Left"
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
+                    Grid.RowSpan="1"
                     Grid.ColumnSpan="3">
             <Image Source="Images/image 2.png"
-               Grid.Column="0" 
-               Margin="20 0 10 0" Grid.ColumnSpan="2"/>
+                   Margin="20 0 10 0"/>
             <Button Click="Home_Click"
                 Foreground="Black"
                 Background="White"
                 BorderBrush="White"
                 FontSize="13"
                 Width="100px"
-                Margin="50 5 5 5">Home</Button>
-
-            <Button 
-                Foreground="Black"
-                Background="white"
-                BorderBrush="White"
-                FontSize="13"
-                Width="100px"
-                Margin="0 5 0 5">About</Button>
-
+                Margin="20 5 5 5">Home</Button>
             <Button Click="Catalogue_Click"
                 Foreground="Black"
                 Background="white"
@@ -58,13 +48,28 @@
                 FontSize="13"
                 Width="100px"
                 Margin="0 5 0 5">Support</Button>
-
-            <Image Source="Images/lang.png"
+            <StackPanel Orientation="Horizontal"
+                        Margin="200 0 0 0">
+                <Image Source="Images/lang.png"
                Grid.Column="0" 
-               Margin="20 0 10 0" Grid.ColumnSpan="2" Height="39" Width="52"/>
-            <Image Source="Images/profile.png"
-               Grid.Column="0" 
-               Margin="20 0 10 0" Grid.ColumnSpan="2" Height="40" Width="34"/>
+               Margin="20 0 10 0" Grid.ColumnSpan="3" Height="39" Width="52"/>
+                <Grid Height="40"
+                  Width="40" 
+                  VerticalAlignment="Center" 
+                  HorizontalAlignment="Center"
+                  Margin="20 0 10 0" >
+                    <Image Source="Images/profile.png"
+                       
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="3" 
+                   Height="40" 
+                   Width="34"/>
+                    <Button 
+                        Height="40"
+                        BorderBrush="Transparent"
+                        Background="Transparent"/>
+                </Grid>
+            </StackPanel>
         </StackPanel>
         <Rectangle  Fill="#FF011936" Height="10" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Row="1"/>
         <Rectangle  Fill="#FF00487C" Height="10" Margin="0,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Row="1" />
@@ -137,9 +142,9 @@
                            Text=" Member ID:"/>
                 <TextBlock x:Name="tbID"
                            Text="ID"
+                           Margin="0 0 15 0"
                            Foreground="White" 
-                           FontSize="12"
-                           Margin="0 0 10 0"/>
+                           FontSize="12"/>
             </StackPanel>
         </StackPanel>
 
@@ -191,47 +196,22 @@
 
 
         </StackPanel>
-        <TextBlock Text="Your Books" 
-           Foreground="White" 
-           FontSize="20" 
-           HorizontalAlignment="Center" 
-           VerticalAlignment="Top" 
-           Margin="0,10,0,20" 
-           Grid.Column="1" 
-           Grid.Row="3"/>
+        <StackPanel Grid.Column="1"
+                    Grid.Row="3"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Your Books" 
+                       Foreground="White" 
+                       FontSize="20" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Top" 
+                       Margin="0,10,0,20"/>
+            <StackPanel x:Name="BookStackPanel" 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
 
-        <ItemsControl x:Name="BookStackPanel"
-                      Grid.Column="1"
-                      Grid.Row="3"
-              VerticalAlignment="Center"
-              HorizontalAlignment="Center"
-              ItemsSource="{Binding}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical" 
-                        Margin="15">
-                        <Image Source="{Binding ImageUri}" 
-                           Height="180" 
-                           Width="160" 
-                           Margin="0,0,0,5"/>
-                        <TextBlock Text="{Binding BookName}" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           FontWeight="Bold" 
-                           Margin="0,0,0,5"/>
-                        <TextBlock Text="{Binding DueDate}" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           FontStyle="Italic"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        </StackPanel>
         <ContentControl Name="MemberContent" 
                         Grid.ColumnSpan="3"
                         Grid.RowSpan="4" />

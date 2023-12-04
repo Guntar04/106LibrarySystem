@@ -40,5 +40,9 @@ namespace LibraryDatabase
         {
             throw new NotImplementedException();
         }
+
+        public class Book
+        {
+        }
     }
 }

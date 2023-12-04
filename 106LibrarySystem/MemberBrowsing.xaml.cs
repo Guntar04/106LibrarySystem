@@ -1,20 +1,9 @@
 ﻿using _106LibrarySystem;
-using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Dapper;
 using System.IO;
 
@@ -27,7 +16,7 @@ namespace LibraryDatabase
     {
         private string databaseFileName = "LibraryDatabase.db";
         private string source;
-        private User currentUser;
+        private static User currentUser;
         public MemberBrowsing()
         {
             InitializeComponent();
@@ -45,6 +34,7 @@ namespace LibraryDatabase
         private void Profile_Click(object sender, RoutedEventArgs e)
         {
             MemberPage memberPage = new MemberPage();
+            //memberPage.SetCurrentUser(currentUser);
             MemberBrowse.Content = memberPage;
         }
         private void Image_Click(object sender, MouseButtonEventArgs e)
@@ -52,7 +42,7 @@ namespace LibraryDatabase
             using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
-                string bookID = (string)((Image)sender).Tag;
+                int bookID = (int)((Image)sender).Tag;
                 string query = "SELECT * FROM books WHERE Id = @BookID";
                 var book = connection.QueryFirstOrDefault<Book>(query, new { BookID = bookID });
 
@@ -85,7 +75,7 @@ namespace LibraryDatabase
 
                     // Pass the currentUser to the constructor of MemberBookDetail
                     MemberBookDetail memberBookDetail = new MemberBookDetail(selectedBook, currentUser);
-
+                    memberBookDetail.SetCurrentUser(currentUser);
                     MemberBrowse.Content = memberBookDetail;
                 }
                 else
@@ -93,6 +83,10 @@ namespace LibraryDatabase
                     MessageBox.Show("Book not found in the database.");
                 }
             }
+        }
+        public void SetCurrentUser(User user)
+        {
+            currentUser = user;
         }
     }
 }

@@ -1,37 +1,30 @@
 ﻿using Dapper;
 using LibraryDatabase;
 using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Data;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Net.Mail;
-using System.ComponentModel;
 
 namespace _106LibrarySystem
 {
     public partial class AdminPage : UserControl
     {
-        private static readonly string databaseFileName = "LibraryDatabase.db";
-        private static readonly string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
+        private static string databaseFileName = "LibraryDatabase.db";
+        private static string source = $"Data Source={System.IO.Path.Combine(Directory.GetCurrentDirectory(), databaseFileName)}";
         private int currentUserID;
-        public User currentUser;
+        public static User currentUser;
 
         public AdminPage()
         {
             InitializeComponent();
+            if (Application.Current.Properties.Contains("CurrentUser"))
+            {
+                var serializedUser = Application.Current.Properties["CurrentUser"];
+                UpdateUserDetails(currentUser);
+            }
             DisplayUserData();
         }
 
@@ -66,17 +59,7 @@ namespace _106LibrarySystem
             AdminBrowsing adminBrowsing = new AdminBrowsing();
             AdminContent.Content = adminBrowsing;
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AdminPage adminPage = new AdminPage();
-            AdminContent.Content = adminPage;
-        }
-        public void SetCurrentUser(User user)
-        {
-            currentUser = user;
-            UpdateUserDetails();
-        }
-        private void UpdateUserDetails()
+        public void UpdateUserDetails(User currentUser)
         {
             if (currentUser != null)
             {
@@ -165,7 +148,7 @@ namespace _106LibrarySystem
 
             if (user != null)
             {
-                // Update the TextBoxes in EditUserPopup with the fetched details
+                // Updates the TextBoxes in EditUserPopup with the fetched details
                 UserName1.Text = user.UserName;
                 FirstName1.Text = user.FirstName;
                 LastName1.Text = user.LastName;
@@ -183,7 +166,7 @@ namespace _106LibrarySystem
 
         private void UpdateUser_Click(object sender, RoutedEventArgs e)
         {
-            // Get the updated user details from EditUserPopup
+            // Gets the updated user details from EditUserPopup
             User updatedUser = new User
             {
                 ID = currentUserID,
@@ -196,13 +179,13 @@ namespace _106LibrarySystem
                 Role = Role1.Text
             };
 
-            // Update the user in the database
+            // Updates the user in the database
             DatabaseHelper.UpdateUser(updatedUser);
 
-            // Close the EditUserPopup
+            // Closes the EditUserPopup
             EditUserPopup.IsOpen = false;
 
-            // Refresh the user data grid or perform any necessary updates
+            // Refreshs the user data grid or perform any necessary updates
             DisplayUserData();
         }
         private void ItemBox_GotFocus(object sender, RoutedEventArgs e)
@@ -329,6 +312,23 @@ namespace _106LibrarySystem
             {
                 textBox.Text = "User's Role";
                 textBox.Foreground = Brushes.Gray;
+            }
+        }
+        public void SetCurrentUser(User user)
+        {
+            currentUser = user;
+            UpdateUserDetails();
+
+        }
+        private void UpdateUserDetails()
+        {
+            if (currentUser != null)
+            {
+                tbFirstname.Text = currentUser.FirstName;
+                tbJoinDate.Text = currentUser.JoinDate;
+                tbPhoneNumber.Text = currentUser.PhoneNumber;
+                tbEmailAddress.Text = currentUser.EmailAddress;
+                tbID.Text = currentUser.ID.ToString();
             }
         }
     }

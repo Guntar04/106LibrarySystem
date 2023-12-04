@@ -27,19 +27,12 @@ namespace LibraryDatabase
             InitializeComponent();
             DataContext = sharedViewModel;
         }
-
-
-
 private void BookButton_Click(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
             var book = (Book)button.DataContext;
-
-            // Pass the shared BookViewModel instance to BookEditWindow
             var bookEditWindow = new BookEditWindow(book, (BookViewModel)DataContext);
             bookEditWindow.ShowDialog();
-
-            // Update Browsing with changes
             ((BookViewModel)DataContext).UpdateBooks();
         }
     }

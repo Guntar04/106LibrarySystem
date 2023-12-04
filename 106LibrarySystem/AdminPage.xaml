@@ -68,7 +68,7 @@
                    Grid.ColumnSpan="3" 
                    Height="40" 
                    Width="34"/>
-                    <Button Click="Button_Click"
+                    <Button 
                         Height="40"
                         BorderBrush="Transparent"
                         Background="Transparent"/>
@@ -243,8 +243,16 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Center">
             <Button Click="Add_User"
+                    Foreground="White"
+                                Background="#89A894"
+                                Height="30"
+                                Width="80"
                     Margin="0 7 10 7">Add User</Button>
             <Button Click="Edit_User"
+                    Foreground="White"
+                    Background="#89A894"
+                    Height="30"
+                    Width="80"
                     Margin="10 7 0 7">Edit User</Button>
         </StackPanel>
         <Popup x:Name="AddUserPopup" IsOpen="False" StaysOpen="False" Placement="Center">

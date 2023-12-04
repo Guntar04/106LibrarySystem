@@ -20,6 +20,7 @@ using System.Net.Mail;
 using System.IO;
 using System.Data.SQLite;
 using Dapper;
+using static LibraryDatabase.Book;
 
 namespace _106LibrarySystem
 {
@@ -27,6 +28,7 @@ namespace _106LibrarySystem
     {
         private string databaseFileName = "LibraryDatabase.db";
         private string source;
+        private static User currentUser;
         private BookViewModel bookViewModel;
 
 
@@ -42,7 +44,7 @@ namespace _106LibrarySystem
         {
             MemberPage memberPage = new MemberPage();
             memberPage.SetCurrentUser(currentUser);
-            HomeContent.Content = memberPage;  
+            HomeContent.Content = memberPage;
         }
 
         private void Image_Click(object sender, MouseButtonEventArgs e)
@@ -80,10 +82,8 @@ namespace _106LibrarySystem
                         ImagePath = imagePath,
                         description = description
                     };
-
-                    // Pass the currentUser to the constructor of MemberBookDetail
                     MemberBookDetail memberBookDetail = new MemberBookDetail(selectedBook, currentUser);
-
+                    memberBookDetail.SetCurrentUser(currentUser);
                     HomeContent.Content = memberBookDetail;
                 }
                 else
@@ -92,15 +92,15 @@ namespace _106LibrarySystem
                 }
             }
         }
-        private void Catalogue_Click(object sender, RoutedEventArgs e)
-        {
-            MemberBrowsing memberBrowsing = new MemberBrowsing();
-            HomeContent.Content = memberBrowsing;
-        }
-        public User currentUser;
         public void SetCurrentUser(User user)
         {
             currentUser = user;
+        }
+        private void Catalogue_Click(object sender, RoutedEventArgs e)
+        {
+            MemberBrowsing memberBrowsing = new MemberBrowsing();
+            memberBrowsing.SetCurrentUser(currentUser);
+            HomeContent.Content = memberBrowsing;
         }
     }
 }

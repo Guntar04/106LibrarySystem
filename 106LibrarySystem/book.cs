@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 
 namespace LibraryDatabase
 {
     public class Book : INotifyPropertyChanged
     {
-        private int _availability;
-        private string _name;
-        private string _author;
-        private string _imagePath;
+        public int _availability;
+        public string _name;
+        public string _author;
+        public string _imagePath;
 
         public int Id { get; set; }
         public string Name { get; set; }
@@ -87,13 +84,19 @@ namespace LibraryDatabase
             get { return availability > 0 ? "Green" : "Red"; }
         }
 
-        public string ImageUri { get; internal set; }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        public DateTime? returnDate;
+
+        public int loanID { get; set; }
+        public int bookID { get; set; }
+        public int userID { get; set; }
+        public DateTime loanDate { get; set; }
+        public DateTime dueDate { get; set; }
+        public string loanStatus { get; set; }
     }
 }

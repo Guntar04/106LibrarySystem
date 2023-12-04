@@ -36,57 +36,42 @@ namespace LibraryDatabase
 
         private void ChangeImageButton_Click(object sender, RoutedEventArgs e)
         {
-            // Create OpenFileDialog
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
 
-            // Set filter for file extension and default file extension
             openFileDialog.DefaultExt = ".png";
             openFileDialog.Filter = "Image files (*.png;*.jpeg;*.jpg)|*.png;*.jpeg;*.jpg|All files (*.*)|*.*";
 
-            // Display OpenFileDialog by calling ShowDialog method
             Nullable<bool> result = openFileDialog.ShowDialog();
 
-            // Get the selected file name and display in a TextBox
+            // Gets the selected file name and display in a TextBox
             if (result == true)
             {
-                // Update the ImagePath property of the CurrentBook
+                // Updates the ImagePath property of the CurrentBook
                 BookViewModel.CurrentBook.ImagePath = openFileDialog.FileName;
 
-                // Update the Image control
+                // Updates the Image control
                 UpdateImage();
             }
         }
-
         private void UpdateImage()
         {
-            // Reload the image to reflect the changes
+            // Reloads the image to reflect the changes
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
             bitmap.UriSource = new Uri(BookViewModel.CurrentBook.ImagePath);
             bitmap.EndInit();
 
-            // Set the Image control source
+            // Sets the Image control source
             bookImage.Source = bitmap;
         }
-
-
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            // Update the book information from the textboxes
-            //UpdateBookInformation();
-
             UpdateBindings();
-
+            // Update the book information from the textboxes
             UpdateBookInformation();
-
-
-            // Close the window or perform other actions
+            // Closes the window or perform other actions
             Close();
         }
-
- 
-
-
         private void UpdateBindings()
         {
             // Manually update the bindings to apply changes immediately
@@ -102,8 +87,6 @@ namespace LibraryDatabase
 
             be = AvailabilityTextBox.GetBindingExpression(TextBox.TextProperty);
             be?.UpdateSource();
-
-            // Update other bindings as needed
         }
 
         private void UpdateBookInformation()
@@ -122,9 +105,6 @@ namespace LibraryDatabase
                 existingBook.pageNum = BookViewModel.CurrentBook.pageNum;
                 existingBook.date = BookViewModel.CurrentBook.date;
                 existingBook.ImagePath = BookViewModel.CurrentBook.ImagePath;
-
-                // Notify the UI about the changes (if needed)
-
             }
 
             BookViewModel.UpdateBook(existingBook);

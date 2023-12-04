@@ -33,10 +33,14 @@ namespace _106LibrarySystem
         }
         private void DisplayUserData()
         {
+            string Loaned = "Loaned";
             using (IDbConnection connection = new SQLiteConnection(source))
             {
                 connection.Open();
-                var users = connection.Query("SELECT * FROM users WHERE booksLoaned > 0");
+
+                // Use a parameterized query to retrieve users with dueDates over the current date
+                IEnumerable<dynamic> users = connection.Query("SELECT * FROM loanedBooks WHERE loanStatus = @LoanStatus", new { LoanStatus = Loaned });
+
                 userGrid.ItemsSource = users;
             }
         }

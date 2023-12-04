@@ -23,7 +23,7 @@ namespace _106LibrarySystem
     public partial class AdminBookDetail : UserControl
     {
         private Book selectedBook;
-
+        private static User currentUser;
         public AdminBookDetail(Book selectedBook, User currentUser)
         {
             InitializeComponent();
@@ -48,6 +48,7 @@ namespace _106LibrarySystem
         private void Profile_Admin(object sender, RoutedEventArgs e)
         {
             AdminPage adminPage = new AdminPage();
+            adminPage.SetCurrentUser(currentUser);
             AdminBookContent.Content = adminPage;
         }
 
@@ -72,8 +73,6 @@ namespace _106LibrarySystem
             }
             else
             {
-                // Handle the case where selectedBook is null
-                // For example, clear the existing values or display an error message
                 ClearBookDetails();
             }
         }
@@ -89,6 +88,10 @@ namespace _106LibrarySystem
             Date.Text = string.Empty;
             Description.Text = string.Empty;
             BookImage.Source = null;
+        }
+        public void SetCurrentUser(User user)
+        {
+            currentUser = user;
         }
     }
 }

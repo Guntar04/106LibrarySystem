@@ -107,7 +107,7 @@ namespace _106LibrarySystem
                                     {
                                         if (reader.Read())
                                         {
-                                            User loggedInUser = new User
+                                            User currentUser = new User
                                             {
                                                 ID = Convert.ToInt32(reader["ID"]),
                                                 FirstName = reader["firstName"].ToString(),
@@ -115,7 +115,7 @@ namespace _106LibrarySystem
                                                 PhoneNumber = reader["phoneNumber"].ToString(),
                                                 EmailAddress = reader["emailAddress"].ToString()
                                             };
-                                            adminHomePage.SetCurrentUser(loggedInUser);
+                                            adminHomePage.SetCurrentUser(currentUser);
                                             MainContent.Content = adminHomePage;
                                         }
                                     }
@@ -133,7 +133,7 @@ namespace _106LibrarySystem
                                     {
                                         if (reader.Read())
                                         {
-                                            User loggedInUser = new User
+                                            User currentUser = new User
                                             {
                                                 ID = Convert.ToInt32(reader["ID"]),
                                                 FirstName = reader["firstName"].ToString(),
@@ -141,7 +141,7 @@ namespace _106LibrarySystem
                                                 PhoneNumber = reader["phoneNumber"].ToString(),
                                                 EmailAddress = reader["emailAddress"].ToString()
                                             };
-                                            memberHomePage.SetCurrentUser(loggedInUser);
+                                            memberHomePage.SetCurrentUser(currentUser);
                                             MainContent.Content = memberHomePage;
                                         }
                                     }

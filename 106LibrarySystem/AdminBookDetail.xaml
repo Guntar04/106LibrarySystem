@@ -138,10 +138,6 @@
                                        Margin="10 0 0 0"/>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Margin="10 30 0 0" Width="87">
-                        <Button Margin="0 70 0 10">Edit Details</Button>
-                        <Button >Remove Book</Button>
-                    </StackPanel>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1"
