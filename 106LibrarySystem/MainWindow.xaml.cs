@@ -34,10 +34,7 @@ namespace _106LibrarySystem
 
         private Book GetSelectedBook()
         {
-            // Implement a method to obtain or create the selected book
-            // For example, you might retrieve it from a list of books, a database, etc.
-            // Replace this with your actual logic to get the selected book.
-            return new Book(); // Replace with your logic to obtain the selected book
+            return new Book();
         }
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {

@@ -79,15 +79,10 @@ namespace _106LibrarySystem
                         Foreground = Brushes.White,
                         FontStyle = FontStyles.Italic
                     };
-
-
-                    // Set the Book property here
                     Book = currentBook;
 
-                    // Ensure the ImagePath is not null or empty
                     if (!string.IsNullOrEmpty(currentBook._imagePath))
                     {
-                        // Access ImagePath through the Book property
                         string imagePath = currentBook._imagePath;
 
                         BitmapImage image = new BitmapImage(new Uri(imagePath, UriKind.RelativeOrAbsolute));

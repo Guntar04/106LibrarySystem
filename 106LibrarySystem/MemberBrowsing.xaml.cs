@@ -72,8 +72,6 @@ namespace LibraryDatabase
                         ImagePath = imagePath,
                         description = description
                     };
-
-                    // Pass the currentUser to the constructor of MemberBookDetail
                     MemberBookDetail memberBookDetail = new MemberBookDetail(selectedBook, currentUser);
                     memberBookDetail.SetCurrentUser(currentUser);
                     MemberBrowse.Content = memberBookDetail;
